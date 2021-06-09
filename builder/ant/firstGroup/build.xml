@@ -1,0 +1,38 @@
+<!--
+    =====================================================
+												  firstGroup
+    =====================================================
+  -->
+<project name="firstGroup" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${firstGroup.buildDir}" />
+		<mkdir dir="${firstGroup.buildDir}" />
+		<mkdir dir="${firstGroup.classDir}" />
+		<mkdir dir="${firstGroup.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${firstGroup.srcDir}" destdir="${firstGroup.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+				<pathelement path="${junitJAR}"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="makeJar" depends="compile">
+		<jar basedir="${firstGroup.classDir}" destfile="${firstGroup.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<attribute name="CLASS-PATH" value="foc.jar resources.jar ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${JasperReportFile4} ${POIFile1}"/>
+	    </manifest>
+		</jar>
+	</target>
+
+</project>

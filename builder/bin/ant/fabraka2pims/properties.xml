@@ -1,0 +1,10 @@
+<project name="fabraka2pimsProperties">
+	<property name="fabraka2pims" value="fabraka2pims"/>
+	<property name="fabraka2pims.prjDir" value="${srcRoot}/${fabraka2pims}"/>
+	<property name="fabraka2pims.srcDir" value="${fabraka2pims.prjDir}/src"/>
+	<property name="fabraka2pims.buildDir" value="${exeRoot}/${appSubDir}/${fabraka2pims}/${buildSubDir}"/>
+	<property name="fabraka2pims.classDir" value="${fabraka2pims.buildDir}/${classSubDir}"/>
+	<property name="fabraka2pims.jarDir" value="${fabraka2pims.buildDir}/${jarSubDir}"/>
+	<property name="fabraka2pims.jarFile" value="${fabraka2pims.buildDir}/${jarSubDir}/01b-${fabraka2pims}.jar"/>
+	<property name="fabraka2pims.ojarName" value="${fabraka2pims}.jar"/>	
+</project>

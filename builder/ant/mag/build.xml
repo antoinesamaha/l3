@@ -1,0 +1,47 @@
+<!--
+    =====================================================
+												  	MAG
+    =====================================================
+  -->
+<project name="mag" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${mag.buildDir}" />
+		<mkdir dir="${mag.buildDir}" />
+		<mkdir dir="${mag.classDir}" />
+		<mkdir dir="${mag.jarDir}" />
+		
+		<delete dir="${mag.versionDir}" />
+		<mkdir dir="${mag.versionDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${mag.srcDir}" destdir="${mag.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${stock.jarFile}/"/>
+				<pathelement path="${attachments.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+				<pathelement path="${junitJAR}"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile1}/"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile2}/"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="makeJar" depends="compile">
+		<jar basedir="${mag.classDir}" destfile="${mag.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<!-- FOR REPORTING attribute name="CLASS-PATH" value="foc.jar budget.jar payment.jar basics.jar pimsInterface.jar scheduler.jar resources.jar employee.jar officeLink.jar ${jFreeChartFile1} ${jFreeChartFile2} ${mysqlJarName} ${eclipseFile1} ${eclipseFile2} ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${JasperReportFile4} ${JasperReportFile5} ${JasperReportFile6} ${JasperReportFile7} properties/. "/-->
+	    	<attribute name="CLASS-PATH" value="foc.jar stock.jar attachments.jar basics.jar resources.jar ${jFreeChartFile1} ${jFreeChartFile2} ${mysqlJarName} ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${JasperReportFile4} properties/. "/>
+	    </manifest>
+		</jar>
+	</target>
+
+</project>

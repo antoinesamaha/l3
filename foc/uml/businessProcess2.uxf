@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><element><type>com.umlet.element.base.Note</type><coordinates><x>20</x><y>1380</y><w>300</w><h>30</h></coordinates><panel_attributes>Client notices a Bug
+
+
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>120</x><y>1420</y><w>200</w><h>70</h></coordinates><panel_attributes>Client
+--
+report to 01Barmaja
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>450</x><y>1420</y><w>200</w><h>70</h></coordinates><panel_attributes>Client - PreI
+--
+Payment of 30% 
+of invoice amount
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>1210</y><w>180</w><h>70</h></coordinates><panel_attributes>Client - C-PreI
+--
+Study of proforma invoice
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>940</y><w>180</w><h>70</h></coordinates><panel_attributes>Client - C-UML
+--
+UML-Business model study
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>890</x><y>1080</y><w>200</w><h>70</h></coordinates><panel_attributes>Client
+--
+Study of the invoice
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>1000</x><y>810</y><w>180</w><h>90</h></coordinates><panel_attributes>Client
+--
+-Testing
+-Bug reporting
+-Enhancements requests
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>850</x><y>350</y><w>210</w><h>50</h></coordinates><panel_attributes>Client
+--
+Request to deliver
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>850</x><y>160</y><w>420</w><h>150</h></coordinates><panel_attributes>Deliveries - When and what to deliver?
+
+1- Any time deliveries: 
+Deliveries can be done at any moment. Each delivery includes 
+the jar executables and the automated tests reports.
+
+2- Scheduled deliveries:
+With mutual agreement we can say wich bugs are to be delivered 
+and when. For each delivery we create an automated test report 
+that should be successful so that the delivery can be executed.
+
+
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>460</x><y>230</y><w>310</w><h>80</h></coordinates><panel_attributes>After discussing the main ideas of the projects
+with the client, starts the following process
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>220</x><y>480</y><w>190</w><h>60</h></coordinates><panel_attributes>Enhancement request
+Or 
+new developement request
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>220</x><y>560</y><w>200</w><h>70</h></coordinates><panel_attributes>Client - C-MR
+--
+Client presents
+modification requirements
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>560</y><w>180</w><h>70</h></coordinates><panel_attributes>Client - C-R
+--
+Presentation
+of requirements
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>440</y><w>180</w><h>60</h></coordinates><panel_attributes>Client - C-PL
+--
+Price list study
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>10</x><y>1440</y><w>140</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+m2=replication failed</panel_attributes><additional_attributes>110;20;20;20;20;160;120;160</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>1560</y><w>180</w><h>70</h></coordinates><panel_attributes>01Barmaja - AUT Creation
+--
+Creation of automated 
+tests failing.
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>370</x><y>1740</y><w>180</w><h>60</h></coordinates><panel_attributes>
+Discovering possible
+new bugs
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>1680</y><w>180</w><h>60</h></coordinates><panel_attributes>01Barmaja - dev
+--
+During developement
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>1330</y><w>180</w><h>70</h></coordinates><panel_attributes>01Barmaja - PreI
+--
+Pre-development
+Invoice issuing
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>1080</y><w>180</w><h>100</h></coordinates><panel_attributes>01Barmaja - B-PreI
+--
+Presentation of a 
+preliminary proforma invoice
+based on price list
+and business model
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>800</y><w>180</w><h>90</h></coordinates><panel_attributes>01Barmaja - B-UML
+--
+Business object model 
+presentation
+in UML diagram format
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>680</y><w>180</w><h>60</h></coordinates><panel_attributes>01Barmaja - B-R
+Requirements study
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>460</x><y>350</y><w>180</w><h>60</h></coordinates><panel_attributes>01Barmaja - B-PL
+--
+Presentation of a price list
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>340</x><y>610</y><w>140</w><h>110</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>120;90;20;90;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>280</x><y>610</y><w>200</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision</panel_attributes><additional_attributes>20;20;20;50;20;110;180;110</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>1030</x><y>460</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;20;100;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>1030</x><y>490</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=regression</panel_attributes><additional_attributes>100;20;20;20</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>1130</x><y>460</y><w>150</w><h>70</h></coordinates><panel_attributes>01Barmaja
+--
+Correcting bugs
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>900</x><y>1200</y><w>280</w><h>130</h></coordinates><panel_attributes>Client
+--
+Payment due is up to 70% 
+of the delivered items
+
+Payment of:
+Additional 40% of the pre-dev invoice items
+70% of the newly created invoice items
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>950</x><y>1130</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+m2=approved</panel_attributes><additional_attributes>30;70;30;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>960</x><y>690</y><w>40</w><h>250</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;230;20;20</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>900</x><y>920</y><w>160</w><h>120</h></coordinates><panel_attributes>01Barmaja
+--
+Post-development
+invoice issuing
+covering the items 
+that did not figure 
+on pre-dev Invoice
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>1040</x><y>970</y><w>161</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision</panel_attributes><additional_attributes>20;20;90;20;90;150;50;150</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>1380</y><w>40</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;40;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>520</x><y>1260</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+m2=approved</panel_attributes><additional_attributes>30;70;30;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>1100</y><w>194</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision in invoice</panel_attributes><additional_attributes>20;20;100;20;100;140;20;140</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>960</x><y>1020</y><w>40</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;60;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>1010</x><y>690</y><w>40</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;120;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>580</y><w>131</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision</panel_attributes><additional_attributes>20;20;110;20;110;130;20;130</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>610</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;70;20;70;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>190</x><y>1470</y><w>40</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;90;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>310</x><y>1590</y><w>170</w><h>200</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>150;20;20;20;20;180;60;180</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>290</x><y>1560</y><w>190</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=replication succeeded</panel_attributes><additional_attributes>170;20;20;20</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>130</x><y>1560</y><w>180</w><h>70</h></coordinates><panel_attributes>01Barmaja
+--
+Replicates the bug on 
+01Barmaja environement
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>1470</y><w>40</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;90;20;20</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>860</x><y>440</y><w>190</w><h>90</h></coordinates><panel_attributes>01Barmaja
+--
+Checking the non regression 
+automated tests of our 
+developement version
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>860</x><y>590</y><w>200</w><h>120</h></coordinates><panel_attributes>01Barmaja
+--
+Release creation and lock.
+Delivery of jar executables 
++Automated tests report
+Development Version number 
+incrementation
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>940</x><y>380</y><w>40</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;60;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>912</x><y>510</y><w>96</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m2=No regressions
+</panel_attributes><additional_attributes>48;80;48;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>520</x><y>480</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m2=approved</panel_attributes><additional_attributes>30;80;30;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>390</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;50;20;20</additional_attributes></element><element><type>com.umlet.element.custom.SendSignal</type><coordinates><x>720</x><y>1580</y><w>170</w><h>60</h></coordinates><panel_attributes>publishing the 
+automated test reports
+showing project status
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>800</y><w>272</w><h>480</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision in UML to reduce cost</panel_attributes><additional_attributes>20;20;220;20;220;460;20;460</additional_attributes></element><element><type>com.umlet.element.custom.State</type><coordinates><x>550</x><y>1740</y><w>180</w><h>60</h></coordinates><panel_attributes>Developement 
+points finished
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>360</y><w>131</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision</panel_attributes><additional_attributes>20;20;110;20;110;120;20;120</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>710</x><y>1620</y><w>70</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>50;20;50;70;50;150;20;150</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>1590</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>100;20;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>1610</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;70;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>1160</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;50;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>620</x><y>820</y><w>131</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+m2=request revision</panel_attributes><additional_attributes>20;20;100;20;100;150;20;150</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>520</x><y>990</y><w>60</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m2=approved</panel_attributes><additional_attributes>30;90;30;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>530</x><y>870</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>20;70;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>520</x><y>720</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m2=approved</panel_attributes><additional_attributes>30;80;30;70;30;20</additional_attributes></element></umlet_diagram>

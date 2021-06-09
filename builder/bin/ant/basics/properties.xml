@@ -1,0 +1,10 @@
+<project name="basicsProperties">
+	<property name="basics" value="basics"/>
+	<property name="basics.prjDir" value="${srcRoot}/${basics}"/>
+	<property name="basics.srcDir" value="${basics.prjDir}/src"/>
+	<property name="basics.buildDir" value="${exeRoot}/${appSubDir}/${basics}/${buildSubDir}"/>
+	<property name="basics.classDir" value="${basics.buildDir}/${classSubDir}"/>
+	<property name="basics.jarDir" value="${basics.buildDir}/${jarSubDir}"/>
+	<property name="basics.jarFile" value="${basics.buildDir}/${jarSubDir}/01b-${basics}.jar"/>
+	<property name="basics.ojarName" value="${basics}.jar"/>
+</project>

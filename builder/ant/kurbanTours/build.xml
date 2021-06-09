@@ -1,0 +1,33 @@
+<!--
+    =====================================================
+												  	Kurban Tours
+    =====================================================
+  -->
+<project name="kurbanTours" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${kurban.buildDir}" />
+		<mkdir dir="${kurban.buildDir}" />
+		<mkdir dir="${kurban.classDir}" />
+		<mkdir dir="${kurban.jarDir}" />
+		
+		<delete dir="${kurban.versionDir}" />
+		<mkdir dir="${kurban.versionDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${kurban.srcDir}" destdir="${kurban.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${kurban.classDir}" destfile="${kurban.jarFile}" />
+	</target>
+</project>

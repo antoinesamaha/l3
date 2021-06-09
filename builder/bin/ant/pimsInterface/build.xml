@@ -1,0 +1,29 @@
+<!--
+    =====================================================
+												  	PIMS Interface
+    =====================================================
+  -->
+	
+<project name="pims" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${pimsInterface.buildDir}" />
+		<mkdir dir="${pimsInterface.buildDir}" />
+		<mkdir dir="${pimsInterface.classDir}" />
+		<mkdir dir="${pimsInterface.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${pimsInterface.srcDir}" destdir="${pimsInterface.classDir}">
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${pimsInterface.classDir}" destfile="${pimsInterface.jarFile}" />
+	</target>
+</project>

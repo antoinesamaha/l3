@@ -1,0 +1,31 @@
+<!--
+    =====================================================
+												  	Employee
+    =====================================================
+  -->
+	
+<project name="employee" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${employee.buildDir}" />
+		<mkdir dir="${employee.buildDir}" />
+		<mkdir dir="${employee.classDir}" />
+		<mkdir dir="${employee.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${employee.srcDir}" destdir="${employee.classDir}">
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${officeLink.jarFile}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${employee.classDir}" destfile="${employee.jarFile}" />
+	</target>
+</project>

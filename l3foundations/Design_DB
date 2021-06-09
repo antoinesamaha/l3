@@ -1,0 +1,137 @@
+le 01/08/2006 :
+
+1st step:
+LisFileConnector :dirset
+									poolKernel
+using its dirset LisFileConnector is Pooling the files to see if there is new "data"; if thus, it builds a new message
+and asks the PoolKernel to send it(to put it in the db in the correct status):
+2nd step
+on the other side (Instrument side) we have a other poolKernel that is Pooling the db() and asking its instruments to 
+send samples
+
+1st step
+LisFileConnector has a methode : treatMessage(Message)
+the poolKernel has a method "putInDb(L3Sample sample )"
+every instrument has a mode whitch is "manuel" or "automatic", and has a methode PutInDb(L3Sample sample)
+
+
+when new data available LisFileConnector builds the message and then treatMessage(message) dispatche it and asks the Pool to putIndDb(Sample)
+the PoolKernel sends the message using its instruments: every in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instrument 
+	polling function:  1- allows to fill an L3Message (From the FocList of samples reloaded) containing the list of samples not "on work" 
+										 2- and then:
+										 	a- Automatic mode: calls the function that pushes all the sample messages in the fifo
+										 	b- Manual mode: does nothing only refreshes the foc list and allows the selection on GUI and the send on GUI
+
+
+
+
+
+
+
+TestLabelMap: is a FaocObject slave to Instrument One2N containing LISLabel(String) and InstrumentLabel()String
+
+IDispatcher:         init(ArrayList Of Pool)
+                     public int dispatchSample(L3Sample sample)//returns the number of instruments involved
+				        		 public String getInstrument(int index);
+              			 public L3Sample getL3Sample(int index);
+              			 
+L3Displatcher: 			 add the internal class that holds (String, L3Sample )
+              			 in the init it can scan the Pool and create a hashMap
+              			 It has a hashmap that points tests -> InstrCode
+              			 It fills automatically the hashMap from the different instruments of the different pools.
+              			 
+create a class LisFileConnector (rename of FilePool) having a atribute :DirSet
+
+LisFileConnector is FocObject and has Properties that determine the rootDirectory, receiveDir, outDir, errorDir, archiveDir
+LisFileConnector is N2N linked to pools.
+
+
+
+
+
+- PoolDBAbstract : make the list of pools available with insert, delete, edit
+- Make Instrument FocObject andlink it to Pool One2N
+	- Name, code, driverName
+- Make gui of instrument available in  pool insert, delete, modify, ...
+- 
+
+
+- Create FLong and FLongField like FInt (Is not priority, can replace this property with Date and )
+
+- PoolKernel extends FocObject NOT_DB_RESIDENT; FocDesc .... LinkOne2N to Instrument
+	- add FString name
+- Instrument extends FocObject; FocDesc ....
+	- code
+	- list of samples FocLinkOne2N to L3Sample
+	
+
+- Start with the PoolDBAbstract extends PoolKernel : 
+			public abstract postMessageToInstrument // same prototype as the Pool interface
+			public abstract postMessageToLIS // same prototype as the Pool interface
+- Start with the PoolDBMonoProcess extends PoolDBAnstract
+			public abstract postMessageToInstrument {
+				message.validateSamples();
+				send(string, message);
+			}
+			public abstract postMessageToLIS // same prototype as the Pool interface
+
+			- create a function in L3Message that scans the L3Samples and validates them 
+				L3Message.validateSamples();
+
+le 27/7/2006 :
+avoir le view add et edit comme constant globales
+dans detail panel de l3sample avoir un bouton show tests qui ouvre le browser panel de l3test.
+dans le browser panel de l3test avoir un current item panel
+dans le detail panel avoir un tab panel pour tout les teste
+
+le 28/7/2006 :
+pool kernel serait un attribut dans d'autre pool(PoolDBInstrumentSide);
+dir set serait aussi un attribut dans la classe;
+il faut avair un bouton dans le browser panel de pool :Start listening to files qui appele la methode startListeningToFiles
+de PoolDBInstrumentSide qui appele startPooling de dir set
+
+
+
+Class pool : exists does not implement messageListener()
+
+create db abstract pool extends pool (define insert, update...methodes and abstract method:exectuteMessage())
+
+create 3 pool classes that extends dbabstract pool:
+	1-Pool: LinkToDbLisSide :this  pool implements runable and pool on the db to see if there is new results 
+		and then notify listener (the listener is the LisCommunicator class and the methode is resultAvailable(testId))
+	 	this pool will be a attribute of the class that communicate with LIS
+		in the executeMessage(intrument,message) method we only call for insert methode (inherited from db bastract pool)
+	
+	2-Pool: link to db instrument side : this pool pool implements runable and pool on the db to see if ther is new 
+		message to execute; in the executeMessage(intrument,message) methode we call to the send methode(inherited from pool) and for the 
+		update methode (inherited from db abstract pool) this class implements msesageListener and in messageReceived(message)
+		we update the db(status to result available and result to the result)
+	
+	3-Pool: db same proces : this pool pool implements msesageListener and in messageReceived(message)
+		we update the db(status to result available and result to the result)and  notify listeners (the listener is the LisCommunicator class and the methode is resultAvailable(testId))
+	  this pool will be an attribut of the class LisComunicator	in the executeMessage(intrument,message) methode we call for the insert methode (inherited from db bastract pool) and to the
+		send methode (inherited from pool)
+		
+create the classes that communicate with LIS LisComunicator: these classes implements runable and has an attribute pool that can be
+		1 of 2 classe : link to db lis side or db same proces:
+	 	if it is link to db lis side that meen the 3rd class	(link to db instrument side) has to be implemented also; if it is db same proces no need to implements any other classes.
+		in the 1st case(the attribut is link to db lis side) then LIS LisComunicator will be pooling files and ordering her pool
+		to executeMessage(intrument,message) and the second pool (link to db instrument side) will be pooling the data base  
+		and executing messages	
+		in resultAvailable(testId) we wirte the result in the files and we update the status of the test to:"commited to LIS"
+		

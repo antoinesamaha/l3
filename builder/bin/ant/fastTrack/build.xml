@@ -1,0 +1,32 @@
+<!--
+    =====================================================
+												  	FAST TRACK
+    =====================================================
+  -->
+<project name="fastTrack" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${fastTrack.buildDir}" />
+		<mkdir dir="${fastTrack.buildDir}" />
+		<mkdir dir="${fastTrack.classDir}" />
+		<mkdir dir="${fastTrack.jarDir}" />
+		
+		<delete dir="${fastTrack.versionDir}" />
+		<mkdir dir="${fastTrack.versionDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${fastTrack.srcDir}" destdir="${fastTrack.classDir}">
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${pimsInterface.jarFile}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${fastTrack.classDir}" destfile="${fastTrack.jarFile}" />
+	</target>
+</project>

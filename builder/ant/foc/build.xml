@@ -1,0 +1,50 @@
+<!--
+    =====================================================
+												  	FOC
+    =====================================================
+  -->
+<project name="foc" default="makeJar">
+	
+	<property name="foc.localClassDir" value="${foc.classDir}"></property>
+	
+	<target name="prepareDir">
+		<delete dir="${foc.buildDir}" />
+		<mkdir dir="${foc.buildDir}" />
+		<mkdir dir="${foc.classDir}" />
+		<mkdir dir="${foc.jarDir}" />
+	</target>
+
+	<target name="compile_internal" depends="prepareDir">
+		<compileMacro tarDir="${foc.classDir}"/>
+	</target>
+
+	<target name="compileExternal" depends="prepareDir">
+		<compileMacro tarDir="${foc.localClassDir}"/>
+	</target>
+
+	<macrodef name="compileMacro">
+		<attribute name="tarDir" default="NOT_SET"/>
+		<element name="justdoit" implicit="yes"/>
+		<sequential>
+			<javac encoding="8859_1" srcdir="${foc.srcDir}" destdir="@{tarDir}" deprecation="on" 
+				executable="${javac1.6}" 
+	      fork="yes"
+	      includeantruntime="false" >
+				<classpath>
+					<!-- <pathelement location="lib/"/> -->
+					<pathelement path="${java.class.path}/"/>
+					<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+					<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+					<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+					<pathelement path="${wibuJar}"/>
+					<pathelement path="${junitJAR}"/>
+					<pathelement path="${wibuJar}/"/>					
+				</classpath>
+			</javac>
+		</sequential>
+	</macrodef>
+	
+	<target name="makeJar" depends="compile_internal">
+		<jar basedir="${foc.classDir}" destfile="${foc.jarFile}" />
+	</target>
+</project>

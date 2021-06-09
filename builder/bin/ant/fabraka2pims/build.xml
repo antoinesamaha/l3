@@ -1,0 +1,31 @@
+<!--
+    =====================================================
+												  	FABRAKA2PIMS
+    =====================================================
+  -->
+	
+<project name="fabraka2pims" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${fabraka2pims.buildDir}" />
+		<mkdir dir="${fabraka2pims.buildDir}" />
+		<mkdir dir="${fabraka2pims.classDir}" />
+		<mkdir dir="${fabraka2pims.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${fabraka2pims.srcDir}" destdir="${fabraka2pims.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${fabraka.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${pimsInterface.jarFile}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${fabraka2pims.classDir}" destfile="${fabraka2pims.jarFile}" />
+	</target>
+</project>

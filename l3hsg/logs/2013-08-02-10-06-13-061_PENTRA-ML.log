@@ -1,0 +1,2197 @@
+10:06:13:171 : drivers oracle.jdbc.driver.OracleDriver
+10:06:13:561 : HOUR,MINUTE,SECOND,MONTH,YEAR
+10:06:13:561 : 2013-08-02
+10:06:13:655 : HOUR,MINUTE,SECOND,MONTH,YEAR
+10:06:13:967 : SELECT REF,JAR,NAME,ID FROM FVERSION
+10:06:14:030 : SELECT REF,NAME,PASSWORD,GRP_REF,FONT_SIZE FROM FUSER WHERE (NAME='ADMIN')
+10:06:14:030 : SELECT REF,NAME,DESCRIP,NAME_MODF,DB_BACKUP,DB_RESTORE FROM FGROUP
+10:06:14:030 : SELECT REF,NAME,PASSWORD,GRP_REF,FONT_SIZE FROM FUSER WHERE (NAME='AUTOMATIC')
+10:06:14:046 : Build date : 11/6/2008
+10:06:14:046 : FINISH LAUNCH
+10:06:14:046 : SELECT REF,NAME,SERVICE_HOST FROM POOL
+10:06:14:061 : SELECT REF,LK_USER_REF,CODE,NAME,CONNECTED,DRIVER_CLASS_NAME,PROPERTIES_FILE_PATH,MODE_O,WAIT_FOR_RESULT_CONFIRMATION,ON_HOLD,DLY_DB_SAMPLES_2SEND,DLY_SAMPLE_DISP_REFRESH,DLY_FOR_RESERVE_RETRY,DLY_FOR_RETRY_LATER,DLY_FOR_TIME_OUT,COM_PORT,COM_BAUDE_RATE,COM_PARITY,COM_DATA_BITS,COM_STOP_BIT,IS_EMUL,RELATED_INSTR,PORT,M_REF FROM INSTRUMENT WHERE (M_REF=1)
+10:06:14:092 : SELECT REF,LK_USER_REF,CODE,NAME,CONNECTED,DRIVER_CLASS_NAME,PROPERTIES_FILE_PATH,MODE_O,WAIT_FOR_RESULT_CONFIRMATION,ON_HOLD,DLY_DB_SAMPLES_2SEND,DLY_SAMPLE_DISP_REFRESH,DLY_FOR_RESERVE_RETRY,DLY_FOR_RETRY_LATER,DLY_FOR_TIME_OUT,COM_PORT,COM_BAUDE_RATE,COM_PARITY,COM_DATA_BITS,COM_STOP_BIT,IS_EMUL,RELATED_INSTR,PORT,M_REF FROM INSTRUMENT WHERE (M_REF=1)
+10:06:14:092 : SELECT REF,LK_USER_REF,CODE,NAME,CONNECTED,DRIVER_CLASS_NAME,PROPERTIES_FILE_PATH,MODE_O,WAIT_FOR_RESULT_CONFIRMATION,ON_HOLD,DLY_DB_SAMPLES_2SEND,DLY_SAMPLE_DISP_REFRESH,DLY_FOR_RESERVE_RETRY,DLY_FOR_RETRY_LATER,DLY_FOR_TIME_OUT,COM_PORT,COM_BAUDE_RATE,COM_PARITY,COM_DATA_BITS,COM_STOP_BIT,IS_EMUL,RELATED_INSTR,PORT,M_REF FROM INSTRUMENT WHERE (M_REF=2)
+10:06:14:124 : SELECT REF,LK_USER_REF,CODE,NAME,CONNECTED,DRIVER_CLASS_NAME,PROPERTIES_FILE_PATH,MODE_O,WAIT_FOR_RESULT_CONFIRMATION,ON_HOLD,DLY_DB_SAMPLES_2SEND,DLY_SAMPLE_DISP_REFRESH,DLY_FOR_RESERVE_RETRY,DLY_FOR_RETRY_LATER,DLY_FOR_TIME_OUT,COM_PORT,COM_BAUDE_RATE,COM_PARITY,COM_DATA_BITS,COM_STOP_BIT,IS_EMUL,RELATED_INSTR,PORT,M_REF FROM INSTRUMENT WHERE (M_REF=2)
+10:06:14:124 : SELECT REF,MODE_O,AUTO_PURGE,LAUNCH_MODE,PURGE_DAYS,PURGE_DAYS_COMMIT,KEEP_FILES,APP_DIR,LAUNCHER_HOST,LAUNCHER_PORT FROM L3_APPLICATION
+10:06:14:139 : SELECT REF,LIS_TEST_LABEL,INSTRUMENT_TEST_CODE,DESCRIP,M_REF,DAY_PRIORITY,NIGHT_PRIORITY,HOLIDAY_PRIORITY,CALCULATED,ON_HOLD,GRP_REF FROM TEST_LABEL_MAP WHERE ( ( ( M_REF = 7 ) ) )
+10:06:14:155 : SELECT REF,LK_USER_REF,CODE,NAME,CONNECTED,DRIVER_CLASS_NAME,PROPERTIES_FILE_PATH,MODE_O,WAIT_FOR_RESULT_CONFIRMATION,ON_HOLD,DLY_DB_SAMPLES_2SEND,DLY_SAMPLE_DISP_REFRESH,DLY_FOR_RESERVE_RETRY,DLY_FOR_RETRY_LATER,DLY_FOR_TIME_OUT,COM_PORT,COM_BAUDE_RATE,COM_PARITY,COM_DATA_BITS,COM_STOP_BIT,IS_EMUL,RELATED_INSTR,PORT,M_REF FROM INSTRUMENT
+10:06:14:499 : PENTRA-ML->At 8812 New client
+10:06:14:499 : PENTRA-ML->At 8812 New client
+10:06:14:499 : PENTRA-ML->At 8812 received : PING
+10:06:14:499 : PENTRA-ML->At 8812 received : PING
+10:06:14:499 : PENTRA-ML->At 8812 reply : SUCCESS
+10:06:14:499 : PENTRA-ML->At 8812 reply : SUCCESS
+10:06:14:499 : PENTRA-ML->At 8812 after condition
+10:06:14:499 : PENTRA-ML->At 8812 after condition
+10:06:15:202 : Local secKey:  00-15-5D-0A-74-0E
+10:06:15:202 : PENTRA-ML->L3 date : Fri Aug 02 10:06:15 EEST 2013
+10:06:15:217 : Serial connecting...
+10:06:15:217 :    COM12 baude=9600 dataBits=8 stop=1 parity=0
+10:06:15:233 : System port :COM26Type :1 p/p 1
+10:06:15:233 : System port :COM25Type :1 p/p 1
+10:06:15:233 : System port :COM23Type :1 p/p 1
+10:06:15:233 : System port :COM20Type :1 p/p 1
+10:06:15:233 : System port :COM19Type :1 p/p 1
+10:06:15:233 : System port :COM18Type :1 p/p 1
+10:06:15:233 : System port :COM17Type :1 p/p 1
+10:06:15:233 : System port :COM16Type :1 p/p 1
+10:06:15:233 : System port :COM15Type :1 p/p 1
+10:06:15:233 : System port :COM14Type :1 p/p 1
+10:06:15:233 : System port :COM13Type :1 p/p 1
+10:06:15:233 : System port :COM12Type :1 p/p 1
+10:06:15:280 : System port :COM1Type :1 p/p 1
+10:06:15:280 : System port :COM2Type :1 p/p 1
+10:06:15:280 : System port :LPT1Type :2 p/p 1
+10:06:15:280 : System port :LPT2Type :2 p/p 1
+10:06:15:280 : Serial connection success
+10:06:15:280 : UPDATE INSTRUMENT SET CONNECTED=1 WHERE (REF=7)
+10:06:15:296 : PT4: In Serial Event
+10:06:15:296 : SELECT T.REF,T.LABEL,T.DESCRIP,T.VALUE,T.RESULT_OK,T.UNIT_LABEL,T.MESSAGE,T.STATUS,T.BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,T.ALARM,T.PRIORITY,T.VERIFICATION_PENDING,S.REF,S.ID,S.PATIENT_ID,S.LAST_NAME,S.FIRST_NAME,S.MIDDLE_INITIAL,S.SEXE,S.LIQUIDE_TYPE,S.RESULT_CONFIRMED,S.OK_TO_BE_SENT,S.ENTRY_DATE,S.AGE,S.DATE_OF_BIRTH,T.REF,S.REF FROM L3TEST T,L3SAMPLE S WHERE (( ( T.BLOCKED=0 and (T.STATUS=0)  and (INSTR_REF=7)  ) ) ) AND ((T.SAMPLE_REF=S.REF))
+10:06:15:296 : PENTRA-ML->...Buff+->[ENQ]
+10:06:15:296 : PENTRA-ML->Received->[ENQ]
+10:06:15:296 : Receive ENQ
+10:06:15:296 : PENTRA-ML Driver Available
+10:06:15:374 : PENTRA-ML : Connected
+10:06:15:499 : PENTRA-ML->Sending->[ACK]
+10:06:15:530 : PT4: In Serial Event
+10:06:15:530 : PENTRA-ML->...Buff+->[STX]
+10:06:15:546 : PT4: In Serial Event
+10:06:15:546 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P
+10:06:15:577 : PT4: In Serial Event
+10:06:15:577 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P|1394-97|201308021013
+10:06:15:592 : PT4: In Serial Event
+10:06:15:592 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P|1394-97|20130802101302[CR][ETX]13[CR][LF]
+
+10:06:15:592 : PENTRA-ML->Received->[STX]1H|\^&|||PML|||||||P|1394-97|20130802101302[CR][ETX]13[CR][LF]
+
+10:06:15:796 : PENTRA-ML->Sending->[ACK]
+10:06:15:842 : PT4: In Serial Event
+10:06:15:842 : PENTRA-ML->...Buff+->[STX]
+10:06:15:858 : PT4: In Serial Event
+10:06:15:858 : PENTRA-ML->...Buff+->[STX]2P|1||||hayfa[.]sabra^|
+10:06:15:874 : PT4: In Serial Event
+10:06:15:874 : PENTRA-ML->...Buff+->[STX]2P|1||||hayfa[.]sabra^|||U[CR][ETX]88[CR][LF]
+
+10:06:15:874 : PENTRA-ML->Received->[STX]2P|1||||hayfa[.]sabra^|||U[CR][ETX]88[CR][LF]
+
+10:06:16:014 : L3SampleTestJoinList size is 91
+10:06:16:014 : Adding test 4 to sample 1383761
+10:06:16:014 : Adding test 3 to sample 1383761
+10:06:16:014 : Adding test 22 to sample 1383761
+10:06:16:014 : Adding test 1 to sample 1383761
+10:06:16:014 : Adding test 20 to sample 1383761
+10:06:16:014 : Adding test 2 to sample 1383761
+10:06:16:014 : Adding test 21 to sample 1383761
+10:06:16:014 : Adding test 4 to sample 1383772
+10:06:16:014 : Adding test 18 to sample 1383772
+10:06:16:014 : Adding test 1 to sample 1383772
+10:06:16:014 : Adding test 3 to sample 1383772
+10:06:16:014 : Adding test 21 to sample 1383772
+10:06:16:030 : Adding test 5 to sample 1383772
+10:06:16:030 : Adding test 2 to sample 1383772
+10:06:16:030 : Adding test 19 to sample 1383772
+10:06:16:030 : Adding test 22 to sample 1383772
+10:06:16:030 : Adding test 8 to sample 1383772
+10:06:16:030 : Adding test 12 to sample 1383772
+10:06:16:030 : Adding test 7 to sample 1383772
+10:06:16:030 : Adding test 20 to sample 1383772
+10:06:16:030 : Adding test 6 to sample 1383772
+10:06:16:030 : Adding test 3 to sample 1383774
+10:06:16:030 : Adding test 6 to sample 1383774
+10:06:16:030 : Adding test 4 to sample 1383774
+10:06:16:030 : Adding test 8 to sample 1383774
+10:06:16:030 : Adding test 19 to sample 1383774
+10:06:16:030 : Adding test 7 to sample 1383774
+10:06:16:030 : Adding test 5 to sample 1383774
+10:06:16:030 : Adding test 1 to sample 1383774
+10:06:16:030 : Adding test 18 to sample 1383774
+10:06:16:030 : Adding test 22 to sample 1383774
+10:06:16:030 : Adding test 20 to sample 1383774
+10:06:16:030 : Adding test 2 to sample 1383774
+10:06:16:030 : Adding test 21 to sample 1383774
+10:06:16:030 : Adding test 12 to sample 1383774
+10:06:16:030 : Adding test 5 to sample 1383778
+10:06:16:030 : Adding test 4 to sample 1383778
+10:06:16:030 : Adding test 22 to sample 1383778
+10:06:16:030 : Adding test 21 to sample 1383778
+10:06:16:030 : Adding test 6 to sample 1383778
+10:06:16:030 : Adding test 12 to sample 1383778
+10:06:16:030 : Adding test 8 to sample 1383778
+10:06:16:030 : Adding test 7 to sample 1383778
+10:06:16:030 : Adding test 20 to sample 1383778
+10:06:16:030 : Adding test 3 to sample 1383778
+10:06:16:030 : Adding test 2 to sample 1383778
+10:06:16:046 : Adding test 19 to sample 1383778
+10:06:16:046 : Adding test 1 to sample 1383778
+10:06:16:046 : Adding test 18 to sample 1383778
+10:06:16:046 : Adding test 7 to sample 1383783
+10:06:16:046 : Adding test 20 to sample 1383783
+10:06:16:046 : Adding test 18 to sample 1383783
+10:06:16:046 : Adding test 3 to sample 1383783
+10:06:16:046 : Adding test 19 to sample 1383783
+10:06:16:046 : Adding test 8 to sample 1383783
+10:06:16:046 : Adding test 5 to sample 1383783
+10:06:16:046 : Adding test 1 to sample 1383783
+10:06:16:046 : Adding test 21 to sample 1383783
+10:06:16:046 : Adding test 22 to sample 1383783
+10:06:16:046 : Adding test 4 to sample 1383783
+10:06:16:046 : Adding test 2 to sample 1383783
+10:06:16:046 : Adding test 6 to sample 1383783
+10:06:16:046 : Adding test 12 to sample 1383783
+10:06:16:046 : Adding test 6 to sample 1383787
+10:06:16:046 : Adding test 1 to sample 1383787
+10:06:16:046 : Adding test 21 to sample 1383787
+10:06:16:046 : Adding test 4 to sample 1383787
+10:06:16:046 : Adding test 2 to sample 1383787
+10:06:16:046 : Adding test 8 to sample 1383787
+10:06:16:046 : Adding test 12 to sample 1383787
+10:06:16:046 : Adding test 22 to sample 1383787
+10:06:16:046 : Adding test 3 to sample 1383787
+10:06:16:046 : Adding test 5 to sample 1383787
+10:06:16:046 : Adding test 19 to sample 1383787
+10:06:16:046 : Adding test 20 to sample 1383787
+10:06:16:046 : Adding test 18 to sample 1383787
+10:06:16:046 : Adding test 7 to sample 1383787
+10:06:16:046 : Adding test 1 to sample 1383789
+10:06:16:046 : Adding test 18 to sample 1383789
+10:06:16:046 : Adding test 20 to sample 1383789
+10:06:16:046 : Adding test 3 to sample 1383789
+10:06:16:061 : Adding test 19 to sample 1383789
+10:06:16:061 : Adding test 6 to sample 1383789
+10:06:16:061 : Adding test 2 to sample 1383789
+10:06:16:061 : Adding test 4 to sample 1383789
+10:06:16:061 : Adding test 21 to sample 1383789
+10:06:16:061 : Adding test 5 to sample 1383789
+10:06:16:061 : Adding test 22 to sample 1383789
+10:06:16:061 : Adding test 8 to sample 1383789
+10:06:16:061 : Adding test 12 to sample 1383789
+10:06:16:061 : Adding test 7 to sample 1383789
+10:06:16:061 : PENTRA-ML trying to reserve driver
+10:06:16:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:16:077 : PENTRA-ML->Sending->[ACK]
+10:06:16:124 : PT4: In Serial Event
+10:06:16:124 : PENTRA-ML->...Buff+->[STX]
+10:06:16:139 : PT4: In Serial Event
+10:06:16:139 : PENTRA-ML->...Buff+->[STX]3O|1|1383774|||R|||||
+10:06:16:155 : PT4: In Serial Event
+10:06:16:171 : PENTRA-ML->...Buff+->[STX]3O|1|1383774|||R||||||||||||||||||||F[CR][ETX]E8
+10:06:16:186 : PT4: In Serial Event
+10:06:16:186 : PENTRA-ML->...Buff+->[STX]3O|1|1383774|||R||||||||||||||||||||F[CR][ETX]E8[CR][LF]
+
+10:06:16:186 : PENTRA-ML->Received->[STX]3O|1|1383774|||R||||||||||||||||||||F[CR][ETX]E8[CR][LF]
+
+10:06:16:389 : PENTRA-ML->Sending->[ACK]
+10:06:16:421 : PT4: In Serial Event
+10:06:16:421 : PENTRA-ML->...Buff+->[STX]
+10:06:16:436 : PT4: In Serial Event
+10:06:16:436 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.68|10
+10:06:16:452 : PT4: In Serial Event
+10:06:16:452 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.68|10^3/mm3||||||PentraD
+10:06:16:483 : PT4: In Serial Event
+10:06:16:483 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.68|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]8B[CR][LF]
+
+10:06:16:483 : PENTRA-ML->Received->[STX]4R|1|^^^NEU#|3.68|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]8B[CR][LF]
+
+10:06:16:561 : PENTRA-ML trying to reserve driver
+10:06:16:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:16:686 : PENTRA-ML->Sending->[ACK]
+10:06:16:733 : PT4: In Serial Event
+10:06:16:733 : PENTRA-ML->...Buff+->[STX]
+10:06:16:749 : PT4: In Serial Event
+10:06:16:749 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|8.8|µm3|
+10:06:16:764 : PT4: In Serial Event
+10:06:16:764 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|8.8|µm3||||||PentraDX|||[.]0[CR][ETX]
+10:06:16:780 : PT4: In Serial Event
+10:06:16:780 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|8.8|µm3||||||PentraDX|||[.]0[CR][ETX]6B[CR][LF]
+
+10:06:16:780 : PENTRA-ML->Received->[STX]5R|2|^^^MPV|8.8|µm3||||||PentraDX|||[.]0[CR][ETX]6B[CR][LF]
+
+10:06:16:983 : PENTRA-ML->Sending->[ACK]
+10:06:17:030 : PT4: In Serial Event
+10:06:17:030 : PENTRA-ML->...Buff+->[STX]
+10:06:17:046 : PT4: In Serial Event
+10:06:17:046 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.23|10
+10:06:17:061 : PENTRA-ML trying to reserve driver
+10:06:17:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:17:061 : PT4: In Serial Event
+10:06:17:061 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.23|10^3/mm3||||||PentraDX|
+10:06:17:093 : PT4: In Serial Event
+10:06:17:093 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.23|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]85[CR][LF]
+
+10:06:17:093 : PENTRA-ML->Received->[STX]6R|3|^^^MON#|0.23|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]85[CR][LF]
+
+10:06:17:296 : PENTRA-ML->Sending->[ACK]
+10:06:17:327 : PT4: In Serial Event
+10:06:17:327 : PENTRA-ML->...Buff+->[STX]
+10:06:17:343 : PT4: In Serial Event
+10:06:17:343 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|85|µm3||
+10:06:17:374 : PT4: In Serial Event
+10:06:17:374 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|85|µm3||||||PentraDX|||[.]0[CR][ETX]3
+10:06:17:389 : PT4: In Serial Event
+10:06:17:389 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|85|µm3||||||PentraDX|||[.]0[CR][ETX]31[CR][LF]
+
+10:06:17:389 : PENTRA-ML->Received->[STX]7R|4|^^^MCV|85|µm3||||||PentraDX|||[.]0[CR][ETX]31[CR][LF]
+
+10:06:17:561 : PENTRA-ML trying to reserve driver
+10:06:17:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:17:593 : PENTRA-ML->Sending->[ACK]
+10:06:17:624 : PT4: In Serial Event
+10:06:17:624 : PENTRA-ML->...Buff+->[STX]
+10:06:17:655 : PT4: In Serial Event
+10:06:17:655 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|33.0|g/
+10:06:17:671 : PT4: In Serial Event
+10:06:17:671 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|33.0|g/dL||||||PentraDX|||[.]
+10:06:17:686 : PT4: In Serial Event
+10:06:17:686 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|33.0|g/dL||||||PentraDX|||[.]0[CR][ETX]A8[CR][LF]
+
+10:06:17:686 : PENTRA-ML->Received->[STX]0R|5|^^^MCHC|33.0|g/dL||||||PentraDX|||[.]0[CR][ETX]A8[CR][LF]
+
+10:06:17:889 : PENTRA-ML->Sending->[ACK]
+10:06:17:936 : PT4: In Serial Event
+10:06:17:936 : PENTRA-ML->...Buff+->[STX]
+10:06:17:952 : PT4: In Serial Event
+10:06:17:952 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.1|pg|
+10:06:17:968 : PT4: In Serial Event
+10:06:17:968 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.1|pg||||||PentraDX|||[.]0[CR][ETX]
+10:06:17:999 : PT4: In Serial Event
+10:06:17:999 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.1|pg||||||PentraDX|||[.]0[CR][ETX]FD[CR][LF]
+
+10:06:17:999 : PENTRA-ML->Received->[STX]1R|6|^^^MCH|28.1|pg||||||PentraDX|||[.]0[CR][ETX]FD[CR][LF]
+
+10:06:18:061 : PENTRA-ML trying to reserve driver
+10:06:18:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:18:202 : PENTRA-ML->Sending->[ACK]
+10:06:18:233 : PT4: In Serial Event
+10:06:18:233 : PENTRA-ML->...Buff+->[STX]
+10:06:18:249 : PT4: In Serial Event
+10:06:18:249 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.35|10
+10:06:18:280 : PT4: In Serial Event
+10:06:18:280 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.35|10^3/mm3||||||PentraDX|
+10:06:18:296 : PT4: In Serial Event
+10:06:18:296 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.35|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]91[CR][LF]
+
+10:06:18:296 : PENTRA-ML->Received->[STX]2R|7|^^^LYM#|1.35|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]91[CR][LF]
+
+10:06:18:499 : PENTRA-ML->Sending->[ACK]
+10:06:18:546 : PT4: In Serial Event
+10:06:18:546 : PENTRA-ML->...Buff+->[STX]
+10:06:18:561 : PENTRA-ML trying to reserve driver
+10:06:18:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:18:561 : PT4: In Serial Event
+10:06:18:561 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.04|10
+10:06:18:577 : PT4: In Serial Event
+10:06:18:577 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.04|10^3/mm3||||||PentraDX
+10:06:18:608 : PT4: In Serial Event
+10:06:18:608 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.04|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]74[CR][LF]
+
+10:06:18:608 : PENTRA-ML->Received->[STX]3R|8|^^^LIC#|0.04|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]74[CR][LF]
+
+10:06:18:811 : PENTRA-ML->Sending->[ACK]
+10:06:18:843 : PT4: In Serial Event
+10:06:18:843 : PENTRA-ML->...Buff+->[STX]
+10:06:18:874 : PT4: In Serial Event
+10:06:18:874 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.00|10
+10:06:18:889 : PT4: In Serial Event
+10:06:18:889 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.00|10^3/mm3||||||PentraDX
+10:06:18:921 : PT4: In Serial Event
+10:06:18:921 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.00|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7D[CR][LF]
+
+10:06:18:921 : PENTRA-ML->Received->[STX]4R|9|^^^IMM#|0.00|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7D[CR][LF]
+
+10:06:19:061 : PENTRA-ML trying to reserve driver
+10:06:19:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:19:124 : PENTRA-ML->Sending->[ACK]
+10:06:19:155 : PT4: In Serial Event
+10:06:19:155 : PENTRA-ML->...Buff+->[STX]
+10:06:19:171 : PT4: In Serial Event
+10:06:19:171 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|1
+10:06:19:202 : PT4: In Serial Event
+10:06:19:202 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX
+10:06:19:218 : PT4: In Serial Event
+10:06:19:218 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A6[CR][LF]
+
+10:06:19:218 : PENTRA-ML->Received->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A6[CR][LF]
+
+10:06:19:421 : PENTRA-ML->Sending->[ACK]
+10:06:19:452 : PT4: In Serial Event
+10:06:19:452 : PENTRA-ML->...Buff+->[STX]
+10:06:19:483 : PT4: In Serial Event
+10:06:19:483 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.03|1
+10:06:19:499 : PT4: In Serial Event
+10:06:19:499 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.03|10^3/mm3||||||PentraD
+10:06:19:515 : PENTRA-ML->At 8812 New client
+10:06:19:530 : PT4: In Serial Event
+10:06:19:530 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A5[CR][LF]
+
+10:06:19:530 : PENTRA-ML->At 8812 received : PING
+10:06:19:530 : PENTRA-ML->At 8812 reply : SUCCESS
+10:06:19:530 : PENTRA-ML->Received->[STX]6R|11|^^^IMG#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A5[CR][LF]
+
+10:06:19:530 : PENTRA-ML->At 8812 after condition
+10:06:19:561 : PENTRA-ML trying to reserve driver
+10:06:19:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:19:733 : PENTRA-ML->Sending->[ACK]
+10:06:19:765 : PT4: In Serial Event
+10:06:19:765 : PENTRA-ML->...Buff+->[STX]
+10:06:19:796 : PT4: In Serial Event
+10:06:19:796 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.18|1
+10:06:19:811 : PT4: In Serial Event
+10:06:19:811 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.18|10^3/mm3||||||PentraD
+10:06:19:827 : PT4: In Serial Event
+10:06:19:827 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.18|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B7[CR][LF]
+
+10:06:19:827 : PENTRA-ML->Received->[STX]7R|12|^^^EOS#|0.18|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B7[CR][LF]
+
+10:06:20:030 : PENTRA-ML->Sending->[ACK]
+10:06:20:061 : PENTRA-ML trying to reserve driver
+10:06:20:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:20:077 : PT4: In Serial Event
+10:06:20:077 : PENTRA-ML->...Buff+->[STX]
+10:06:20:093 : PT4: In Serial Event
+10:06:20:093 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.08|10
+10:06:20:124 : PT4: In Serial Event
+10:06:20:124 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.08|10^3/mm3||||||PentraDX
+10:06:20:140 : PT4: In Serial Event
+10:06:20:140 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.08|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]9F[CR][LF]
+
+10:06:20:140 : PENTRA-ML->Received->[STX]0R|13|^^^BAS#|0.08|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]9F[CR][LF]
+
+10:06:20:343 : PENTRA-ML->Sending->[ACK]
+10:06:20:390 : PT4: In Serial Event
+10:06:20:390 : PENTRA-ML->...Buff+->[STX]
+10:06:20:405 : PT4: In Serial Event
+10:06:20:405 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.03|1
+10:06:20:421 : PT4: In Serial Event
+10:06:20:421 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.03|10^3/mm3||||||PentraD
+10:06:20:452 : PT4: In Serial Event
+10:06:20:452 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]AC[CR][LF]
+
+10:06:20:452 : PENTRA-ML->Received->[STX]1R|14|^^^ALY#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]AC[CR][LF]
+
+10:06:20:561 : PENTRA-ML trying to reserve driver
+10:06:20:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:20:655 : PENTRA-ML->Sending->[ACK]
+10:06:20:686 : PT4: In Serial Event
+10:06:20:686 : PENTRA-ML->...Buff+->[STX]2R|1
+10:06:20:718 : PT4: In Serial Event
+10:06:20:718 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.5|10^3/mm
+10:06:20:718 : PT4: In Serial Event
+10:06:20:718 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.5|10^3/mm3||||||USER1||201308
+10:06:20:765 : PT4: In Serial Event
+10:06:20:765 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.5|10^3/mm3||||||USER1||20130802095617|1[CR][ETX]6F[CR][LF]
+
+10:06:20:765 : PENTRA-ML->Received->[STX]2R|15|^^^WBC|5.5|10^3/mm3||||||USER1||20130802095617|1[CR][ETX]6F[CR][LF]
+
+10:06:20:968 : PENTRA-ML->Sending->[ACK]
+10:06:21:015 : PT4: In Serial Event
+10:06:21:015 : PENTRA-ML->...Buff+->[STX]
+10:06:21:030 : PT4: In Serial Event
+10:06:21:030 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|24.5|%
+10:06:21:046 : PT4: In Serial Event
+10:06:21:046 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|24.5|%||||||USER1||2013080
+10:06:21:061 : PENTRA-ML trying to reserve driver
+10:06:21:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:21:077 : PT4: In Serial Event
+10:06:21:077 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|24.5|%||||||USER1||20130802095617|1[CR][ETX]D4[CR][LF]
+
+10:06:21:077 : PENTRA-ML->Received->[STX]3R|16|^^^LYM%|24.5|%||||||USER1||20130802095617|1[CR][ETX]D4[CR][LF]
+
+10:06:21:280 : PENTRA-ML->Sending->[ACK]
+10:06:21:327 : PT4: In Serial Event
+10:06:21:327 : PENTRA-ML->...Buff+->[STX]4R
+10:06:21:343 : PT4: In Serial Event
+10:06:21:343 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|4.2|%|||
+10:06:21:358 : PT4: In Serial Event
+10:06:21:358 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|4.2|%||||||USER1||20130802095
+10:06:21:390 : PT4: In Serial Event
+10:06:21:390 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|4.2|%||||||USER1||20130802095617|1[CR][ETX]99[CR][LF]
+
+10:06:21:390 : PENTRA-ML->Received->[STX]4R|17|^^^MON%|4.2|%||||||USER1||20130802095617|1[CR][ETX]99[CR][LF]
+
+10:06:21:561 : PENTRA-ML trying to reserve driver
+10:06:21:561 : PENTRA-ML Driver Busy could not Reserve
+10:06:21:593 : PENTRA-ML->Sending->[ACK]
+10:06:21:624 : PT4: In Serial Event
+10:06:21:624 : PENTRA-ML->...Buff+->[STX]
+10:06:21:655 : PT4: In Serial Event
+10:06:21:655 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|66.7|%
+10:06:21:655 : PT4: In Serial Event
+10:06:21:655 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|66.7|%||||||USER1||2013080
+10:06:21:671 : PT4: In Serial Event
+10:06:21:671 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|66.7|%||||||USER1||20130802095617|1[CR][ETX]D6[CR][LF]
+
+10:06:21:671 : PENTRA-ML->Received->[STX]5R|18|^^^NEU%|66.7|%||||||USER1||20130802095617|1[CR][ETX]D6[CR][LF]
+
+10:06:21:890 : PENTRA-ML->Sending->[ACK]
+10:06:21:921 : PT4: In Serial Event
+10:06:21:921 : PENTRA-ML->...Buff+->[STX]
+10:06:21:952 : PT4: In Serial Event
+10:06:21:952 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|3.2|%|
+10:06:21:968 : PT4: In Serial Event
+10:06:21:968 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|3.2|%||||||USER1||201308020
+10:06:21:999 : PT4: In Serial Event
+10:06:21:999 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|3.2|%||||||USER1||20130802095617|1[CR][ETX]99[CR][LF]
+
+10:06:21:999 : PENTRA-ML->Received->[STX]6R|19|^^^EOS%|3.2|%||||||USER1||20130802095617|1[CR][ETX]99[CR][LF]
+
+10:06:22:061 : PENTRA-ML trying to reserve driver
+10:06:22:061 : PENTRA-ML Driver Busy could not Reserve
+10:06:22:202 : PENTRA-ML->Sending->[ACK]
+10:06:22:249 : PT4: In Serial Event
+10:06:22:249 : PENTRA-ML->...Buff+->[STX]
+10:06:22:265 : PT4: In Serial Event
+10:06:22:265 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|1.4|%|
+10:06:22:296 : PT4: In Serial Event
+10:06:22:296 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|1.4|%||||||USER1||20130802
+10:06:22:296 : PT4: In Serial Event
+10:06:22:296 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|1.4|%||||||USER1||20130802095617|1[CR][ETX]81[CR][LF]
+
+10:06:22:296 : PENTRA-ML->Received->[STX]7R|20|^^^BAS%|1.4|%||||||USER1||20130802095617|1[CR][ETX]81[CR][LF]
+
+10:06:22:499 : PENTRA-ML->Sending->[ACK]
+10:06:22:562 : PENTRA-ML trying to reserve driver
+10:06:22:562 : PENTRA-ML Driver Busy could not Reserve
+10:06:22:562 : PT4: In Serial Event
+10:06:22:562 : PENTRA-ML->...Buff+->[STX]
+10:06:22:577 : PT4: In Serial Event
+10:06:22:577 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|0.6|%|
+10:06:22:593 : PT4: In Serial Event
+10:06:22:608 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|0.6|%||||||USER1||2013080
+10:06:22:624 : PT4: In Serial Event
+10:06:22:624 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|0.6|%||||||USER1||20130802095617|1[CR][ETX]8C[CR][LF]
+
+10:06:22:624 : PENTRA-ML->Received->[STX]0R|21|^^^ALY%|0.6|%||||||USER1||20130802095617|1[CR][ETX]8C[CR][LF]
+
+10:06:22:827 : PENTRA-ML->Sending->[ACK]
+10:06:22:858 : PT4: In Serial Event
+10:06:22:858 : PENTRA-ML->...Buff+->[STX]
+10:06:22:890 : PT4: In Serial Event
+10:06:22:890 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.7|%||
+10:06:22:905 : PT4: In Serial Event
+10:06:22:905 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.7|%||||||USER1||201308020
+10:06:22:937 : PT4: In Serial Event
+10:06:22:937 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.7|%||||||USER1||20130802095617|1[CR][ETX]81[CR][LF]
+
+10:06:22:937 : PENTRA-ML->Received->[STX]1R|22|^^^LIC%|0.7|%||||||USER1||20130802095617|1[CR][ETX]81[CR][LF]
+
+10:06:23:062 : PENTRA-ML trying to reserve driver
+10:06:23:062 : PENTRA-ML Driver Busy could not Reserve
+10:06:23:140 : PENTRA-ML->Sending->[ACK]
+10:06:23:171 : PT4: In Serial Event
+10:06:23:171 : PENTRA-ML->...Buff+->[STX]
+10:06:23:202 : PT4: In Serial Event
+10:06:23:202 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.65|10
+10:06:23:218 : PT4: In Serial Event
+10:06:23:218 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.65|10^6/mm3||||||USER1||2
+10:06:23:233 : PT4: In Serial Event
+10:06:23:233 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.65|10^6/mm3||||||USER1||20130802095617|1[CR][ETX]A1[CR]
+10:06:23:265 : PT4: In Serial Event
+10:06:23:265 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.65|10^6/mm3||||||USER1||20130802095617|1[CR][ETX]A1[CR][LF]
+
+10:06:23:265 : PENTRA-ML->Received->[STX]2R|23|^^^RBC|4.65|10^6/mm3||||||USER1||20130802095617|1[CR][ETX]A1[CR][LF]
+
+10:06:23:468 : PENTRA-ML->Sending->[ACK]
+10:06:23:499 : PT4: In Serial Event
+10:06:23:499 : PENTRA-ML->...Buff+->[STX]
+10:06:23:515 : PT4: In Serial Event
+10:06:23:515 : PENTRA-ML->...Buff+->[STX]3C|1|I|Anisocytosis|
+10:06:23:530 : PT4: In Serial Event
+10:06:23:530 : PENTRA-ML->...Buff+->[STX]3C|1|I|Anisocytosis|I[CR][ETX]41[CR][LF]
+
+10:06:23:530 : PENTRA-ML->Received->[STX]3C|1|I|Anisocytosis|I[CR][ETX]41[CR][LF]
+
+10:06:23:562 : PENTRA-ML trying to reserve driver
+10:06:23:562 : PENTRA-ML Driver Busy could not Reserve
+10:06:23:733 : PENTRA-ML->Sending->[ACK]
+10:06:23:780 : PT4: In Serial Event
+10:06:23:780 : PENTRA-ML->...Buff+->[STX]
+10:06:23:796 : PT4: In Serial Event
+10:06:23:796 : PENTRA-ML->...Buff+->[STX]4R|24|^^^HGB|13.1|g/
+10:06:23:812 : PT4: In Serial Event
+10:06:23:812 : PENTRA-ML->...Buff+->[STX]4R|24|^^^HGB|13.1|g/dL||||||USER1||201308
+10:06:23:843 : PT4: In Serial Event
+10:06:23:843 : PENTRA-ML->...Buff+->[STX]4R|24|^^^HGB|13.1|g/dL||||||USER1||20130802095617|1[CR][ETX]A9[CR][LF]
+
+10:06:23:843 : PENTRA-ML->Received->[STX]4R|24|^^^HGB|13.1|g/dL||||||USER1||20130802095617|1[CR][ETX]A9[CR][LF]
+
+10:06:24:046 : PENTRA-ML->Sending->[ACK]
+10:06:24:062 : PENTRA-ML trying to reserve driver
+10:06:24:062 : PENTRA-ML Driver Busy could not Reserve
+10:06:24:093 : PT4: In Serial Event
+10:06:24:093 : PENTRA-ML->...Buff+->[STX]
+10:06:24:108 : PT4: In Serial Event
+10:06:24:108 : PENTRA-ML->...Buff+->[STX]5R|25|^^^HCT|39.6|%|
+10:06:24:124 : PT4: In Serial Event
+10:06:24:124 : PENTRA-ML->...Buff+->[STX]5R|25|^^^HCT|39.6|%||||||USER1||20130802
+10:06:24:155 : PT4: In Serial Event
+10:06:24:155 : PENTRA-ML->...Buff+->[STX]5R|25|^^^HCT|39.6|%||||||USER1||20130802095617|1[CR][ETX]A5[CR][LF]
+
+10:06:24:155 : PENTRA-ML->Received->[STX]5R|25|^^^HCT|39.6|%||||||USER1||20130802095617|1[CR][ETX]A5[CR][LF]
+
+10:06:24:358 : PENTRA-ML->Sending->[ACK]
+10:06:24:390 : PT4: In Serial Event
+10:06:24:390 : PENTRA-ML->...Buff+->[STX]
+10:06:24:421 : PT4: In Serial Event
+10:06:24:421 : PENTRA-ML->...Buff+->[STX]6R|26|^^^RDW|18.4|%
+10:06:24:437 : PT4: In Serial Event
+10:06:24:437 : PENTRA-ML->...Buff+->[STX]6R|26|^^^RDW|18.4|%||HH||||USER1||2013080
+10:06:24:468 : PT4: In Serial Event
+10:06:24:468 : PENTRA-ML->...Buff+->[STX]6R|26|^^^RDW|18.4|%||HH||||USER1||20130802095617|1[CR][ETX]40[CR][LF]
+
+10:06:24:468 : PENTRA-ML->Received->[STX]6R|26|^^^RDW|18.4|%||HH||||USER1||20130802095617|1[CR][ETX]40[CR][LF]
+
+10:06:24:562 : PENTRA-ML trying to reserve driver
+10:06:24:562 : PENTRA-ML Driver Busy could not Reserve
+10:06:24:671 : PENTRA-ML->Sending->[ACK]
+10:06:24:718 : PT4: In Serial Event
+10:06:24:718 : PENTRA-ML->...Buff+->[STX]7R|27|^^^PLT
+10:06:24:749 : PT4: In Serial Event
+10:06:24:749 : PENTRA-ML->...Buff+->[STX]7R|27|^^^PLT|176|10^3/mm3||||||U
+10:06:24:765 : PT4: In Serial Event
+10:06:24:765 : PENTRA-ML->...Buff+->[STX]7R|27|^^^PLT|176|10^3/mm3||||||USER1||20130802095617|
+10:06:24:780 : PT4: In Serial Event
+10:06:24:780 : PENTRA-ML->...Buff+->[STX]7R|27|^^^PLT|176|10^3/mm3||||||USER1||20130802095617|1[CR][ETX]91[CR][LF]
+
+10:06:24:780 : PENTRA-ML->Received->[STX]7R|27|^^^PLT|176|10^3/mm3||||||USER1||20130802095617|1[CR][ETX]91[CR][LF]
+
+10:06:24:983 : PENTRA-ML->Sending->[ACK]
+10:06:25:030 : PT4: In Serial Event
+10:06:25:030 : PENTRA-ML->...Buff+->[STX]
+10:06:25:046 : PT4: In Serial Event
+10:06:25:046 : PENTRA-ML->...Buff+->[STX]0R|28|^^^PCT|0.155|%
+10:06:25:062 : PENTRA-ML trying to reserve driver
+10:06:25:062 : PENTRA-ML Driver Busy could not Reserve
+10:06:25:062 : PT4: In Serial Event
+10:06:25:062 : PENTRA-ML->...Buff+->[STX]0R|28|^^^PCT|0.155|%||||||USER1||20130802
+10:06:25:093 : PT4: In Serial Event
+10:06:25:093 : PENTRA-ML->...Buff+->[STX]0R|28|^^^PCT|0.155|%||||||USER1||20130802095617|1[CR][ETX]D4[CR][LF]
+
+10:06:25:093 : PENTRA-ML->Received->[STX]0R|28|^^^PCT|0.155|%||||||USER1||20130802095617|1[CR][ETX]D4[CR][LF]
+
+10:06:25:296 : PENTRA-ML->Sending->[ACK]
+10:06:25:343 : PT4: In Serial Event
+10:06:25:343 : PENTRA-ML->...Buff+->[STX]
+10:06:25:358 : PT4: In Serial Event
+10:06:25:358 : PENTRA-ML->...Buff+->[STX]1R|29|^^^PDW|17.8|%|
+10:06:25:374 : PT4: In Serial Event
+10:06:25:374 : PENTRA-ML->...Buff+->[STX]1R|29|^^^PDW|17.8|%||||||USER1||20130802
+10:06:25:405 : PT4: In Serial Event
+10:06:25:405 : PENTRA-ML->...Buff+->[STX]1R|29|^^^PDW|17.8|%||||||USER1||20130802095617|1[CR][ETX]AF[CR][LF]
+
+10:06:25:405 : PENTRA-ML->Received->[STX]1R|29|^^^PDW|17.8|%||||||USER1||20130802095617|1[CR][ETX]AF[CR][LF]
+
+10:06:25:562 : PENTRA-ML trying to reserve driver
+10:06:25:562 : PENTRA-ML Driver Busy could not Reserve
+10:06:25:608 : PENTRA-ML->Sending->[ACK]
+10:06:25:640 : PT4: In Serial Event
+10:06:25:640 : PENTRA-ML->...Buff+->[STX]
+10:06:25:671 : PT4: In Serial Event
+10:06:25:671 : PENTRA-ML->...Buff+->[STX]2R|30|^^^IML%|0.2|%|
+10:06:25:687 : PT4: In Serial Event
+10:06:25:687 : PENTRA-ML->...Buff+->[STX]2R|30|^^^IML%|0.2|%||||||USER1||201308020
+10:06:25:702 : PT4: In Serial Event
+10:06:25:702 : PENTRA-ML->...Buff+->[STX]2R|30|^^^IML%|0.2|%||||||USER1||20130802095617|1[CR]
+10:06:25:702 : PT4: In Serial Event
+10:06:25:702 : PENTRA-ML->...Buff+->[STX]2R|30|^^^IML%|0.2|%||||||USER1||20130802095617|1[CR][ETX]86[CR][LF]
+
+10:06:25:702 : PENTRA-ML->Received->[STX]2R|30|^^^IML%|0.2|%||||||USER1||20130802095617|1[CR][ETX]86[CR][LF]
+
+10:06:25:905 : PENTRA-ML->Sending->[ACK]
+10:06:25:952 : PT4: In Serial Event
+10:06:25:952 : PENTRA-ML->...Buff+->[STX]
+10:06:25:968 : PT4: In Serial Event
+10:06:25:968 : PENTRA-ML->...Buff+->[STX]3R|31|^^^IMM%|0.0|%
+10:06:25:999 : PT4: In Serial Event
+10:06:25:999 : PENTRA-ML->...Buff+->[STX]3R|31|^^^IMM%|0.0|%||||||USER1||20130802
+10:06:26:015 : PT4: In Serial Event
+10:06:26:015 : PENTRA-ML->...Buff+->[STX]3R|31|^^^IMM%|0.0|%||||||USER1||20130802095617|1[CR][ETX]87[CR][LF]
+
+10:06:26:015 : PENTRA-ML->Received->[STX]3R|31|^^^IMM%|0.0|%||||||USER1||20130802095617|1[CR][ETX]87[CR][LF]
+
+10:06:26:062 : PENTRA-ML trying to reserve driver
+10:06:26:062 : PENTRA-ML Driver Busy could not Reserve
+10:06:26:218 : PENTRA-ML->Sending->[ACK]
+10:06:26:265 : PT4: In Serial Event
+10:06:26:265 : PENTRA-ML->...Buff+->[STX]
+10:06:26:280 : PT4: In Serial Event
+10:06:26:280 : PENTRA-ML->...Buff+->[STX]4R|32|^^^IMG%|0.5|%|
+10:06:26:312 : PT4: In Serial Event
+10:06:26:312 : PENTRA-ML->...Buff+->[STX]4R|32|^^^IMG%|0.5|%||||||USER1||20130802
+10:06:26:327 : PT4: In Serial Event
+10:06:26:327 : PENTRA-ML->...Buff+->[STX]4R|32|^^^IMG%|0.5|%||||||USER1||20130802095617|1[CR][ETX]88[CR][LF]
+
+10:06:26:327 : PENTRA-ML->Received->[STX]4R|32|^^^IMG%|0.5|%||||||USER1||20130802095617|1[CR][ETX]88[CR][LF]
+
+10:06:26:530 : PENTRA-ML->Sending->[ACK]
+10:06:26:562 : PENTRA-ML trying to reserve driver
+10:06:26:562 : PENTRA-ML Driver Busy could not Reserve
+10:06:26:577 : PT4: In Serial Event
+10:06:26:577 : PENTRA-ML->...Buff+->[STX]
+10:06:26:593 : PT4: In Serial Event
+10:06:26:593 : PENTRA-ML->...Buff+->[STX]5L|1[CR][ETX]3E[CR][LF]
+
+10:06:26:593 : PENTRA-ML->Received->[STX]5L|1[CR][ETX]3E[CR][LF]
+
+10:06:26:796 : PENTRA-ML->Sending->[ACK]
+10:06:26:843 : PT4: In Serial Event
+10:06:26:843 : PENTRA-ML->...Buff+->[EOT]
+10:06:26:843 : PENTRA-ML->Received->[EOT]
+10:06:26:843 : Receive EOT
+10:06:26:843 : Concatenation Buffer = H|\^&|||PML|||||||P|1394-97|20130802101302P|1||||hayfa sabra^|||UO|1|1383774|||R||||||||||||||||||||FR|1|^^^NEU#|3.68|10^3/mm3||||||PentraDX||| 0R|2|^^^MPV|8.8|µm3||||||PentraDX||| 0R|3|^^^MON#|0.23|10^3/mm3||||||PentraDX||| 0R|4|^^^MCV|85|µm3||||||PentraDX||| 0R|5|^^^MCHC|33.0|g/dL||||||PentraDX||| 0R|6|^^^MCH|28.1|pg||||||PentraDX||| 0R|7|^^^LYM#|1.35|10^3/mm3||||||PentraDX||| 0R|8|^^^LIC#|0.04|10^3/mm3||||||PentraDX||| 0R|9|^^^IMM#|0.00|10^3/mm3||||||PentraDX||| 0R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX||| 0R|11|^^^IMG#|0.03|10^3/mm3||||||PentraDX||| 0R|12|^^^EOS#|0.18|10^3/mm3||||||PentraDX||| 0R|13|^^^BAS#|0.08|10^3/mm3||||||PentraDX||| 0R|14|^^^ALY#|0.03|10^3/mm3||||||PentraDX||| 0R|15|^^^WBC|5.5|10^3/mm3||||||USER1||20130802095617|1R|16|^^^LYM%|24.5|%||||||USER1||20130802095617|1R|17|^^^MON%|4.2|%||||||USER1||20130802095617|1R|18|^^^NEU%|66.7|%||||||USER1||20130802095617|1R|19|^^^EOS%|3.2|%||||||USER1||20130802095617|1R|20|^^^BAS%|1.4|%||||||USER1||20130802095617|1R|21|^^^ALY%|0.6|%||||||USER1||20130802095617|1R|22|^^^LIC%|0.7|%||||||USER1||20130802095617|1R|23|^^^RBC|4.65|10^6/mm3||||||USER1||20130802095617|1C|1|I|Anisocytosis|IR|24|^^^HGB|13.1|g/dL||||||USER1||20130802095617|1R|25|^^^HCT|39.6|%||||||USER1||20130802095617|1R|26|^^^RDW|18.4|%||HH||||USER1||20130802095617|1R|27|^^^PLT|176|10^3/mm3||||||USER1||20130802095617|1R|28|^^^PCT|0.155|%||||||USER1||20130802095617|1R|29|^^^PDW|17.8|%||||||USER1||20130802095617|1R|30|^^^IML%|0.2|%||||||USER1||20130802095617|1R|31|^^^IMM%|0.0|%||||||USER1||20130802095617|1R|32|^^^IMG%|0.5|%||||||USER1||20130802095617|1L|1
+10:06:26:843 : Concatenated Frame : H|\^&|||PML|||||||P|1394-97|20130802101302
+10:06:26:843 : Concatenated Frame : P|1||||hayfa[.]sabra^|||U
+10:06:26:843 :  fieldPos:1 compPos:0 token:1
+10:06:26:843 :  fieldPos:5 compPos:0 token:hayfa sabra
+10:06:26:843 : Concatenated Frame : O|1|1383774|||R||||||||||||||||||||F
+10:06:26:843 :  fieldPos:1 compPos:0 token:1
+10:06:26:843 :  fieldPos:2 compPos:0 token:1383774
+10:06:26:843 :  fieldPos:5 compPos:0 token:R
+10:06:26:843 : - Parsed sample ID : 1383774
+10:06:26:843 : Concatenated Frame : R|1|^^^NEU#|3.68|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:1
+10:06:26:843 :  fieldPos:2 compPos:3 token:NEU#
+10:06:26:843 :  ASTM result list read -> token = NEU# lisCode = 15 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:3.68
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|2|^^^MPV|8.8|µm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:2
+10:06:26:843 :  fieldPos:2 compPos:3 token:MPV
+10:06:26:843 :  ASTM result list read -> token = MPV lisCode = 9 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:8.8
+10:06:26:843 :  fieldPos:4 compPos:0 token:µm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|3|^^^MON#|0.23|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:3
+10:06:26:843 :  fieldPos:2 compPos:3 token:MON#
+10:06:26:843 :  ASTM result list read -> token = MON# lisCode = 14 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.23
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|4|^^^MCV|85|µm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:4
+10:06:26:843 :  fieldPos:2 compPos:3 token:MCV
+10:06:26:843 :  ASTM result list read -> token = MCV lisCode = 5 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:85
+10:06:26:843 :  fieldPos:4 compPos:0 token:µm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|5|^^^MCHC|33.0|g/dL||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:5
+10:06:26:843 :  fieldPos:2 compPos:3 token:MCHC
+10:06:26:843 :  ASTM result list read -> token = MCHC lisCode = 7 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:33.0
+10:06:26:843 :  fieldPos:4 compPos:0 token:g/dL
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|6|^^^MCH|28.1|pg||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:6
+10:06:26:843 :  fieldPos:2 compPos:3 token:MCH
+10:06:26:843 :  ASTM result list read -> token = MCH lisCode = 6 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:28.1
+10:06:26:843 :  fieldPos:4 compPos:0 token:pg
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|7|^^^LYM#|1.35|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:7
+10:06:26:843 :  fieldPos:2 compPos:3 token:LYM#
+10:06:26:843 :  ASTM result list read -> token = LYM# lisCode = 13 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:1.35
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|8|^^^LIC#|0.04|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:8
+10:06:26:843 :  fieldPos:2 compPos:3 token:LIC#
+10:06:26:843 :  ASTM result list read -> token = LIC# lisCode = null doRead = false
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.04
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|9|^^^IMM#|0.00|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:9
+10:06:26:843 :  fieldPos:2 compPos:3 token:IMM#
+10:06:26:843 :  ASTM result list read -> token = IMM# lisCode = null doRead = false
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.00
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:10
+10:06:26:843 :  fieldPos:2 compPos:3 token:IML#
+10:06:26:843 :  ASTM result list read -> token = IML# lisCode = null doRead = false
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.01
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|11|^^^IMG#|0.03|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:11
+10:06:26:843 :  fieldPos:2 compPos:3 token:IMG#
+10:06:26:843 :  ASTM result list read -> token = IMG# lisCode = null doRead = false
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.03
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|12|^^^EOS#|0.18|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:12
+10:06:26:843 :  fieldPos:2 compPos:3 token:EOS#
+10:06:26:843 :  ASTM result list read -> token = EOS# lisCode = 16 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.18
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|13|^^^BAS#|0.08|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:13
+10:06:26:843 :  fieldPos:2 compPos:3 token:BAS#
+10:06:26:843 :  ASTM result list read -> token = BAS# lisCode = 17 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.08
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|14|^^^ALY#|0.03|10^3/mm3||||||PentraDX|||[.]0
+10:06:26:843 :  fieldPos:1 compPos:0 token:14
+10:06:26:843 :  fieldPos:2 compPos:3 token:ALY#
+10:06:26:843 :  ASTM result list read -> token = ALY# lisCode = null doRead = false
+10:06:26:843 :  fieldPos:3 compPos:0 token:0.03
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:26:843 :  fieldPos:13 compPos:0 token: 
+10:06:26:843 : Concatenated Frame : R|15|^^^WBC|5.5|10^3/mm3||||||USER1||20130802095617|1
+10:06:26:843 :  fieldPos:1 compPos:0 token:15
+10:06:26:843 :  fieldPos:2 compPos:3 token:WBC
+10:06:26:843 :  ASTM result list read -> token = WBC lisCode = 4 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:5.5
+10:06:26:843 :  fieldPos:4 compPos:0 token:10
+10:06:26:843 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:843 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:843 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:843 : Concatenated Frame : R|16|^^^LYM%|24.5|%||||||USER1||20130802095617|1
+10:06:26:843 :  fieldPos:1 compPos:0 token:16
+10:06:26:843 :  fieldPos:2 compPos:3 token:LYM%
+10:06:26:843 :  ASTM result list read -> token = LYM% lisCode = 18 doRead = true
+10:06:26:843 :  fieldPos:3 compPos:0 token:24.5
+10:06:26:843 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|17|^^^MON%|4.2|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:17
+10:06:26:859 :  fieldPos:2 compPos:3 token:MON%
+10:06:26:859 :  ASTM result list read -> token = MON% lisCode = 19 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:4.2
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|18|^^^NEU%|66.7|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:18
+10:06:26:859 :  fieldPos:2 compPos:3 token:NEU%
+10:06:26:859 :  ASTM result list read -> token = NEU% lisCode = 20 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:66.7
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|19|^^^EOS%|3.2|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:19
+10:06:26:859 :  fieldPos:2 compPos:3 token:EOS%
+10:06:26:859 :  ASTM result list read -> token = EOS% lisCode = 21 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:3.2
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|20|^^^BAS%|1.4|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:20
+10:06:26:859 :  fieldPos:2 compPos:3 token:BAS%
+10:06:26:859 :  ASTM result list read -> token = BAS% lisCode = 22 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:1.4
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|21|^^^ALY%|0.6|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:21
+10:06:26:859 :  fieldPos:2 compPos:3 token:ALY%
+10:06:26:859 :  ASTM result list read -> token = ALY% lisCode = null doRead = false
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.6
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|22|^^^LIC%|0.7|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:22
+10:06:26:859 :  fieldPos:2 compPos:3 token:LIC%
+10:06:26:859 :  ASTM result list read -> token = LIC% lisCode = null doRead = false
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.7
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|23|^^^RBC|4.65|10^6/mm3||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:23
+10:06:26:859 :  fieldPos:2 compPos:3 token:RBC
+10:06:26:859 :  ASTM result list read -> token = RBC lisCode = 3 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:4.65
+10:06:26:859 :  fieldPos:4 compPos:0 token:10
+10:06:26:859 :  fieldPos:4 compPos:1 token:6/mm3
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : C|1|I|Anisocytosis|I
+10:06:26:859 : Concatenated Frame : R|24|^^^HGB|13.1|g/dL||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:24
+10:06:26:859 :  fieldPos:2 compPos:3 token:HGB
+10:06:26:859 :  ASTM result list read -> token = HGB lisCode = 1 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:13.1
+10:06:26:859 :  fieldPos:4 compPos:0 token:g/dL
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|25|^^^HCT|39.6|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:25
+10:06:26:859 :  fieldPos:2 compPos:3 token:HCT
+10:06:26:859 :  ASTM result list read -> token = HCT lisCode = 2 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:39.6
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|26|^^^RDW|18.4|%||HH||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:26
+10:06:26:859 :  fieldPos:2 compPos:3 token:RDW
+10:06:26:859 :  ASTM result list read -> token = RDW lisCode = 8 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:18.4
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:6 compPos:0 token:HH
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|27|^^^PLT|176|10^3/mm3||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:27
+10:06:26:859 :  fieldPos:2 compPos:3 token:PLT
+10:06:26:859 :  ASTM result list read -> token = PLT lisCode = 12 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:176
+10:06:26:859 :  fieldPos:4 compPos:0 token:10
+10:06:26:859 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|28|^^^PCT|0.155|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:28
+10:06:26:859 :  fieldPos:2 compPos:3 token:PCT
+10:06:26:859 :  ASTM result list read -> token = PCT lisCode = 11 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.155
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|29|^^^PDW|17.8|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:29
+10:06:26:859 :  fieldPos:2 compPos:3 token:PDW
+10:06:26:859 :  ASTM result list read -> token = PDW lisCode = 10 doRead = true
+10:06:26:859 :  fieldPos:3 compPos:0 token:17.8
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|30|^^^IML%|0.2|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:30
+10:06:26:859 :  fieldPos:2 compPos:3 token:IML%
+10:06:26:859 :  ASTM result list read -> token = IML% lisCode = null doRead = false
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.2
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|31|^^^IMM%|0.0|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:31
+10:06:26:859 :  fieldPos:2 compPos:3 token:IMM%
+10:06:26:859 :  ASTM result list read -> token = IMM% lisCode = null doRead = false
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.0
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : R|32|^^^IMG%|0.5|%||||||USER1||20130802095617|1
+10:06:26:859 :  fieldPos:1 compPos:0 token:32
+10:06:26:859 :  fieldPos:2 compPos:3 token:IMG%
+10:06:26:859 :  ASTM result list read -> token = IMG% lisCode = null doRead = false
+10:06:26:859 :  fieldPos:3 compPos:0 token:0.5
+10:06:26:859 :  fieldPos:4 compPos:0 token:%
+10:06:26:859 :  fieldPos:10 compPos:0 token:USER1
+10:06:26:859 :  fieldPos:12 compPos:0 token:20130802095617
+10:06:26:859 : Concatenated Frame : L|1
+10:06:26:874 : SELECT T.REF,T.LABEL,T.DESCRIP,T.VALUE,T.RESULT_OK,T.UNIT_LABEL,T.MESSAGE,T.STATUS,T.BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,T.ALARM,T.PRIORITY,T.VERIFICATION_PENDING,S.REF,S.ID,S.PATIENT_ID,S.LAST_NAME,S.FIRST_NAME,S.MIDDLE_INITIAL,S.SEXE,S.LIQUIDE_TYPE,S.RESULT_CONFIRMED,S.OK_TO_BE_SENT,S.ENTRY_DATE,S.AGE,S.DATE_OF_BIRTH,T.REF,S.REF FROM L3TEST T,L3SAMPLE S WHERE (( ( S.ID = '1383774' ) ) ) AND ((T.SAMPLE_REF=S.REF))
+10:06:26:890 : Received from instrument existing sample : 1383774
+10:06:26:890 : UPDATE L3TEST SET VALUE=24.5,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825361)
+10:06:26:890 : UPDATE L3TEST SET VALUE=5.5,RESULT_OK=1,UNIT_LABEL='3/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825349)
+10:06:26:890 : UPDATE L3TEST SET VALUE=1.4,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825357)
+10:06:26:890 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:890 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825468,'15','',3.68,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:890 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:890 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825469,'17','',0.08,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:905 : UPDATE L3TEST SET VALUE=13.1,RESULT_OK=1,UNIT_LABEL='g/dL',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825348)
+10:06:26:905 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:905 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825470,'13','',1.35,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:905 : UPDATE L3TEST SET VALUE=66.7,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825356)
+10:06:26:921 : UPDATE L3TEST SET VALUE=33.0,RESULT_OK=1,UNIT_LABEL='g/dL',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825351)
+10:06:26:921 : UPDATE L3TEST SET VALUE=28.1,RESULT_OK=1,UNIT_LABEL='pg',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825354)
+10:06:26:921 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:921 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825471,'14','',0.23,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:921 : UPDATE L3TEST SET VALUE=176.0,RESULT_OK=1,UNIT_LABEL='3/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825355)
+10:06:26:921 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:921 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825472,'11','',0.155,1,'%','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:921 : UPDATE L3TEST SET VALUE=4.65,RESULT_OK=1,UNIT_LABEL='6/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825352)
+10:06:26:921 : UPDATE L3TEST SET VALUE=3.2,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825358)
+10:06:26:921 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:937 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825473,'9','',8.8,1,'µm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:937 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:937 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825474,'10','',17.8,1,'%','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:937 : UPDATE L3TEST SET VALUE=18.4,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825353)
+10:06:26:937 : UPDATE L3TEST SET VALUE=39.6,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825359)
+10:06:26:937 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:26:937 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825475,'16','',0.18,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902582,0,'',0)
+10:06:26:937 : UPDATE L3TEST SET VALUE=85.0,RESULT_OK=1,UNIT_LABEL='µm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825350)
+10:06:26:952 : UPDATE L3TEST SET VALUE=4.2,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10825360)
+10:06:27:062 : PENTRA-ML trying to reserve driver
+10:06:27:062 : PENTRA-ML Driver Available
+10:06:27:062 : PENTRA-ML->Message before send:Message:1383761 liq:-1PatientId=134070 FirstName=Nabil MidInitial=A LastName=Haddad SexeM
+Test[0]= isOk=false Label=21 Value=0.0
+Test[1]= isOk=false Label=2 Value=0.0
+Test[2]= isOk=false Label=1 Value=0.0
+Test[3]= isOk=false Label=4 Value=0.0
+Test[4]= isOk=false Label=22 Value=0.0
+Test[5]= isOk=false Label=20 Value=0.0
+Test[6]= isOk=false Label=3 Value=0.0
+
+10:06:27:062 : SELECT REF,NAME,ISDEFAULT,STARTING_DAY_OF_WEEK,ISMONDAY,ISTUESDAY,ISWEDNESDAY,ISTHURDAY,ISFRIDAY,ISSATURDAY,ISSUNDAY,START_TIME,END_TIME FROM CALENDAR
+10:06:27:062 : SELECT REF,HOLIDAY_DATE,HOLIDAY_END_DATE,REASON,FCALENDAR_REF FROM HOLIDAY WHERE ( ( ( FCALENDAR_REF = 1 ) ) )
+10:06:27:062 : SELECT REF,HOLIDAY_DATE,HOLIDAY_END_DATE,REASON,FCALENDAR_REF FROM HOLIDAY WHERE ( ( ( FCALENDAR_REF = 1 ) ) )
+10:06:27:062 : PENTRA-ML-> sending char[0] : 5
+10:06:27:062 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:27:062 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:343 : PT4: In Serial Event
+10:06:27:343 : PENTRA-ML->...Buff+->[ACK]
+10:06:27:343 : PENTRA-ML->Received->[ACK]
+10:06:27:343 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:343 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:343 : PENTRA-ML-> sending char[0] : 2
+10:06:27:343 : PENTRA-ML-> sending char[1] : 49
+10:06:27:343 : PENTRA-ML-> sending char[2] : 72
+10:06:27:343 : PENTRA-ML->Sending(30000)->[STX]1H|\^&||||||||||P|1[CR][ETX]BA[CR][LF]
+
+10:06:27:343 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:390 : PT4: In Serial Event
+10:06:27:390 : PENTRA-ML->...Buff+->[ACK]
+10:06:27:390 : PENTRA-ML->Received->[ACK]
+10:06:27:390 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:390 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:390 : PENTRA-ML-> sending char[0] : 2
+10:06:27:390 : PENTRA-ML-> sending char[1] : 50
+10:06:27:390 : PENTRA-ML-> sending char[2] : 80
+10:06:27:390 : PENTRA-ML->Sending(30000)->[STX]2P|1||134070|1383761|Haddad^Nabil^A||^^|M[CR][ETX]61[CR][LF]
+
+10:06:27:390 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:499 : PT4: In Serial Event
+10:06:27:499 : PENTRA-ML->...Buff+->[ACK]
+10:06:27:499 : PENTRA-ML->Received->[ACK]
+10:06:27:499 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:499 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:499 : PENTRA-ML-> sending char[0] : 2
+10:06:27:499 : PENTRA-ML-> sending char[1] : 51
+10:06:27:499 : PENTRA-ML-> sending char[2] : 79
+10:06:27:499 : PENTRA-ML->Sending(30000)->[STX]3O|1|1383761|1383761|^^^DIF\^^^CBC|R||20130802094200||||N||||||||||||||O[CR][ETX]92[CR][LF]
+
+10:06:27:499 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:593 : PT4: In Serial Event
+10:06:27:593 : PENTRA-ML->...Buff+->[ACK]
+10:06:27:593 : PENTRA-ML->Received->[ACK]
+10:06:27:593 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:593 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:593 : PENTRA-ML-> sending char[0] : 2
+10:06:27:593 : PENTRA-ML-> sending char[1] : 52
+10:06:27:593 : PENTRA-ML-> sending char[2] : 76
+10:06:27:593 : PENTRA-ML->Sending(30000)->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:27:593 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:640 : PT4: In Serial Event
+10:06:27:640 : PENTRA-ML->...Buff+->[ACK]
+10:06:27:640 : PENTRA-ML->Received->[ACK]
+10:06:27:640 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:640 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:27:640 : PENTRA-ML->Sending->[EOT]
+10:06:27:655 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825192)
+10:06:27:671 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825187)
+10:06:27:687 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825204)
+10:06:27:687 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825203)
+10:06:27:702 : PT4: In Serial Event
+10:06:27:702 : PENTRA-ML->...Buff+->[ENQ]
+10:06:27:702 : PENTRA-ML->Received->[ENQ]
+10:06:27:702 : Receive ENQ
+10:06:27:702 : PENTRA-ML Driver Busy could not Reserve
+10:06:27:702 : PENTRA-ML->Returning NACK because driver is Reserved
+10:06:27:702 : PENTRA-ML->sending NACK from AstmReceiver.received(L3Frame frame)
+10:06:27:702 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825205)
+10:06:27:702 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825183)
+10:06:27:702 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825201)
+10:06:27:718 : PENTRA-ML trying to reserve driver
+10:06:27:718 : PENTRA-ML Driver Available
+10:06:27:718 : PENTRA-ML->Message before send:Message:1383772 liq:-1PatientId=444112 FirstName=Gabriella MidInitial=G LastName=Kassab SexeF
+Test[0]= isOk=false Label=1 Value=0.0
+Test[1]= isOk=false Label=7 Value=0.0
+Test[2]= isOk=false Label=5 Value=0.0
+Test[3]= isOk=false Label=2 Value=0.0
+Test[4]= isOk=false Label=21 Value=0.0
+Test[5]= isOk=false Label=22 Value=0.0
+Test[6]= isOk=false Label=18 Value=0.0
+Test[7]= isOk=false Label=8 Value=0.0
+Test[8]= isOk=false Label=12 Value=0.0
+Test[9]= isOk=false Label=20 Value=0.0
+Test[10]= isOk=false Label=4 Value=0.0
+Test[11]= isOk=false Label=19 Value=0.0
+Test[12]= isOk=false Label=6 Value=0.0
+Test[13]= isOk=false Label=3 Value=0.0
+
+10:06:27:905 : PENTRA-ML->Sending->[NACK]
+10:06:27:905 : PENTRA-ML-> sending char[0] : 5
+10:06:27:905 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:27:905 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:202 : PT4: In Serial Event
+10:06:28:202 : PENTRA-ML->...Buff+->[ACK]
+10:06:28:202 : PENTRA-ML->Received->[ACK]
+10:06:28:202 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:202 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:202 : PENTRA-ML-> sending char[0] : 2
+10:06:28:202 : PENTRA-ML-> sending char[1] : 49
+10:06:28:202 : PENTRA-ML-> sending char[2] : 72
+10:06:28:202 : PENTRA-ML->Sending(30000)->[STX]1H|\^&||||||||||P|1[CR][ETX]BA[CR][LF]
+
+10:06:28:202 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:249 : PT4: In Serial Event
+10:06:28:249 : PENTRA-ML->...Buff+->[ACK]
+10:06:28:249 : PENTRA-ML->Received->[ACK]
+10:06:28:249 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:249 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:249 : PENTRA-ML-> sending char[0] : 2
+10:06:28:249 : PENTRA-ML-> sending char[1] : 50
+10:06:28:249 : PENTRA-ML-> sending char[2] : 80
+10:06:28:249 : PENTRA-ML->Sending(30000)->[STX]2P|1||444112|1383772|Kassab^Gabriella^G||19920401^^|F[CR][ETX]B9[CR][LF]
+
+10:06:28:249 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:343 : PT4: In Serial Event
+10:06:28:343 : PENTRA-ML->...Buff+->[ACK]
+10:06:28:343 : PENTRA-ML->Received->[ACK]
+10:06:28:343 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:343 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:343 : PENTRA-ML-> sending char[0] : 2
+10:06:28:343 : PENTRA-ML-> sending char[1] : 51
+10:06:28:343 : PENTRA-ML-> sending char[2] : 79
+10:06:28:343 : PENTRA-ML->Sending(30000)->[STX]3O|1|1383772|1383772|^^^CBC\^^^DIF|R||20130802094600||||N||||||||||||||O[CR][ETX]9A[CR][LF]
+
+10:06:28:343 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:452 : PT4: In Serial Event
+10:06:28:452 : PENTRA-ML->...Buff+->[ACK]
+10:06:28:452 : PENTRA-ML->Received->[ACK]
+10:06:28:452 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:452 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:452 : PENTRA-ML-> sending char[0] : 2
+10:06:28:452 : PENTRA-ML-> sending char[1] : 52
+10:06:28:452 : PENTRA-ML-> sending char[2] : 76
+10:06:28:452 : PENTRA-ML->Sending(30000)->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:28:452 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:499 : PT4: In Serial Event
+10:06:28:499 : PENTRA-ML->...Buff+->[ACK]
+10:06:28:499 : PENTRA-ML->Received->[ACK]
+10:06:28:499 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:499 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:28:499 : PENTRA-ML->Sending->[EOT]
+10:06:28:499 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825338)
+10:06:28:515 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825343)
+10:06:28:530 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825334)
+10:06:28:530 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825335)
+10:06:28:546 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825337)
+10:06:28:562 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825340)
+10:06:28:562 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825341)
+10:06:28:577 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825346)
+10:06:28:593 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825336)
+10:06:28:593 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825347)
+10:06:28:609 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825344)
+10:06:28:624 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825342)
+10:06:28:624 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825339)
+10:06:28:624 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825345)
+10:06:28:624 : PENTRA-ML trying to reserve driver
+10:06:28:624 : PENTRA-ML Driver Available
+10:06:28:624 : PENTRA-ML->Message before send:Message:1383774 liq:-1PatientId=126069 FirstName=Hayfa MidInitial=F LastName=Sabra SexeF
+Test[0]= isOk=false Label=5 Value=0.0
+Test[1]= isOk=false Label=22 Value=0.0
+Test[2]= isOk=false Label=8 Value=0.0
+Test[3]= isOk=false Label=21 Value=0.0
+Test[4]= isOk=false Label=1 Value=0.0
+Test[5]= isOk=false Label=18 Value=0.0
+Test[6]= isOk=false Label=2 Value=0.0
+Test[7]= isOk=false Label=6 Value=0.0
+Test[8]= isOk=false Label=4 Value=0.0
+Test[9]= isOk=false Label=7 Value=0.0
+Test[10]= isOk=false Label=19 Value=0.0
+Test[11]= isOk=false Label=20 Value=0.0
+Test[12]= isOk=false Label=3 Value=0.0
+Test[13]= isOk=false Label=12 Value=0.0
+
+10:06:28:624 : PENTRA-ML-> sending char[0] : 5
+10:06:28:624 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:28:624 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:046 : PT4: In Serial Event
+10:06:29:046 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:046 : PENTRA-ML->Received->[ACK]
+10:06:29:046 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:046 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:046 : PENTRA-ML-> sending char[0] : 2
+10:06:29:046 : PENTRA-ML-> sending char[1] : 49
+10:06:29:046 : PENTRA-ML-> sending char[2] : 72
+10:06:29:046 : PENTRA-ML->Sending(30000)->[STX]1H|\^&||||||||||P|1[CR][ETX]BA[CR][LF]
+
+10:06:29:046 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:109 : PT4: In Serial Event
+10:06:29:109 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:109 : PENTRA-ML->Received->[ACK]
+10:06:29:109 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:109 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:109 : PENTRA-ML-> sending char[0] : 2
+10:06:29:109 : PENTRA-ML-> sending char[1] : 50
+10:06:29:109 : PENTRA-ML-> sending char[2] : 80
+10:06:29:109 : PENTRA-ML->Sending(30000)->[STX]2P|1||126069|1383774|Sabra^Hayfa^F||^^|F[CR][ETX]22[CR][LF]
+
+10:06:29:109 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:202 : PT4: In Serial Event
+10:06:29:202 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:202 : PENTRA-ML->Received->[ACK]
+10:06:29:202 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:202 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:202 : PENTRA-ML-> sending char[0] : 2
+10:06:29:202 : PENTRA-ML-> sending char[1] : 51
+10:06:29:202 : PENTRA-ML-> sending char[2] : 79
+10:06:29:202 : PENTRA-ML->Sending(30000)->[STX]3O|1|1383774|1383774|^^^CBC\^^^DIF|R||20130802094900||||N||||||||||||||O[CR][ETX]A1[CR][LF]
+
+10:06:29:202 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:312 : PT4: In Serial Event
+10:06:29:312 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:312 : PENTRA-ML->Received->[ACK]
+10:06:29:312 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:312 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:312 : PENTRA-ML-> sending char[0] : 2
+10:06:29:312 : PENTRA-ML-> sending char[1] : 52
+10:06:29:312 : PENTRA-ML-> sending char[2] : 76
+10:06:29:312 : PENTRA-ML->Sending(30000)->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:29:312 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:359 : PT4: In Serial Event
+10:06:29:359 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:359 : PENTRA-ML->Received->[ACK]
+10:06:29:359 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:359 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:359 : PENTRA-ML->Sending->[EOT]
+10:06:29:359 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825350)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825357)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825353)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825358)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825348)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825361)
+10:06:29:374 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825359)
+10:06:29:390 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825354)
+10:06:29:390 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825349)
+10:06:29:390 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825351)
+10:06:29:390 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825360)
+10:06:29:390 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825356)
+10:06:29:406 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825352)
+10:06:29:406 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825355)
+10:06:29:406 : PENTRA-ML trying to reserve driver
+10:06:29:406 : PENTRA-ML Driver Available
+10:06:29:406 : PENTRA-ML->Message before send:Message:1383778 liq:-1PatientId=65414 FirstName=Eliane MidInitial=A LastName=Kassab SexeF
+Test[0]= isOk=false Label=20 Value=0.0
+Test[1]= isOk=false Label=7 Value=0.0
+Test[2]= isOk=false Label=21 Value=0.0
+Test[3]= isOk=false Label=19 Value=0.0
+Test[4]= isOk=false Label=22 Value=0.0
+Test[5]= isOk=false Label=1 Value=0.0
+Test[6]= isOk=false Label=18 Value=0.0
+Test[7]= isOk=false Label=6 Value=0.0
+Test[8]= isOk=false Label=2 Value=0.0
+Test[9]= isOk=false Label=4 Value=0.0
+Test[10]= isOk=false Label=5 Value=0.0
+Test[11]= isOk=false Label=12 Value=0.0
+Test[12]= isOk=false Label=3 Value=0.0
+Test[13]= isOk=false Label=8 Value=0.0
+
+10:06:29:406 : PENTRA-ML-> sending char[0] : 5
+10:06:29:406 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:29:406 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:906 : PT4: In Serial Event
+10:06:29:906 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:906 : PENTRA-ML->Received->[ACK]
+10:06:29:906 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:906 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:906 : PENTRA-ML-> sending char[0] : 2
+10:06:29:906 : PENTRA-ML-> sending char[1] : 49
+10:06:29:906 : PENTRA-ML-> sending char[2] : 72
+10:06:29:906 : PENTRA-ML->Sending(30000)->[STX]1H|\^&||||||||||P|1[CR][ETX]BA[CR][LF]
+
+10:06:29:906 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:952 : PT4: In Serial Event
+10:06:29:968 : PENTRA-ML->...Buff+->[ACK]
+10:06:29:968 : PENTRA-ML->Received->[ACK]
+10:06:29:968 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:968 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:29:968 : PENTRA-ML-> sending char[0] : 2
+10:06:29:968 : PENTRA-ML-> sending char[1] : 50
+10:06:29:968 : PENTRA-ML-> sending char[2] : 80
+10:06:29:968 : PENTRA-ML->Sending(30000)->[STX]2P|1||65414|1383778|Kassab^Eliane^A||^^|F[CR][ETX]BE[CR][LF]
+
+10:06:29:968 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:062 : PT4: In Serial Event
+10:06:30:062 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:062 : PENTRA-ML->Received->[ACK]
+10:06:30:062 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:062 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:062 : PENTRA-ML-> sending char[0] : 2
+10:06:30:062 : PENTRA-ML-> sending char[1] : 51
+10:06:30:062 : PENTRA-ML-> sending char[2] : 79
+10:06:30:062 : PENTRA-ML->Sending(30000)->[STX]3O|1|1383778|1383778|^^^DIF\^^^CBC|R||20130802095100||||N||||||||||||||O[CR][ETX]A2[CR][LF]
+
+10:06:30:062 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:171 : PT4: In Serial Event
+10:06:30:171 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:171 : PENTRA-ML->Received->[ACK]
+10:06:30:171 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:171 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:171 : PENTRA-ML-> sending char[0] : 2
+10:06:30:171 : PENTRA-ML-> sending char[1] : 52
+10:06:30:171 : PENTRA-ML-> sending char[2] : 76
+10:06:30:171 : PENTRA-ML->Sending(30000)->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:30:171 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:218 : PT4: In Serial Event
+10:06:30:218 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:218 : PENTRA-ML->Received->[ACK]
+10:06:30:218 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:218 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:218 : PENTRA-ML->Sending->[EOT]
+10:06:30:218 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825396)
+10:06:30:234 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825386)
+10:06:30:234 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825391)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825397)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825392)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825387)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825393)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825384)
+10:06:30:249 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825389)
+10:06:30:265 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825390)
+10:06:30:265 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825394)
+10:06:30:265 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825385)
+10:06:30:265 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825395)
+10:06:30:265 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825388)
+10:06:30:281 : PENTRA-ML trying to reserve driver
+10:06:30:281 : PENTRA-ML Driver Available
+10:06:30:281 : PENTRA-ML->Message before send:Message:1383783 liq:-1PatientId=444114 FirstName=Amanda MidInitial=R LastName=Kassab SexeF
+Test[0]= isOk=false Label=12 Value=0.0
+Test[1]= isOk=false Label=8 Value=0.0
+Test[2]= isOk=false Label=1 Value=0.0
+Test[3]= isOk=false Label=4 Value=0.0
+Test[4]= isOk=false Label=5 Value=0.0
+Test[5]= isOk=false Label=18 Value=0.0
+Test[6]= isOk=false Label=19 Value=0.0
+Test[7]= isOk=false Label=21 Value=0.0
+Test[8]= isOk=false Label=20 Value=0.0
+Test[9]= isOk=false Label=3 Value=0.0
+Test[10]= isOk=false Label=22 Value=0.0
+Test[11]= isOk=false Label=6 Value=0.0
+Test[12]= isOk=false Label=7 Value=0.0
+Test[13]= isOk=false Label=2 Value=0.0
+
+10:06:30:281 : PENTRA-ML-> sending char[0] : 5
+10:06:30:281 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:30:281 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:765 : PT4: In Serial Event
+10:06:30:765 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:765 : PENTRA-ML->Received->[ACK]
+10:06:30:765 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:765 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:765 : PENTRA-ML-> sending char[0] : 2
+10:06:30:765 : PENTRA-ML-> sending char[1] : 49
+10:06:30:765 : PENTRA-ML-> sending char[2] : 72
+10:06:30:765 : PENTRA-ML->Sending(30000)->[STX]1H|\^&||||||||||P|1[CR][ETX]BA[CR][LF]
+
+10:06:30:765 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:796 : PT4: In Serial Event
+10:06:30:796 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:796 : PENTRA-ML->Received->[ACK]
+10:06:30:796 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:796 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:796 : PENTRA-ML-> sending char[0] : 2
+10:06:30:796 : PENTRA-ML-> sending char[1] : 50
+10:06:30:796 : PENTRA-ML-> sending char[2] : 80
+10:06:30:796 : PENTRA-ML->Sending(30000)->[STX]2P|1||444114|1383783|Kassab^Amanda^R||19941026^^|F[CR][ETX]8D[CR][LF]
+
+10:06:30:796 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:921 : PT4: In Serial Event
+10:06:30:921 : PENTRA-ML->...Buff+->[ACK]
+10:06:30:921 : PENTRA-ML->Received->[ACK]
+10:06:30:921 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:921 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:30:921 : PENTRA-ML-> sending char[0] : 2
+10:06:30:921 : PENTRA-ML-> sending char[1] : 51
+10:06:30:921 : PENTRA-ML-> sending char[2] : 79
+10:06:30:921 : PENTRA-ML->Sending(30000)->[STX]3O|1|1383783|1383783|^^^CBC\^^^DIF|R||20130802095300||||N||||||||||||||O[CR][ETX]9C[CR][LF]
+
+10:06:30:921 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:015 : PT4: In Serial Event
+10:06:31:015 : PENTRA-ML->...Buff+->[ACK]
+10:06:31:015 : PENTRA-ML->Received->[ACK]
+10:06:31:015 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:015 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:015 : PENTRA-ML-> sending char[0] : 2
+10:06:31:015 : PENTRA-ML-> sending char[1] : 52
+10:06:31:015 : PENTRA-ML-> sending char[2] : 76
+10:06:31:015 : PENTRA-ML->Sending(30000)->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:31:015 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:077 : PT4: In Serial Event
+10:06:31:077 : PENTRA-ML->...Buff+->[ACK]
+10:06:31:077 : PENTRA-ML->Received->[ACK]
+10:06:31:077 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:077 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:077 : PENTRA-ML->Sending->[EOT]
+10:06:31:077 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825399)
+10:06:31:077 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825410)
+10:06:31:077 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825398)
+10:06:31:093 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825401)
+10:06:31:093 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825411)
+10:06:31:093 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825405)
+10:06:31:109 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825403)
+10:06:31:109 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825408)
+10:06:31:109 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825407)
+10:06:31:109 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825400)
+10:06:31:124 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825402)
+10:06:31:124 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825409)
+10:06:31:124 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825406)
+10:06:31:140 : UPDATE L3TEST SET STATUS=3 WHERE (REF=10825404)
+10:06:31:140 : PENTRA-ML trying to reserve driver
+10:06:31:140 : PENTRA-ML Driver Available
+10:06:31:140 : PENTRA-ML->Message before send:Message:1383787 liq:-1PatientId=111734 FirstName=Mireille MidInitial=E LastName=Checrallah SexeF
+Test[0]= isOk=false Label=6 Value=0.0
+Test[1]= isOk=false Label=2 Value=0.0
+Test[2]= isOk=false Label=3 Value=0.0
+Test[3]= isOk=false Label=7 Value=0.0
+Test[4]= isOk=false Label=22 Value=0.0
+Test[5]= isOk=false Label=4 Value=0.0
+Test[6]= isOk=false Label=8 Value=0.0
+Test[7]= isOk=false Label=19 Value=0.0
+Test[8]= isOk=false Label=12 Value=0.0
+Test[9]= isOk=false Label=21 Value=0.0
+Test[10]= isOk=false Label=18 Value=0.0
+Test[11]= isOk=false Label=5 Value=0.0
+Test[12]= isOk=false Label=1 Value=0.0
+Test[13]= isOk=false Label=20 Value=0.0
+
+10:06:31:140 : PENTRA-ML-> sending char[0] : 5
+10:06:31:156 : PENTRA-ML->Sending(30000)->[ENQ]
+10:06:31:156 : Wait :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:562 : PT4: In Serial Event
+10:06:31:562 : PENTRA-ML->...Buff+->[ENQ]
+10:06:31:562 : PENTRA-ML->Received->[ENQ]
+10:06:31:562 : Notify :b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:562 : Wait Out:b01.l3.connection.L3SerialPort@13e58d4
+10:06:31:562 : PENTRA-ML->L3TryLaterException Driver suspended comunication.
+10:06:31:562 : PENTRA-ML->Driver received ENQ While Sending ENQ. Will have a slave behaviour.
+10:06:31:562 : PENTRA-ML->...Buff+->
+10:06:36:578 : PT4: In Serial Event
+10:06:36:578 : PENTRA-ML->...Buff+->[ENQ]
+10:06:36:578 : PENTRA-ML->Received->[ENQ]
+10:06:36:578 : Receive ENQ
+10:06:36:578 : PENTRA-ML Driver Available
+10:06:36:781 : PENTRA-ML->Sending->[ACK]
+10:06:36:781 : PT4: In Serial Event
+10:06:36:781 : PENTRA-ML->...Buff+->[STX]
+10:06:36:812 : PT4: In Serial Event
+10:06:36:812 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P
+10:06:36:828 : PT4: In Serial Event
+10:06:36:828 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P|1394-97|20130802101
+10:06:36:859 : PT4: In Serial Event
+10:06:36:859 : PENTRA-ML->...Buff+->[STX]1H|\^&|||PML|||||||P|1394-97|20130802101332[CR][ETX]16[CR][LF]
+
+10:06:36:859 : PENTRA-ML->Received->[STX]1H|\^&|||PML|||||||P|1394-97|20130802101332[CR][ETX]16[CR][LF]
+
+10:06:37:062 : PENTRA-ML->Sending->[ACK]
+10:06:37:093 : PT4: In Serial Event
+10:06:37:093 : PENTRA-ML->...Buff+->[STX]
+10:06:37:109 : PT4: In Serial Event
+10:06:37:109 : PENTRA-ML->...Buff+->[STX]2P|1||444098||Abou-K
+10:06:37:125 : PT4: In Serial Event
+10:06:37:140 : PENTRA-ML->...Buff+->[STX]2P|1||444098||Abou-Khalil^Khalil|||M[CR][ETX]E9
+10:06:37:156 : PT4: In Serial Event
+10:06:37:156 : PENTRA-ML->...Buff+->[STX]2P|1||444098||Abou-Khalil^Khalil|||M[CR][ETX]E9[CR][LF]
+
+10:06:37:156 : PENTRA-ML->Received->[STX]2P|1||444098||Abou-Khalil^Khalil|||M[CR][ETX]E9[CR][LF]
+
+10:06:37:359 : PENTRA-ML->Sending->[ACK]
+10:06:37:390 : PT4: In Serial Event
+10:06:37:390 : PENTRA-ML->...Buff+->[STX]
+10:06:37:406 : PT4: In Serial Event
+10:06:37:406 : PENTRA-ML->...Buff+->[STX]3O|1|1383710^102^4||
+10:06:37:437 : PT4: In Serial Event
+10:06:37:437 : PENTRA-ML->...Buff+->[STX]3O|1|1383710^102^4|||R||20130802085000|||
+10:06:37:453 : PT4: In Serial Event
+10:06:37:453 : PENTRA-ML->...Buff+->[STX]3O|1|1383710^102^4|||R||20130802085000||||||||||||||||||F[CR][ETX]1
+10:06:37:468 : PT4: In Serial Event
+10:06:37:468 : PENTRA-ML->...Buff+->[STX]3O|1|1383710^102^4|||R||20130802085000||||||||||||||||||F[CR][ETX]1E[CR][LF]
+
+10:06:37:468 : PENTRA-ML->Received->[STX]3O|1|1383710^102^4|||R||20130802085000||||||||||||||||||F[CR][ETX]1E[CR][LF]
+
+10:06:37:671 : PENTRA-ML->Sending->[ACK]
+10:06:37:703 : PT4: In Serial Event
+10:06:37:703 : PENTRA-ML->...Buff+->[STX]
+10:06:37:734 : PT4: In Serial Event
+10:06:37:734 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.02|10
+10:06:37:750 : PT4: In Serial Event
+10:06:37:750 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.02|10^3/mm3||||||PentraDX
+10:06:37:781 : PT4: In Serial Event
+10:06:37:781 : PENTRA-ML->...Buff+->[STX]4R|1|^^^NEU#|3.02|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7F[CR][LF]
+
+10:06:37:781 : PENTRA-ML->Received->[STX]4R|1|^^^NEU#|3.02|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7F[CR][LF]
+
+10:06:37:984 : PENTRA-ML->Sending->[ACK]
+10:06:38:015 : PT4: In Serial Event
+10:06:38:015 : PENTRA-ML->...Buff+->[STX]
+10:06:38:031 : PT4: In Serial Event
+10:06:38:031 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|10.0|µm3
+10:06:38:062 : PT4: In Serial Event
+10:06:38:062 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|10.0|µm3||||||PentraDX|||[.]0[CR][ETX]
+10:06:38:078 : PT4: In Serial Event
+10:06:38:078 : PENTRA-ML->...Buff+->[STX]5R|2|^^^MPV|10.0|µm3||||||PentraDX|||[.]0[CR][ETX]8C[CR][LF]
+
+10:06:38:078 : PENTRA-ML->Received->[STX]5R|2|^^^MPV|10.0|µm3||||||PentraDX|||[.]0[CR][ETX]8C[CR][LF]
+
+10:06:38:281 : PENTRA-ML->Sending->[ACK]
+10:06:38:312 : PT4: In Serial Event
+10:06:38:312 : PENTRA-ML->...Buff+->[STX]
+10:06:38:343 : PT4: In Serial Event
+10:06:38:343 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.58|10^
+10:06:38:359 : PT4: In Serial Event
+10:06:38:359 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.58|10^3/mm3||||||PentraDX|
+10:06:38:375 : PT4: In Serial Event
+10:06:38:375 : PENTRA-ML->...Buff+->[STX]6R|3|^^^MON#|0.58|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]8D[CR][LF]
+
+10:06:38:375 : PENTRA-ML->Received->[STX]6R|3|^^^MON#|0.58|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]8D[CR][LF]
+
+10:06:38:578 : PENTRA-ML->Sending->[ACK]
+10:06:38:625 : PT4: In Serial Event
+10:06:38:625 : PENTRA-ML->...Buff+->[STX]
+10:06:38:640 : PT4: In Serial Event
+10:06:38:640 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|89|µm3||
+10:06:38:672 : PT4: In Serial Event
+10:06:38:672 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|89|µm3||||||PentraDX|||[.]0[CR][ETX]3
+10:06:38:687 : PT4: In Serial Event
+10:06:38:687 : PENTRA-ML->...Buff+->[STX]7R|4|^^^MCV|89|µm3||||||PentraDX|||[.]0[CR][ETX]35[CR][LF]
+
+10:06:38:687 : PENTRA-ML->Received->[STX]7R|4|^^^MCV|89|µm3||||||PentraDX|||[.]0[CR][ETX]35[CR][LF]
+
+10:06:38:890 : PENTRA-ML->Sending->[ACK]
+10:06:38:922 : PT4: In Serial Event
+10:06:38:922 : PENTRA-ML->...Buff+->[STX]
+10:06:38:937 : PT4: In Serial Event
+10:06:38:953 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|32.5|g/
+10:06:38:968 : PT4: In Serial Event
+10:06:38:968 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|32.5|g/dL||||||PentraDX|||[.]
+10:06:38:984 : PT4: In Serial Event
+10:06:38:984 : PENTRA-ML->...Buff+->[STX]0R|5|^^^MCHC|32.5|g/dL||||||PentraDX|||[.]0[CR][ETX]AC[CR][LF]
+
+10:06:38:984 : PENTRA-ML->Received->[STX]0R|5|^^^MCHC|32.5|g/dL||||||PentraDX|||[.]0[CR][ETX]AC[CR][LF]
+
+10:06:39:187 : PENTRA-ML->Sending->[ACK]
+10:06:39:218 : PT4: In Serial Event
+10:06:39:234 : PENTRA-ML->...Buff+->[STX]
+10:06:39:250 : PT4: In Serial Event
+10:06:39:250 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.8|pg|
+10:06:39:265 : PT4: In Serial Event
+10:06:39:265 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.8|pg||||||PentraDX|||[.]0[CR][ETX]0
+10:06:39:297 : PT4: In Serial Event
+10:06:39:297 : PENTRA-ML->...Buff+->[STX]1R|6|^^^MCH|28.8|pg||||||PentraDX|||[.]0[CR][ETX]04[CR][LF]
+
+10:06:39:297 : PENTRA-ML->Received->[STX]1R|6|^^^MCH|28.8|pg||||||PentraDX|||[.]0[CR][ETX]04[CR][LF]
+
+10:06:39:500 : PENTRA-ML->Sending->[ACK]
+10:06:39:531 : PT4: In Serial Event
+10:06:39:531 : PENTRA-ML->...Buff+->[STX]
+10:06:39:547 : PT4: In Serial Event
+10:06:39:547 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.71|10^
+10:06:39:578 : PT4: In Serial Event
+10:06:39:578 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.71|10^3/mm3||||||PentraDX|
+10:06:39:593 : PT4: In Serial Event
+10:06:39:593 : PENTRA-ML->...Buff+->[STX]2R|7|^^^LYM#|1.71|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]91[CR][LF]
+
+10:06:39:593 : PENTRA-ML->Received->[STX]2R|7|^^^LYM#|1.71|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]91[CR][LF]
+
+10:06:39:797 : PENTRA-ML->Sending->[ACK]
+10:06:39:828 : PT4: In Serial Event
+10:06:39:828 : PENTRA-ML->...Buff+->[STX]
+10:06:39:859 : PT4: In Serial Event
+10:06:39:859 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.03|10
+10:06:39:875 : PT4: In Serial Event
+10:06:39:875 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.03|10^3/mm3||||||PentraDX
+10:06:39:890 : PT4: In Serial Event
+10:06:39:890 : PENTRA-ML->...Buff+->[STX]3R|8|^^^LIC#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]73[CR][LF]
+
+10:06:39:890 : PENTRA-ML->Received->[STX]3R|8|^^^LIC#|0.03|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]73[CR][LF]
+
+10:06:40:093 : PENTRA-ML->Sending->[ACK]
+10:06:40:140 : PT4: In Serial Event
+10:06:40:140 : PENTRA-ML->...Buff+->[STX]
+10:06:40:156 : PT4: In Serial Event
+10:06:40:156 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.01|10
+10:06:40:187 : PT4: In Serial Event
+10:06:40:187 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.01|10^3/mm3||||||PentraDX
+10:06:40:203 : PT4: In Serial Event
+10:06:40:203 : PENTRA-ML->...Buff+->[STX]4R|9|^^^IMM#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7E[CR][LF]
+
+10:06:40:203 : PENTRA-ML->Received->[STX]4R|9|^^^IMM#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]7E[CR][LF]
+
+10:06:40:406 : PENTRA-ML->Sending->[ACK]
+10:06:40:453 : PT4: In Serial Event
+10:06:40:453 : PENTRA-ML->...Buff+->[STX]
+10:06:40:468 : PT4: In Serial Event
+10:06:40:468 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|10
+10:06:40:484 : PT4: In Serial Event
+10:06:40:484 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX
+10:06:40:515 : PT4: In Serial Event
+10:06:40:515 : PENTRA-ML->...Buff+->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A6[CR][LF]
+
+10:06:40:515 : PENTRA-ML->Received->[STX]5R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A6[CR][LF]
+
+10:06:40:718 : PENTRA-ML->Sending->[ACK]
+10:06:40:750 : PT4: In Serial Event
+10:06:40:750 : PENTRA-ML->...Buff+->[STX]
+10:06:40:781 : PT4: In Serial Event
+10:06:40:781 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.01|1
+10:06:40:797 : PT4: In Serial Event
+10:06:40:797 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.01|10^3/mm3||||||PentraD
+10:06:40:812 : PT4: In Serial Event
+10:06:40:812 : PENTRA-ML->...Buff+->[STX]6R|11|^^^IMG#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A3[CR][LF]
+
+10:06:40:812 : PENTRA-ML->Received->[STX]6R|11|^^^IMG#|0.01|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]A3[CR][LF]
+
+10:06:41:015 : PENTRA-ML->Sending->[ACK]
+10:06:41:047 : PT4: In Serial Event
+10:06:41:047 : PENTRA-ML->...Buff+->[STX]
+10:06:41:078 : PT4: In Serial Event
+10:06:41:078 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.47|1
+10:06:41:109 : PT4: In Serial Event
+10:06:41:109 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.47|10^3/mm3||||||PentraDX
+10:06:41:125 : PT4: In Serial Event
+10:06:41:125 : PENTRA-ML->...Buff+->[STX]7R|12|^^^EOS#|0.47|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B9[CR][LF]
+
+10:06:41:125 : PENTRA-ML->Received->[STX]7R|12|^^^EOS#|0.47|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B9[CR][LF]
+
+10:06:41:328 : PENTRA-ML->Sending->[ACK]
+10:06:41:375 : PT4: In Serial Event
+10:06:41:375 : PENTRA-ML->...Buff+->[STX]
+10:06:41:390 : PT4: In Serial Event
+10:06:41:390 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.05|1
+10:06:41:406 : PT4: In Serial Event
+10:06:41:406 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.05|10^3/mm3||||||PentraD
+10:06:41:437 : PT4: In Serial Event
+10:06:41:437 : PENTRA-ML->...Buff+->[STX]0R|13|^^^BAS#|0.05|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]9C[CR][LF]
+
+10:06:41:437 : PENTRA-ML->Received->[STX]0R|13|^^^BAS#|0.05|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]9C[CR][LF]
+
+10:06:41:640 : PENTRA-ML->Sending->[ACK]
+10:06:41:672 : PT4: In Serial Event
+10:06:41:672 : PENTRA-ML->...Buff+->[STX]
+10:06:41:687 : PT4: In Serial Event
+10:06:41:703 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.07|1
+10:06:41:718 : PT4: In Serial Event
+10:06:41:718 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.07|10^3/mm3||||||PentraD
+10:06:41:734 : PT4: In Serial Event
+10:06:41:734 : PENTRA-ML->...Buff+->[STX]1R|14|^^^ALY#|0.07|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B0[CR][LF]
+
+10:06:41:734 : PENTRA-ML->Received->[STX]1R|14|^^^ALY#|0.07|10^3/mm3||||||PentraDX|||[.]0[CR][ETX]B0[CR][LF]
+
+10:06:41:937 : PENTRA-ML->Sending->[ACK]
+10:06:41:984 : PT4: In Serial Event
+10:06:41:984 : PENTRA-ML->...Buff+->[STX]
+10:06:42:000 : PT4: In Serial Event
+10:06:42:000 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.8|10^3
+10:06:42:031 : PT4: In Serial Event
+10:06:42:031 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||
+10:06:42:031 : PT4: In Serial Event
+10:06:42:031 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]F8
+10:06:42:062 : PT4: In Serial Event
+10:06:42:062 : PENTRA-ML->...Buff+->[STX]2R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]F8[CR][LF]
+
+10:06:42:062 : PENTRA-ML->Received->[STX]2R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]F8[CR][LF]
+
+10:06:42:265 : PENTRA-ML->Sending->[ACK]
+10:06:42:297 : PT4: In Serial Event
+10:06:42:297 : PENTRA-ML->...Buff+->[STX]
+10:06:42:312 : PT4: In Serial Event
+10:06:42:312 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|29.3|%
+10:06:42:328 : PT4: In Serial Event
+10:06:42:328 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|29.3|%||||||PentraDX||2013
+10:06:42:359 : PT4: In Serial Event
+10:06:42:359 : PENTRA-ML->...Buff+->[STX]3R|16|^^^LYM%|29.3|%||||||PentraDX||20130802100029|1[CR][ETX]5D[CR][LF]
+
+10:06:42:359 : PENTRA-ML->Received->[STX]3R|16|^^^LYM%|29.3|%||||||PentraDX||20130802100029|1[CR][ETX]5D[CR][LF]
+
+10:06:42:562 : PENTRA-ML->Sending->[ACK]
+10:06:42:625 : PT4: In Serial Event
+10:06:42:625 : PENTRA-ML->...Buff+->[STX]
+10:06:42:640 : PT4: In Serial Event
+10:06:42:640 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|10.0|%
+10:06:42:656 : PT4: In Serial Event
+10:06:42:656 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|10.0|%||||||PentraDX||2013
+10:06:42:687 : PT4: In Serial Event
+10:06:42:687 : PENTRA-ML->...Buff+->[STX]4R|17|^^^MON%|10.0|%||||||PentraDX||20130802100029|1[CR][ETX]4A[CR][LF]
+
+10:06:42:687 : PENTRA-ML->Received->[STX]4R|17|^^^MON%|10.0|%||||||PentraDX||20130802100029|1[CR][ETX]4A[CR][LF]
+
+10:06:42:890 : PENTRA-ML->Sending->[ACK]
+10:06:42:937 : PT4: In Serial Event
+10:06:42:937 : PENTRA-ML->...Buff+->[STX]
+10:06:42:953 : PT4: In Serial Event
+10:06:42:953 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|51.8|%
+10:06:42:969 : PT4: In Serial Event
+10:06:42:969 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|51.8|%||||||PentraDX||20130
+10:06:43:000 : PT4: In Serial Event
+10:06:43:000 : PENTRA-ML->...Buff+->[STX]5R|18|^^^NEU%|51.8|%||||||PentraDX||20130802100029|1[CR][ETX]57[CR][LF]
+
+10:06:43:000 : PENTRA-ML->Received->[STX]5R|18|^^^NEU%|51.8|%||||||PentraDX||20130802100029|1[CR][ETX]57[CR][LF]
+
+10:06:43:203 : PENTRA-ML->Sending->[ACK]
+10:06:43:250 : PT4: In Serial Event
+10:06:43:250 : PENTRA-ML->...Buff+->[STX]
+10:06:43:265 : PT4: In Serial Event
+10:06:43:265 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|8.0|%|
+10:06:43:281 : PT4: In Serial Event
+10:06:43:281 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|8.0|%||||||PentraDX||20130
+10:06:43:312 : PT4: In Serial Event
+10:06:43:312 : PENTRA-ML->...Buff+->[STX]6R|19|^^^EOS%|8.0|%||||||PentraDX||20130802100029|1[CR][ETX]22[CR][LF]
+
+10:06:43:312 : PENTRA-ML->Received->[STX]6R|19|^^^EOS%|8.0|%||||||PentraDX||20130802100029|1[CR][ETX]22[CR][LF]
+
+10:06:43:515 : PENTRA-ML->Sending->[ACK]
+10:06:43:562 : PT4: In Serial Event
+10:06:43:562 : PENTRA-ML->...Buff+->[STX]
+10:06:43:578 : PT4: In Serial Event
+10:06:43:578 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|0.9|%|
+10:06:43:594 : PT4: In Serial Event
+10:06:43:594 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|0.9|%||||||PentraDX||201308
+10:06:43:609 : PT4: In Serial Event
+10:06:43:609 : PENTRA-ML->...Buff+->[STX]7R|20|^^^BAS%|0.9|%||||||PentraDX||20130802100029|1[CR][ETX]0B[CR][LF]
+
+10:06:43:609 : PENTRA-ML->Received->[STX]7R|20|^^^BAS%|0.9|%||||||PentraDX||20130802100029|1[CR][ETX]0B[CR][LF]
+
+10:06:43:812 : PENTRA-ML->Sending->[ACK]
+10:06:43:812 : PT4: In Serial Event
+10:06:43:812 : PENTRA-ML->...Buff+->[STX]
+10:06:43:844 : PT4: In Serial Event
+10:06:43:844 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|1.1|%||
+10:06:43:859 : PT4: In Serial Event
+10:06:43:859 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|1.1|%||||||PentraDX||201308
+10:06:43:875 : PT4: In Serial Event
+10:06:43:875 : PENTRA-ML->...Buff+->[STX]0R|21|^^^ALY%|1.1|%||||||PentraDX||20130802100029|1[CR][ETX]0E[CR][LF]
+
+10:06:43:875 : PENTRA-ML->Received->[STX]0R|21|^^^ALY%|1.1|%||||||PentraDX||20130802100029|1[CR][ETX]0E[CR][LF]
+
+10:06:44:078 : PENTRA-ML->Sending->[ACK]
+10:06:44:140 : PT4: In Serial Event
+10:06:44:140 : PENTRA-ML->...Buff+->[STX]
+10:06:44:156 : PT4: In Serial Event
+10:06:44:156 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.5|%|
+10:06:44:172 : PT4: In Serial Event
+10:06:44:172 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.5|%||||||PentraDX||20130
+10:06:44:187 : PT4: In Serial Event
+10:06:44:187 : PENTRA-ML->...Buff+->[STX]1R|22|^^^LIC%|0.5|%||||||PentraDX||20130802100029|1[CR][ETX]05[CR][LF]
+
+10:06:44:187 : PENTRA-ML->Received->[STX]1R|22|^^^LIC%|0.5|%||||||PentraDX||20130802100029|1[CR][ETX]05[CR][LF]
+
+10:06:44:390 : PENTRA-ML->Sending->[ACK]
+10:06:44:390 : PT4: In Serial Event
+10:06:44:390 : PENTRA-ML->...Buff+->[STX]
+10:06:44:422 : PT4: In Serial Event
+10:06:44:422 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.28|10
+10:06:44:437 : PT4: In Serial Event
+10:06:44:437 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX|
+10:06:44:453 : PT4: In Serial Event
+10:06:44:453 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX||20130802100029|1[CR][ETX]2
+10:06:44:484 : PT4: In Serial Event
+10:06:44:484 : PENTRA-ML->...Buff+->[STX]2R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX||20130802100029|1[CR][ETX]26[CR][LF]
+
+10:06:44:484 : PENTRA-ML->Received->[STX]2R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX||20130802100029|1[CR][ETX]26[CR][LF]
+
+10:06:44:687 : PENTRA-ML->Sending->[ACK]
+10:06:44:719 : PT4: In Serial Event
+10:06:44:719 : PENTRA-ML->...Buff+->[STX]3R|24|
+10:06:44:734 : PT4: In Serial Event
+10:06:44:734 : PENTRA-ML->...Buff+->[STX]3R|24|^^^HGB|12.3|g/dL||||
+10:06:44:765 : PT4: In Serial Event
+10:06:44:765 : PENTRA-ML->...Buff+->[STX]3R|24|^^^HGB|12.3|g/dL||||||PentraDX||20130802
+10:06:44:781 : PT4: In Serial Event
+10:06:44:781 : PENTRA-ML->...Buff+->[STX]3R|24|^^^HGB|12.3|g/dL||||||PentraDX||20130802100029|1[CR][ETX]2F[CR][LF]
+
+10:06:44:781 : PENTRA-ML->Received->[STX]3R|24|^^^HGB|12.3|g/dL||||||PentraDX||20130802100029|1[CR][ETX]2F[CR][LF]
+
+10:06:44:984 : PENTRA-ML->Sending->[ACK]
+10:06:45:031 : PT4: In Serial Event
+10:06:45:031 : PENTRA-ML->...Buff+->[STX]
+10:06:45:047 : PT4: In Serial Event
+10:06:45:047 : PENTRA-ML->...Buff+->[STX]4R|25|^^^HCT|37.9|%|
+10:06:45:062 : PT4: In Serial Event
+10:06:45:062 : PENTRA-ML->...Buff+->[STX]4R|25|^^^HCT|37.9|%||||||PentraDX||2013
+10:06:45:094 : PT4: In Serial Event
+10:06:45:094 : PENTRA-ML->...Buff+->[STX]4R|25|^^^HCT|37.9|%||||||PentraDX||20130802100029|1[CR][ETX]2B[CR][LF]
+
+10:06:45:094 : PENTRA-ML->Received->[STX]4R|25|^^^HCT|37.9|%||||||PentraDX||20130802100029|1[CR][ETX]2B[CR][LF]
+
+10:06:45:297 : PENTRA-ML->Sending->[ACK]
+10:06:45:344 : PT4: In Serial Event
+10:06:45:344 : PENTRA-ML->...Buff+->[STX]
+10:06:45:359 : PT4: In Serial Event
+10:06:45:359 : PENTRA-ML->...Buff+->[STX]5R|26|^^^RDW|14.1|%|
+10:06:45:375 : PT4: In Serial Event
+10:06:45:375 : PENTRA-ML->...Buff+->[STX]5R|26|^^^RDW|14.1|%||||||PentraDX||20130
+10:06:45:406 : PT4: In Serial Event
+10:06:45:406 : PENTRA-ML->...Buff+->[STX]5R|26|^^^RDW|14.1|%||||||PentraDX||201308021
+10:06:45:406 : PT4: In Serial Event
+10:06:45:406 : PENTRA-ML->...Buff+->[STX]5R|26|^^^RDW|14.1|%||||||PentraDX||20130802100029|1[CR][ETX]2E[CR][LF]
+
+10:06:45:406 : PENTRA-ML->Received->[STX]5R|26|^^^RDW|14.1|%||||||PentraDX||20130802100029|1[CR][ETX]2E[CR][LF]
+
+10:06:45:609 : PENTRA-ML->Sending->[ACK]
+10:06:45:656 : PT4: In Serial Event
+10:06:45:656 : PENTRA-ML->...Buff+->[STX]
+10:06:45:687 : PT4: In Serial Event
+10:06:45:687 : PENTRA-ML->...Buff+->[STX]6R|27|^^^PLT|229|10^
+10:06:45:703 : PT4: In Serial Event
+10:06:45:703 : PENTRA-ML->...Buff+->[STX]6R|27|^^^PLT|229|10^3/mm3||||||PentraDX|
+10:06:45:719 : PT4: In Serial Event
+10:06:45:719 : PENTRA-ML->...Buff+->[STX]6R|27|^^^PLT|229|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]1
+10:06:45:734 : PT4: In Serial Event
+10:06:45:734 : PENTRA-ML->...Buff+->[STX]6R|27|^^^PLT|229|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]15[CR][LF]
+
+10:06:45:734 : PENTRA-ML->Received->[STX]6R|27|^^^PLT|229|10^3/mm3||||||PentraDX||20130802100029|1[CR][ETX]15[CR][LF]
+
+10:06:45:937 : PENTRA-ML->Sending->[ACK]
+10:06:45:984 : PT4: In Serial Event
+10:06:45:984 : PENTRA-ML->...Buff+->[STX]
+10:06:46:000 : PT4: In Serial Event
+10:06:46:000 : PENTRA-ML->...Buff+->[STX]7R|28|^^^PCT|0.229|%
+10:06:46:016 : PT4: In Serial Event
+10:06:46:016 : PENTRA-ML->...Buff+->[STX]7R|28|^^^PCT|0.229|%||||||PentraDX||20130
+10:06:46:047 : PT4: In Serial Event
+10:06:46:047 : PENTRA-ML->...Buff+->[STX]7R|28|^^^PCT|0.229|%||||||PentraDX||20130802100029|1[CR][ETX]63[CR][LF]
+
+10:06:46:047 : PENTRA-ML->Received->[STX]7R|28|^^^PCT|0.229|%||||||PentraDX||20130802100029|1[CR][ETX]63[CR][LF]
+
+10:06:46:250 : PENTRA-ML->Sending->[ACK]
+10:06:46:281 : PT4: In Serial Event
+10:06:46:281 : PENTRA-ML->...Buff+->[STX]
+10:06:46:312 : PT4: In Serial Event
+10:06:46:312 : PENTRA-ML->...Buff+->[STX]0R|2
+10:06:46:312 : PT4: In Serial Event
+10:06:46:312 : PENTRA-ML->...Buff+->[STX]0R|29|^^^PDW|19.0|%
+10:06:46:328 : PT4: In Serial Event
+10:06:46:328 : PENTRA-ML->...Buff+->[STX]0R|29|^^^PDW|19.0|%||H||||USER1||2013080
+10:06:46:344 : PT4: In Serial Event
+10:06:46:344 : PENTRA-ML->...Buff+->[STX]0R|29|^^^PDW|19.0|%||H||||USER1||20130802100029|1[CR][ETX]E0[CR][LF]
+
+10:06:46:344 : PENTRA-ML->Received->[STX]0R|29|^^^PDW|19.0|%||H||||USER1||20130802100029|1[CR][ETX]E0[CR][LF]
+
+10:06:46:547 : PENTRA-ML->Sending->[ACK]
+10:06:46:547 : PT4: In Serial Event
+10:06:46:547 : PENTRA-ML->...Buff+->[STX]
+10:06:46:578 : PT4: In Serial Event
+10:06:46:578 : PENTRA-ML->...Buff+->[STX]1R|30|^^^IML%|0.2|%|
+10:06:46:594 : PT4: In Serial Event
+10:06:46:594 : PENTRA-ML->...Buff+->[STX]1R|30|^^^IML%|0.2|%||||||PentraDX||20130
+10:06:46:609 : PT4: In Serial Event
+10:06:46:609 : PENTRA-ML->...Buff+->[STX]1R|30|^^^IML%|0.2|%||||||PentraDX||20130802100029|1[CR][ETX]0B[CR][LF]
+
+10:06:46:609 : PENTRA-ML->Received->[STX]1R|30|^^^IML%|0.2|%||||||PentraDX||20130802100029|1[CR][ETX]0B[CR][LF]
+
+10:06:46:812 : PENTRA-ML->Sending->[ACK]
+10:06:46:859 : PT4: In Serial Event
+10:06:46:859 : PENTRA-ML->...Buff+->[STX]
+10:06:46:891 : PT4: In Serial Event
+10:06:46:891 : PENTRA-ML->...Buff+->[STX]2R|31|^^^IMM%|0.1|%||
+10:06:46:906 : PT4: In Serial Event
+10:06:46:906 : PENTRA-ML->...Buff+->[STX]2R|31|^^^IMM%|0.1|%||||||PentraDX||201308
+10:06:46:922 : PT4: In Serial Event
+10:06:46:922 : PENTRA-ML->...Buff+->[STX]2R|31|^^^IMM%|0.1|%||||||PentraDX||20130802100029|1[CR][ETX]0D[CR][LF]
+
+10:06:46:922 : PENTRA-ML->Received->[STX]2R|31|^^^IMM%|0.1|%||||||PentraDX||20130802100029|1[CR][ETX]0D[CR][LF]
+
+10:06:47:125 : PENTRA-ML->Sending->[ACK]
+10:06:47:172 : PT4: In Serial Event
+10:06:47:172 : PENTRA-ML->...Buff+->[STX]
+10:06:47:203 : PT4: In Serial Event
+10:06:47:203 : PENTRA-ML->...Buff+->[STX]3R|32|^^^IMG%|0.2|%|
+10:06:47:219 : PT4: In Serial Event
+10:06:47:219 : PENTRA-ML->...Buff+->[STX]3R|32|^^^IMG%|0.2|%||||||PentraDX||20130
+10:06:47:234 : PT4: In Serial Event
+10:06:47:234 : PENTRA-ML->...Buff+->[STX]3R|32|^^^IMG%|0.2|%||||||PentraDX||20130802100029|1[CR][ETX]0A[CR][LF]
+
+10:06:47:234 : PENTRA-ML->Received->[STX]3R|32|^^^IMG%|0.2|%||||||PentraDX||20130802100029|1[CR][ETX]0A[CR][LF]
+
+10:06:47:437 : PENTRA-ML->Sending->[ACK]
+10:06:47:484 : PT4: In Serial Event
+10:06:47:484 : PENTRA-ML->...Buff+->[STX]
+10:06:47:516 : PT4: In Serial Event
+10:06:47:516 : PENTRA-ML->...Buff+->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:47:516 : PENTRA-ML->Received->[STX]4L|1[CR][ETX]3D[CR][LF]
+
+10:06:47:719 : PENTRA-ML->Sending->[ACK]
+10:06:47:750 : PT4: In Serial Event
+10:06:47:750 : PENTRA-ML->...Buff+->[EOT]
+10:06:47:750 : PENTRA-ML->Received->[EOT]
+10:06:47:750 : Receive EOT
+10:06:47:750 : Concatenation Buffer = H|\^&|||PML|||||||P|1394-97|20130802101332P|1||444098||Abou-Khalil^Khalil|||MO|1|1383710^102^4|||R||20130802085000||||||||||||||||||FR|1|^^^NEU#|3.02|10^3/mm3||||||PentraDX||| 0R|2|^^^MPV|10.0|µm3||||||PentraDX||| 0R|3|^^^MON#|0.58|10^3/mm3||||||PentraDX||| 0R|4|^^^MCV|89|µm3||||||PentraDX||| 0R|5|^^^MCHC|32.5|g/dL||||||PentraDX||| 0R|6|^^^MCH|28.8|pg||||||PentraDX||| 0R|7|^^^LYM#|1.71|10^3/mm3||||||PentraDX||| 0R|8|^^^LIC#|0.03|10^3/mm3||||||PentraDX||| 0R|9|^^^IMM#|0.01|10^3/mm3||||||PentraDX||| 0R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX||| 0R|11|^^^IMG#|0.01|10^3/mm3||||||PentraDX||| 0R|12|^^^EOS#|0.47|10^3/mm3||||||PentraDX||| 0R|13|^^^BAS#|0.05|10^3/mm3||||||PentraDX||| 0R|14|^^^ALY#|0.07|10^3/mm3||||||PentraDX||| 0R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||20130802100029|1R|16|^^^LYM%|29.3|%||||||PentraDX||20130802100029|1R|17|^^^MON%|10.0|%||||||PentraDX||20130802100029|1R|18|^^^NEU%|51.8|%||||||PentraDX||20130802100029|1R|19|^^^EOS%|8.0|%||||||PentraDX||20130802100029|1R|20|^^^BAS%|0.9|%||||||PentraDX||20130802100029|1R|21|^^^ALY%|1.1|%||||||PentraDX||20130802100029|1R|22|^^^LIC%|0.5|%||||||PentraDX||20130802100029|1R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX||20130802100029|1R|24|^^^HGB|12.3|g/dL||||||PentraDX||20130802100029|1R|25|^^^HCT|37.9|%||||||PentraDX||20130802100029|1R|26|^^^RDW|14.1|%||||||PentraDX||20130802100029|1R|27|^^^PLT|229|10^3/mm3||||||PentraDX||20130802100029|1R|28|^^^PCT|0.229|%||||||PentraDX||20130802100029|1R|29|^^^PDW|19.0|%||H||||USER1||20130802100029|1R|30|^^^IML%|0.2|%||||||PentraDX||20130802100029|1R|31|^^^IMM%|0.1|%||||||PentraDX||20130802100029|1R|32|^^^IMG%|0.2|%||||||PentraDX||20130802100029|1L|1
+10:06:47:750 : Concatenated Frame : H|\^&|||PML|||||||P|1394-97|20130802101332
+10:06:47:750 : Concatenated Frame : P|1||444098||Abou-Khalil^Khalil|||M
+10:06:47:750 :  fieldPos:1 compPos:0 token:1
+10:06:47:750 :  fieldPos:3 compPos:0 token:444098
+10:06:47:750 :  fieldPos:5 compPos:0 token:Abou-Khalil
+10:06:47:750 :  fieldPos:5 compPos:1 token:Khalil
+10:06:47:750 : Concatenated Frame : O|1|1383710^102^4|||R||20130802085000||||||||||||||||||F
+10:06:47:750 :  fieldPos:1 compPos:0 token:1
+10:06:47:750 :  fieldPos:2 compPos:0 token:1383710
+10:06:47:750 :  fieldPos:2 compPos:1 token:102
+10:06:47:750 :  fieldPos:2 compPos:2 token:4
+10:06:47:750 :  fieldPos:5 compPos:0 token:R
+10:06:47:750 :  fieldPos:7 compPos:0 token:20130802085000
+10:06:47:750 : - Parsed sample ID : 1383710
+10:06:47:750 : Concatenated Frame : R|1|^^^NEU#|3.02|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:750 :  fieldPos:1 compPos:0 token:1
+10:06:47:750 :  fieldPos:2 compPos:3 token:NEU#
+10:06:47:750 :  ASTM result list read -> token = NEU# lisCode = 15 doRead = true
+10:06:47:750 :  fieldPos:3 compPos:0 token:3.02
+10:06:47:750 :  fieldPos:4 compPos:0 token:10
+10:06:47:750 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:750 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:750 :  fieldPos:13 compPos:0 token: 
+10:06:47:750 : Concatenated Frame : R|2|^^^MPV|10.0|µm3||||||PentraDX|||[.]0
+10:06:47:750 :  fieldPos:1 compPos:0 token:2
+10:06:47:750 :  fieldPos:2 compPos:3 token:MPV
+10:06:47:750 :  ASTM result list read -> token = MPV lisCode = 9 doRead = true
+10:06:47:750 :  fieldPos:3 compPos:0 token:10.0
+10:06:47:750 :  fieldPos:4 compPos:0 token:µm3
+10:06:47:750 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:750 :  fieldPos:13 compPos:0 token: 
+10:06:47:750 : Concatenated Frame : R|3|^^^MON#|0.58|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:750 :  fieldPos:1 compPos:0 token:3
+10:06:47:750 :  fieldPos:2 compPos:3 token:MON#
+10:06:47:750 :  ASTM result list read -> token = MON# lisCode = 14 doRead = true
+10:06:47:750 :  fieldPos:3 compPos:0 token:0.58
+10:06:47:750 :  fieldPos:4 compPos:0 token:10
+10:06:47:750 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:750 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:750 :  fieldPos:13 compPos:0 token: 
+10:06:47:750 : Concatenated Frame : R|4|^^^MCV|89|µm3||||||PentraDX|||[.]0
+10:06:47:750 :  fieldPos:1 compPos:0 token:4
+10:06:47:750 :  fieldPos:2 compPos:3 token:MCV
+10:06:47:750 :  ASTM result list read -> token = MCV lisCode = 5 doRead = true
+10:06:47:750 :  fieldPos:3 compPos:0 token:89
+10:06:47:750 :  fieldPos:4 compPos:0 token:µm3
+10:06:47:750 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:750 :  fieldPos:13 compPos:0 token: 
+10:06:47:750 : Concatenated Frame : R|5|^^^MCHC|32.5|g/dL||||||PentraDX|||[.]0
+10:06:47:750 :  fieldPos:1 compPos:0 token:5
+10:06:47:750 :  fieldPos:2 compPos:3 token:MCHC
+10:06:47:750 :  ASTM result list read -> token = MCHC lisCode = 7 doRead = true
+10:06:47:750 :  fieldPos:3 compPos:0 token:32.5
+10:06:47:750 :  fieldPos:4 compPos:0 token:g/dL
+10:06:47:750 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|6|^^^MCH|28.8|pg||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:6
+10:06:47:766 :  fieldPos:2 compPos:3 token:MCH
+10:06:47:766 :  ASTM result list read -> token = MCH lisCode = 6 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:28.8
+10:06:47:766 :  fieldPos:4 compPos:0 token:pg
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|7|^^^LYM#|1.71|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:7
+10:06:47:766 :  fieldPos:2 compPos:3 token:LYM#
+10:06:47:766 :  ASTM result list read -> token = LYM# lisCode = 13 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:1.71
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|8|^^^LIC#|0.03|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:8
+10:06:47:766 :  fieldPos:2 compPos:3 token:LIC#
+10:06:47:766 :  ASTM result list read -> token = LIC# lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.03
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|9|^^^IMM#|0.01|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:9
+10:06:47:766 :  fieldPos:2 compPos:3 token:IMM#
+10:06:47:766 :  ASTM result list read -> token = IMM# lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.01
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|10|^^^IML#|0.01|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:10
+10:06:47:766 :  fieldPos:2 compPos:3 token:IML#
+10:06:47:766 :  ASTM result list read -> token = IML# lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.01
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|11|^^^IMG#|0.01|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:11
+10:06:47:766 :  fieldPos:2 compPos:3 token:IMG#
+10:06:47:766 :  ASTM result list read -> token = IMG# lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.01
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|12|^^^EOS#|0.47|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:12
+10:06:47:766 :  fieldPos:2 compPos:3 token:EOS#
+10:06:47:766 :  ASTM result list read -> token = EOS# lisCode = 16 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.47
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|13|^^^BAS#|0.05|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:13
+10:06:47:766 :  fieldPos:2 compPos:3 token:BAS#
+10:06:47:766 :  ASTM result list read -> token = BAS# lisCode = 17 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.05
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|14|^^^ALY#|0.07|10^3/mm3||||||PentraDX|||[.]0
+10:06:47:766 :  fieldPos:1 compPos:0 token:14
+10:06:47:766 :  fieldPos:2 compPos:3 token:ALY#
+10:06:47:766 :  ASTM result list read -> token = ALY# lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.07
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:13 compPos:0 token: 
+10:06:47:766 : Concatenated Frame : R|15|^^^WBC|5.8|10^3/mm3||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:15
+10:06:47:766 :  fieldPos:2 compPos:3 token:WBC
+10:06:47:766 :  ASTM result list read -> token = WBC lisCode = 4 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:5.8
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|16|^^^LYM%|29.3|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:16
+10:06:47:766 :  fieldPos:2 compPos:3 token:LYM%
+10:06:47:766 :  ASTM result list read -> token = LYM% lisCode = 18 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:29.3
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|17|^^^MON%|10.0|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:17
+10:06:47:766 :  fieldPos:2 compPos:3 token:MON%
+10:06:47:766 :  ASTM result list read -> token = MON% lisCode = 19 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:10.0
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|18|^^^NEU%|51.8|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:18
+10:06:47:766 :  fieldPos:2 compPos:3 token:NEU%
+10:06:47:766 :  ASTM result list read -> token = NEU% lisCode = 20 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:51.8
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|19|^^^EOS%|8.0|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:19
+10:06:47:766 :  fieldPos:2 compPos:3 token:EOS%
+10:06:47:766 :  ASTM result list read -> token = EOS% lisCode = 21 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:8.0
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|20|^^^BAS%|0.9|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:20
+10:06:47:766 :  fieldPos:2 compPos:3 token:BAS%
+10:06:47:766 :  ASTM result list read -> token = BAS% lisCode = 22 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.9
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|21|^^^ALY%|1.1|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:21
+10:06:47:766 :  fieldPos:2 compPos:3 token:ALY%
+10:06:47:766 :  ASTM result list read -> token = ALY% lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:1.1
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|22|^^^LIC%|0.5|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:22
+10:06:47:766 :  fieldPos:2 compPos:3 token:LIC%
+10:06:47:766 :  ASTM result list read -> token = LIC% lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.5
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|23|^^^RBC|4.28|10^6/mm3||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:23
+10:06:47:766 :  fieldPos:2 compPos:3 token:RBC
+10:06:47:766 :  ASTM result list read -> token = RBC lisCode = 3 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:4.28
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:6/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|24|^^^HGB|12.3|g/dL||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:24
+10:06:47:766 :  fieldPos:2 compPos:3 token:HGB
+10:06:47:766 :  ASTM result list read -> token = HGB lisCode = 1 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:12.3
+10:06:47:766 :  fieldPos:4 compPos:0 token:g/dL
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|25|^^^HCT|37.9|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:25
+10:06:47:766 :  fieldPos:2 compPos:3 token:HCT
+10:06:47:766 :  ASTM result list read -> token = HCT lisCode = 2 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:37.9
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|26|^^^RDW|14.1|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:26
+10:06:47:766 :  fieldPos:2 compPos:3 token:RDW
+10:06:47:766 :  ASTM result list read -> token = RDW lisCode = 8 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:14.1
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|27|^^^PLT|229|10^3/mm3||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:27
+10:06:47:766 :  fieldPos:2 compPos:3 token:PLT
+10:06:47:766 :  ASTM result list read -> token = PLT lisCode = 12 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:229
+10:06:47:766 :  fieldPos:4 compPos:0 token:10
+10:06:47:766 :  fieldPos:4 compPos:1 token:3/mm3
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|28|^^^PCT|0.229|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:28
+10:06:47:766 :  fieldPos:2 compPos:3 token:PCT
+10:06:47:766 :  ASTM result list read -> token = PCT lisCode = 11 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.229
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|29|^^^PDW|19.0|%||H||||USER1||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:29
+10:06:47:766 :  fieldPos:2 compPos:3 token:PDW
+10:06:47:766 :  ASTM result list read -> token = PDW lisCode = 10 doRead = true
+10:06:47:766 :  fieldPos:3 compPos:0 token:19.0
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:6 compPos:0 token:H
+10:06:47:766 :  fieldPos:10 compPos:0 token:USER1
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|30|^^^IML%|0.2|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:30
+10:06:47:766 :  fieldPos:2 compPos:3 token:IML%
+10:06:47:766 :  ASTM result list read -> token = IML% lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.2
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|31|^^^IMM%|0.1|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:31
+10:06:47:766 :  fieldPos:2 compPos:3 token:IMM%
+10:06:47:766 :  ASTM result list read -> token = IMM% lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.1
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : R|32|^^^IMG%|0.2|%||||||PentraDX||20130802100029|1
+10:06:47:766 :  fieldPos:1 compPos:0 token:32
+10:06:47:766 :  fieldPos:2 compPos:3 token:IMG%
+10:06:47:766 :  ASTM result list read -> token = IMG% lisCode = null doRead = false
+10:06:47:766 :  fieldPos:3 compPos:0 token:0.2
+10:06:47:766 :  fieldPos:4 compPos:0 token:%
+10:06:47:766 :  fieldPos:10 compPos:0 token:PentraDX
+10:06:47:766 :  fieldPos:12 compPos:0 token:20130802100029
+10:06:47:766 : Concatenated Frame : L|1
+10:06:47:781 : SELECT T.REF,T.LABEL,T.DESCRIP,T.VALUE,T.RESULT_OK,T.UNIT_LABEL,T.MESSAGE,T.STATUS,T.BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,T.ALARM,T.PRIORITY,T.VERIFICATION_PENDING,S.REF,S.ID,S.PATIENT_ID,S.LAST_NAME,S.FIRST_NAME,S.MIDDLE_INITIAL,S.SEXE,S.LIQUIDE_TYPE,S.RESULT_CONFIRMED,S.OK_TO_BE_SENT,S.ENTRY_DATE,S.AGE,S.DATE_OF_BIRTH,T.REF,S.REF FROM L3TEST T,L3SAMPLE S WHERE (( ( S.ID = '1383710' ) ) ) AND ((T.SAMPLE_REF=S.REF))
+10:06:47:797 : Received from instrument existing sample : 1383710
+10:06:47:797 : UPDATE L3TEST SET VALUE=4.28,RESULT_OK=1,UNIT_LABEL='6/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824365)
+10:06:47:797 : UPDATE L3TEST SET VALUE=29.3,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824373)
+10:06:47:797 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:812 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825476,'14','',0.58,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:812 : UPDATE L3TEST SET VALUE=89.0,RESULT_OK=1,UNIT_LABEL='µm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824368)
+10:06:47:812 : UPDATE L3TEST SET VALUE=12.3,RESULT_OK=1,UNIT_LABEL='g/dL',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824360)
+10:06:47:812 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:812 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825477,'16','',0.47,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:812 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:828 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825478,'17','',0.05,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:828 : UPDATE L3TEST SET VALUE=5.8,RESULT_OK=1,UNIT_LABEL='3/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824372)
+10:06:47:828 : UPDATE L3TEST SET VALUE=0.9,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824361)
+10:06:47:828 : UPDATE L3TEST SET VALUE=10.0,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824367)
+10:06:47:828 : UPDATE L3TEST SET VALUE=14.1,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824369)
+10:06:47:828 : UPDATE L3TEST SET VALUE=229.0,RESULT_OK=1,UNIT_LABEL='3/mm3',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824370)
+10:06:47:828 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:828 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825479,'13','',1.71,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:844 : UPDATE L3TEST SET VALUE=51.8,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824366)
+10:06:47:844 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:844 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825480,'9','',10.0,1,'µm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:844 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:844 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825481,'11','',0.229,1,'%','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:844 : UPDATE L3TEST SET VALUE=37.9,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824364)
+10:06:47:844 : UPDATE L3TEST SET VALUE=8.0,RESULT_OK=1,UNIT_LABEL='%',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824371)
+10:06:47:844 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:859 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825482,'15','',3.02,1,'3/mm3','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:859 : UPDATE L3TEST SET VALUE=32.5,RESULT_OK=1,UNIT_LABEL='g/dL',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824362)
+10:06:47:859 : SELECT L3TEST_SEQUENCE.nextval from dual
+10:06:47:859 : INSERT INTO L3TEST (REF,LABEL,DESCRIP,VALUE,RESULT_OK,UNIT_LABEL,MESSAGE,STATUS,BLOCKED,I_SUGGREF,INSTR_REF,I_RECREF,SAMPLE_REF,ALARM,PRIORITY,VERIFICATION_PENDING) VALUES (10825483,'10','',19.0,1,'%','Test was not in L3 when received',7,0,0,0,7,902519,0,'',0)
+10:06:47:859 : UPDATE L3TEST SET VALUE=28.8,RESULT_OK=1,UNIT_LABEL='pg',STATUS=4,I_RECREF=7,ALARM=0,VERIFICATION_PENDING=0 WHERE (REF=10824363)
+10:08:09:066 : PENTRA-ML->At 8812 New client
+10:08:09:081 : PENTRA-ML->At 8812 received : PING
+10:08:09:081 : PENTRA-ML->At 8812 reply : SUCCESS
+10:08:09:081 : PENTRA-ML->At 8812 after condition
+10:08:14:035 : PENTRA-ML->At 8812 New client
+10:08:14:050 : PENTRA-ML->At 8812 received : PING
+10:08:14:050 : PENTRA-ML->At 8812 reply : SUCCESS
+10:08:14:050 : PENTRA-ML->At 8812 after condition
+10:08:14:472 : PENTRA-ML->At 8812 New client
+10:08:14:472 : PENTRA-ML->At 8812 received : EXIT
+10:08:14:472 : PENTRA-ML Driver Available
+10:08:14:472 : UPDATE INSTRUMENT SET CONNECTED=0 WHERE (REF=7)
+10:08:14:472 : PENTRA-ML : Disconnected
+10:08:14:472 : PENTRA-ML->At 8812 reply : SUCCESS
+10:08:14:472 : PENTRA-ML->At 8812 after condition
+10:08:14:472 : PENTRA-ML Driver Available
+10:08:14:472 : UPDATE INSTRUMENT SET CONNECTED=0 WHERE (REF=7)
+10:08:14:488 : PENTRA-ML : Disconnected
+10:08:14:488 : UPDATE INSTRUMENT SET REF=7,LK_USER_REF=0,CODE='PENTRA-ML',NAME='PENTRA-ML',CONNECTED=0,DRIVER_CLASS_NAME='b01.l3.drivers.horiba.pentraML.PentraMLDriver',PROPERTIES_FILE_PATH='',MODE_O=1,WAIT_FOR_RESULT_CONFIRMATION=0,ON_HOLD=0,DLY_DB_SAMPLES_2SEND=10000,DLY_SAMPLE_DISP_REFRESH=10000,DLY_FOR_RESERVE_RETRY=500,DLY_FOR_RETRY_LATER=2000,DLY_FOR_TIME_OUT=30000,COM_PORT='COM12',COM_BAUDE_RATE=9600,COM_PARITY=0,COM_DATA_BITS=8,COM_STOP_BIT=1,IS_EMUL=0,RELATED_INSTR='',PORT=8812,M_REF=1 WHERE (REF=7)
+10:08:14:488 : PENTRA-ML->At 8812 New client
+10:08:14:488 : PENTRA-ML->At 8812 received : PING
+10:08:14:488 : PENTRA-ML->At 8812 reply : SUCCESS
+10:08:14:488 : PENTRA-ML->At 8812 after condition
+10:08:14:503 : -- Application exit --

@@ -1,0 +1,17 @@
+<!--
+    =====================================================
+											firstGroup
+    =====================================================
+  -->
+<project name="firstGroupProperties">
+	<property name="firstGroup" value="firstGroup"/>
+	<property name="firstGroup.prjDir" value="${srcRoot}/firstGroup"/>
+	<property name="firstGroup.srcDir" value="${firstGroup.prjDir}/src"/>
+	<property name="firstGroup.exeDir" value="${exeRoot}/${appSubDir}/${firstGroup}"/>
+	<property name="firstGroup.buildDir" value="${firstGroup.exeDir}/${buildSubDir}"/>
+	<property name="firstGroup.classDir" value="${firstGroup.buildDir}/${classSubDir}"/>
+	<property name="firstGroup.jarDir" value="${firstGroup.buildDir}/${jarSubDir}"/>
+	<property name="firstGroup.jarFile" value="${firstGroup.buildDir}/${jarSubDir}/01b-${firstGroup}.jar"/>
+	<property name="firstGroup.ojarName" value="${firstGroup}.jar"/>
+	<property name="firstGroup.packDir" value="${firstGroup.exeDir}/${versionSubDir}"/>
+</project>

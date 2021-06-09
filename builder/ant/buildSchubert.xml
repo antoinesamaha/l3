@@ -1,0 +1,1934 @@
+<!--
+    =====================================================
+												  	MAIN
+    =====================================================
+  -->
+<project name="foc" default="full">
+	<property name="jre" value="true" />
+  <property name="drive_workspace" value="c" />
+  <property name="drive_java" value="c" />
+  <property name="eclipseworkspace" value="eclipseworkspace" />	
+  
+  <!--property name="jdkVersion" value="1.5.0" />
+  <property name="jdkDirName" value="jdk${jdkVersion}" />
+  <property name="jdkFullPath" value="${drive_java}:/java/${jdkDirName}" />
+  <property name="jreDirName" value="jre${jdkVersion}" />
+  <property name="jreFullPath" value="${jdkFullPath}/jre" />
+	<property name="jreFullPathWithOutRoot" value="java/${jdkDirName}/jre" /-->
+	
+	<property name="jreDirName" value="jre1.5.0_06" />
+	<property name="jreFullPath" value="C:/UserProgramFiles/Java/jdk1.5.0_06/jre" />
+	
+  <property name="exeRoot" value="${drive_workspace}:/exe" />
+  <property name="srcRoot" value="${drive_workspace}:/${eclipseworkspace}" />
+  <!-- <property name="resources" value="${drive_workspace}:/eclipseworkspace/_resources" /> -->
+	<property name="resources" value="${drive_java}:/eclipseworkspace/_resources" />	
+	<property name="appSubDir" value="app"/>
+	<property name="buildSubDir" value="build"/>
+	<property name="jarSubDir" value="jar"/>
+	<property name="classSubDir" value="class"/>
+	<property name="versionSubDir" value="pack"/>
+	
+	<!-- Mysql properties -->
+	<property name="mysqlJarDir" value="${resources}/jar"/>
+	<property name="mysqlJarName" value="mysql-connector-java-3.0.14-production-bin.jar"/>
+	<property name="mysqlJarName_5.0.7" value="mysql-connector-java-5.0.7-bin.jar"/>
+	
+	<!-- Oracle properties -->
+	<property name="oracleJarDir" value="${resources}/jar"/>
+	<property name="oracleJarName" value="ojdbc14.jar"/>
+	
+	<!-- SQL server properties -->
+	<property name="sqlJarDir" value="${resources}/jar"/>
+	<property name="sqlJarName" value="jtds-1.2.jar"/>
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	
+	<!-- COMM API -->
+	<property name="commApiDir" value="${resources}/jar"/>
+
+	<!-- JUNIT API -->
+	<property name="junitJAR" value="${resources}/jar/junit-4.1.jar"/>
+
+	<!-- JasperReport Directory-->
+	<property name="JasperReportDir" value="${resources}/jasper"/>
+	<property name="JasperReportFile1" value="jasperreports-3.1.4.jar"/>
+	<property name="JasperReportFile2" value="commons-logging-1.1.jar"/>
+  <property name="JasperReportFile3" value="commons-collections-2.1.jar"/>
+  <property name="JasperReportFile4" value="itext-1.3.1.jar"/>	
+	<property name="JasperReportFile5" value="poi-2.0-final-20040126.jar"/>
+	<property name="JasperReportFile6" value="commons-beanutils-1.7.jar"/>
+	<property name="JasperReportFile7" value="commons-digester-1.7.jar"/>
+	
+	<!-- POI Directory-->
+	<property name="POIDir" value="${resources}/jar/poi"/>
+	<property name="POIFile1" value="poi.jar"/>
+  <property name="POIFile2" value="poi-scratchpad.jar"/>
+	<!--property name="POIFile1" value="poi-3.0.1-FINAL-20070705.jar"/>
+  <property name="POIFile2" value="poi-scratchpad-3.0.1-FINAL-20070705.jar"/-->
+	
+	<!-- eclipse Directory-->
+	<property name="eclipseDir" value="${resources}/eclipse"/>
+	<property name="eclipseFile1" value="org.eclipse.jdt.core.manipulation_1.0.1.r321_v20060721.jar"/>
+	<property name="eclipseFile2" value="org.eclipse.jdt.core_3.2.3.v_686_R32x.jar"/>
+	
+	<!-- jFreeChart Directory-->
+	<property name="jFreeChartDir" value="${resources}/jfreeChart"/>
+	<property name="jFreeChartFile1" value="jfreechart-1.0.5.jar"/>
+	<property name="jFreeChartFile2" value="jcommon-1.0.9.jar"/>
+
+	<property name="wibuJar.Dir" value="${resources}/jar/wibu"/>
+	<property name="wibuJar.File" value="CodeMeter.jar"/>
+	<property name="wibuJar" value="${wibuJar.Dir}/${wibuJar.File}"/>
+	
+	<property name="global.signAlias" value="01Barmaja"/>	
+	<property name="global.signStorepass" value="01Barmaja10"/>	
+	
+	<property name="obfuscate" value="true" />
+	
+	<import file="macros.xml" />
+	<import file="obfuscation.xml" />
+	
+	<import file="foc/properties.xml" />
+	<import file="socketBasedService/properties.xml" />	
+	<import file="l3foundations/properties.xml" />	
+	<import file="l3drivers/properties.xml" />	
+	<import file="pimsInterface/properties.xml" />	
+	<import file="scheduler/properties.xml" />	
+	<import file="fabraka/properties.xml" />	
+	<import file="fabraka2pims/properties.xml" />	
+	<import file="payment/properties.xml" />	
+	<import file="stock/properties.xml" />	
+	<import file="attachments/properties.xml" />	
+	<import file="employee/properties.xml" />	
+	<import file="officeLink/properties.xml" />	
+	<import file="basics/properties.xml" />	
+	<import file="trusttrading/properties.xml" />	
+	<import file="mboq/properties.xml" />	
+	<import file="devtask/properties.xml" />	
+	<import file="mg/properties.xml" />	
+	<import file="budget/properties.xml" />
+	<import file="hardwareid/properties.xml" />
+	<import file="l3cedim/properties.xml" />
+	<import file="wbs/properties.xml" />
+	<import file="hybrid/properties.xml" />
+	<import file="precastConstruction/properties.xml" />
+	<import file="calculateurDeplacement/properties.xml" />	
+	<import file="mag/properties.xml" />
+	<import file="firstGroup/properties.xml" />
+	<import file="galleriaHotel/properties.xml" />
+	
+	<target name="mboq">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${mboq}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate2 jar1="${foc.jarFile}" ojar1="${mboq.jarDir}/${foc.ojarName}" jar2="${mboq.jarFile}" ojar2="${mboq.jarDir}/${mboq.ojarName}"/>	
+		
+		<preparePackDir packDir="${mboq.packDir}"/>
+		<addProjectToPack packDir="${mboq.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${mboq.packDir}" projectDir="${mboq.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${mboq.packDir}" jarfile="${mysqlJarDir}/${mysqlJarName}"/>
+		<addJarToPack packDir="${mboq.packDir}" jarfile="${mboq.buildDir}/jar/${mboq.ojarName}"/>
+		<addJarToPack packDir="${mboq.packDir}" jarfile="${mboq.buildDir}/jar/${foc.ojarName}"/>
+		<copy file="${mboq.prjDir}/ant/to_copy_run.cmd" tofile="${mboq.packDir}/run.cmd"/>
+		
+	  <zip destfile="${mboq.exeDir}/${mboq}_properties.zip" basedir="${mboq.packDir}"
+			includes="properties/*.properties"
+	  />
+		
+	  <zip destfile="${mboq.exeDir}/${mboq}.zip" basedir="${mboq.packDir}"
+	  	excludes="properties/*.properties"
+	  />		
+		
+		<!--
+		<jreCopy packdir="${mboq.packDir}"/>
+		-->
+
+		<jreZip packDir="${mboq.exeDir}"/>
+	</target>
+
+	<target name="devtask">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${devtask}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate2 jar1="${foc.jarFile}" ojar1="${devtask.jarDir}/${foc.ojarName}" jar2="${devtask.jarFile}" ojar2="${devtask.jarDir}/${devtask.ojarName}"/>		
+		
+		<preparePackDir packDir="${devtask.packDir}"/>
+		<addProjectToPack packDir="${devtask.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${devtask.packDir}" projectDir="${devtask.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${devtask.packDir}" jarfile="${mysqlJarDir}/${mysqlJarName}"/>
+		<addJarToPack packDir="${devtask.packDir}" jarfile="${devtask.buildDir}/jar/${devtask.ojarName}"/>
+		<addJarToPack packDir="${devtask.packDir}" jarfile="${devtask.buildDir}/jar/${foc.ojarName}"/>
+		<copy file="${devtask.prjDir}/ant/to_copy_run.cmd" tofile="${devtask.packDir}/run.cmd"/>
+		
+	  <zip destfile="${devtask.exeDir}/${devtask}_properties.zip" basedir="${devtask.packDir}"
+			includes="properties/*.properties"
+	  />
+		
+	  <zip destfile="${devtask.exeDir}/${devtask}.zip" basedir="${devtask.packDir}"
+	  	excludes="properties/*.properties"
+	  />		
+		
+		<!--
+		<jreCopy packdir="${mboq.packDir}"/>
+		-->
+
+		<!--jreZip packDir="${devtask.exeDir}"/-->
+	</target>
+
+	
+	
+	
+	<!--
+  	MG
+	  -->	
+	<target name="mg">
+		<preparePackDir packDir="${mg.packDir}"/>
+		<addProjectToPack packDir="${mg.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${mg.packDir}" projectDir="${fabraka.prjDir}" foc-app="app"/>
+		<addProjectToPack packDir="${mg.packDir}" projectDir="${mg.prjDir}" foc-app="app"/>		
+		<jar basedir="${mg.packDir}" destfile="${mg.packDir}/resources.jar" />
+
+		<compileAndCopyJar module="${foc}" jar="${foc.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${scheduler}" jar="${scheduler.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${officeLink}" jar="${officeLink.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${attachments}" jar="${attachments.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${basics}" jar="${basics.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${pimsInterface}" jar="${pimsInterface.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${stock}" jar="${stock.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${fabraka}" jar="${fabraka.jarFile}" todir="${mg.packDir}/jar"/>
+		<compileAndCopyJar module="${mg}" jar="${mg.jarFile}" todir="${mg.packDir}/jar"/>
+	
+		<doObfuscateDir jarDir="${mg.packDir}/jar" />
+
+		<move file="${mg.packDir}/resources.jar" tofile="${mg.packDir}/jar/resources.jar"/>
+
+		<delete>
+	    <fileset dir="${mg.packDir}/jar" includes="01b-*.jar"/>
+	  </delete>
+
+		<mgSignJar jar = "${foc.ojarName}" />
+		<mgSignJar jar = "${scheduler.ojarName}" />
+		<mgSignJar jar = "${officeLink.ojarName}" />
+		<mgSignJar jar = "${attachments.ojarName}" />
+		<mgSignJar jar = "${basics.ojarName}" />
+		<mgSignJar jar = "${stock.ojarName}" />
+		<mgSignJar jar = "${fabraka.ojarName}" />
+		<mgSignJar jar = "${mg.ojarName}" />
+		<mgSignJar jar = "resources.jar" />
+	
+		<mgCopySignJar fromDir="${jFreeChartDir}" toDir="${mg.packDir}/jar" jar="${jFreeChartFile1}"/>		
+		<mgCopySignJar fromDir="${jFreeChartDir}" toDir="${mg.packDir}/jar" jar="${jFreeChartFile2}"/>		
+		<mgCopySignJar fromDir="${POIDir}" toDir="${mg.packDir}/jar" jar="${POIFile1}"/>		
+		<mgCopySignJar fromDir="${POIDir}" toDir="${mg.packDir}/jar" jar="${POIFile2}"/>		
+		<mgCopySignJar fromDir="${mysqlJarDir}" toDir="${mg.packDir}/jar" jar="${mysqlJarName}"/>		
+		<mgCopySignJar fromDir="${JasperReportDir}" toDir="${mg.packDir}/jar" jar="${JasperReportFile1}"/>		
+		<mgCopySignJar fromDir="${JasperReportDir}" toDir="${mg.packDir}/jar" jar="${JasperReportFile2}"/>		
+		<mgCopySignJar fromDir="${JasperReportDir}" toDir="${mg.packDir}/jar" jar="${JasperReportFile3}"/>		
+		<mgCopySignJar fromDir="${JasperReportDir}" toDir="${mg.packDir}/jar" jar="${JasperReportFile4}"/>		
+		
+		<copy file="${mg}/01barmaja.jnlp" todir="${mg.packDir}/jar"/>
+
+	</target>
+	
+	<!--
+  	MAG
+	  -->
+
+	<target name="mag">
+		<preparePackDir packDir="${mag.packDir}"/>
+		<addProjectToPack packDir="${mag.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${mag.packDir}" projectDir="${ccc.prjDir}" foc-app="app"/>
+		<addProjectToPack packDir="${mag.packDir}" projectDir="${mag.prjDir}" foc-app="app"/>		
+		<jar basedir="${mag.packDir}" destfile="${mag.packDir}/jar/resources.jar" />
+	
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${attachments}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${basics}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${stock}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${employee}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${mag}" antfile="build.xml" target="makeJar"/>
+			
+  	<copy file="${foc.jarFile}" todir="${mag.buildDir}/jar" />
+		<copy file="${mag.jarFile}" todir="${mag.buildDir}/jar" />
+		<copy file="${basics.jarFile}" todir="${mag.buildDir}/jar" />
+		<copy file="${stock.jarFile}" todir="${mag.buildDir}/jar" />
+		<copy file="${attachments.jarFile}" todir="${mag.buildDir}/jar" />
+	
+		<doObfuscateDir jarDir="${mag.buildDir}/jar" />
+
+		<copy todir="${mag.packDir}/jar">
+	    <fileset dir="${mag.buildDir}/jar">
+	      <exclude name="01b-*.jar"/>
+	    </fileset>
+	  </copy>
+
+		<signjar jar="${mag.packDir}/jar/${foc.ojarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<signjar jar="${mag.packDir}/jar/${mag.ojarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<signjar jar="${mag.packDir}/jar/${stock.ojarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<signjar jar="${mag.packDir}/jar/${attachments.ojarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<signjar jar="${mag.packDir}/jar/${basics.ojarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		
+		<signjar jar="${mag.packDir}/jar/resources.jar" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		
+		<copySignJar srcDir="${jFreeChartDir}" tarDir="${mag.packDir}/jar" jar="${jFreeChartFile1}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${jFreeChartDir}" tarDir="${mag.packDir}/jar" jar="${jFreeChartFile2}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${mysqlJarDir}" tarDir="${mag.packDir}/jar" jar="${mysqlJarName}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${mag.packDir}/jar" jar="${JasperReportFile1}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${mag.packDir}/jar" jar="${JasperReportFile2}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${mag.packDir}/jar" jar="${JasperReportFile3}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${mag.packDir}/jar" jar="${JasperReportFile4}" alias="${mag.signAlias}" storepass="${mag.signStorepass}" keystore="${mag.keystore}"/>		
+		
+		<copy file="${mag}/01barmaja.jnlp" todir="${mag.packDir}/jar"/>
+		<copy file="${mag}/01barmaja-beta.jnlp" todir="${mag.packDir}/jar"/>
+	</target>
+			
+	<target name="magFTP">
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="01barmaja.jnlp" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="01barmaja-beta.jnlp" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${mag.ojarName}" />		
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${foc.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${stock.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${attachments.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${basics.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="resources.jar" />
+
+   	<!-- 
+   	<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${payment.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${scheduler.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${officeLink.ojarName}" />					
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${ccc.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${pimsInterface.ojarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${employee.ojarName}" />	
+		-->
+	</target>	
+
+	<target name="magFTPFixed">
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${jFreeChartFile1}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${jFreeChartFile2}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${mysqlJarName}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${JasperReportFile1}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${JasperReportFile2}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${JasperReportFile3}" />			
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${JasperReportFile4}" />
+
+		<!-- 
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${POIFile1}" />
+		<ftpWeb projectDir="mag" jarDir="${mag.packDir}/jar" fileName="${POIFile2}" />	
+		-->
+	</target>	
+	
+	<!--
+	  Precast Construction
+		-->
+	<target name="precastConstruction">
+	<!-- SHOULD BE HERE -->
+		<preparePackDir packDir="${precastConstruction.packDir}"/>
+		<addProjectToPack packDir="${precastConstruction.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${precastConstruction.packDir}" projectDir="${scheduler.prjDir}" foc-app="app"/>
+		<addProjectToPack packDir="${precastConstruction.packDir}" projectDir="${basics.prjDir}" foc-app="app"/>
+		<addProjectToPack packDir="${precastConstruction.packDir}" projectDir="${budget.prjDir}" foc-app="app"/>
+		<addProjectToPack packDir="${precastConstruction.packDir}" projectDir="${precastConstruction.prjDir}" foc-app="app"/>		
+		<jar basedir="${precastConstruction.packDir}" destfile="${precastConstruction.packDir}/jar/resources.jar" />
+
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${attachments}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${scheduler}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${officeLink}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${basics}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${pimsInterface}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${precastConstruction}" antfile="build.xml" target="makeJar"/>
+			
+		<copy file="${foc.jarFile}"    todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${attachments.jarFile}"    todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${scheduler.jarFile}" todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${officeLink.jarFile}" todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${pimsInterface.jarFile}" todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${basics.jarFile}" todir="${precastConstruction.buildDir}/jar" />
+		<copy file="${precastConstruction.jarFile}" todir="${precastConstruction.buildDir}/jar" />
+	
+		<doObfuscateDir jarDir="${precastConstruction.buildDir}/jar" />
+	
+		<copy todir="${precastConstruction.packDir}/jar">
+	    <fileset dir="${precastConstruction.buildDir}/jar">
+	      <exclude name="01b-*.jar"/>
+	    </fileset>
+	  </copy>	
+
+  	<!--signjar jar="${precastConstruction.packDir}/jar/${foc.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>
+		<signjar jar="${precastConstruction.packDir}/jar/${attachments.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<signjar jar="${precastConstruction.packDir}/jar/${scheduler.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<signjar jar="${precastConstruction.packDir}/jar/${officeLink.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<signjar jar="${precastConstruction.packDir}/jar/${pimsInterface.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<signjar jar="${precastConstruction.packDir}/jar/${basics.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+	
+		<copySignJar srcDir="${wibuJar.Dir}" tarDir="${precastConstruction.packDir}/jar" jar="${wibuJar.File}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${jFreeChartDir}" tarDir="${precastConstruction.packDir}/jar" jar="${jFreeChartFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${jFreeChartDir}" tarDir="${precastConstruction.packDir}/jar" jar="${jFreeChartFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${mysqlJarDir}" tarDir="${precastConstruction.packDir}/jar" jar="${mysqlJarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+	  <copySignJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile3}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile4}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${POIDir}" tarDir="${precastConstruction.packDir}/jar" jar="${POIFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copySignJar srcDir="${POIDir}" tarDir="${precastConstruction.packDir}/jar" jar="${POIFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/-->		
+		<copyOnlyJar srcDir="${wibuJar.Dir}" tarDir="${precastConstruction.packDir}/jar" jar="${wibuJar.File}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${jFreeChartDir}" tarDir="${precastConstruction.packDir}/jar" jar="${jFreeChartFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${jFreeChartDir}" tarDir="${precastConstruction.packDir}/jar" jar="${jFreeChartFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${mysqlJarDir}" tarDir="${precastConstruction.packDir}/jar" jar="${mysqlJarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+	  <copyOnlyJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile3}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${JasperReportDir}" tarDir="${precastConstruction.packDir}/jar" jar="${JasperReportFile4}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${POIDir}" tarDir="${precastConstruction.packDir}/jar" jar="${POIFile1}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+		<copyOnlyJar srcDir="${POIDir}" tarDir="${precastConstruction.packDir}/jar" jar="${POIFile2}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>			
+
+		<!--exec dir="C:\Program Files\WIBU-SYSTEMS\AxProtector\DevKit\bin" executable="java.exe">
+		  <arg line=" -jar AxProtector.jar -kcm -f100497 -p7778 -cf44 -d:3.20 -sln -nl -rr -wu1000 -we60 -eac -eec -eurc1 -car30,3 -v -cag7 -jh:e -# -o:""D:\exe\app\precastConstruction\pack\jar\precastConstruction_protected.jar"" ""D:\exe\app\precastConstruction\pack\jar\precastConstruction.jar"""/>
+		</exec-->
+	
+	  <copy file="${precastConstruction}/01barmaja.jnlp" todir="${precastConstruction.packDir}/jar"/>
+		<copy file="${precastConstruction}/index.html" todir="${precastConstruction.packDir}"/>
+		<mkdir dir="${precastConstruction.packDir}/img" />
+		<copyDirIfExist srcDir="${precastConstruction}/img" tarDir="${precastConstruction.packDir}/img"/> 
+	</target>
+	
+	<target name="precastConstruction_Signing">
+		<signjar jar="${precastConstruction.packDir}/jar/${precastConstruction.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>		
+	</target>
+
+	<!--
+	  Precast Construction
+		-->
+	<target name="calculateurDeplacement">
+	<!-- SHOULD BE HERE -->
+		<preparePackDir packDir="${calculateurDeplacement.packDir}"/>
+		<addProjectToPack packDir="${calculateurDeplacement.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${calculateurDeplacement.packDir}" projectDir="${calculateurDeplacement.prjDir}" foc-app="app"/>		
+		<jar basedir="${calculateurDeplacement.packDir}" destfile="${calculateurDeplacement.packDir}/jar/resources.jar" />
+
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${calculateurDeplacement}" antfile="build.xml" target="makeJar"/>
+			
+		<copy file="${foc.jarFile}"    todir="${calculateurDeplacement.buildDir}/jar" />
+		<copy file="${calculateurDeplacement.jarFile}" todir="${calculateurDeplacement.buildDir}/jar" />
+	
+		<doObfuscateDir jarDir="${calculateurDeplacement.buildDir}/jar" />
+	
+		<copy todir="${calculateurDeplacement.packDir}/jar">
+	    <fileset dir="${calculateurDeplacement.buildDir}/jar">
+	      <exclude name="01b-*.jar"/>
+	    </fileset>
+	  </copy>	
+
+  	<!--signjar jar="${precastConstruction.packDir}/jar/${foc.ojarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/>
+	
+		<copySignJar srcDir="${mysqlJarDir}" tarDir="${precastConstruction.packDir}/jar" jar="${mysqlJarName}" alias="${precastConstruction.signAlias}" storepass="${precastConstruction.signStorepass}" keystore="${precastConstruction.keystore}"/-->		
+		<copyOnlyJar srcDir="${mysqlJarDir}" tarDir="${calculateurDeplacement.packDir}/jar" jar="${mysqlJarName_5.0.7}" alias="${calculateurDeplacement.signAlias}" storepass="${calculateurDeplacement.signStorepass}" keystore="${calculateurDeplacement.keystore}"/>		
+	
+	  <copy file="${calculateurDeplacement}/config.bat" todir="${calculateurDeplacement.packDir}"/>
+		<copy file="${calculateurDeplacement}/saisie.bat" todir="${calculateurDeplacement.packDir}"/>
+		<copy file="${calculateurDeplacement}/export.bat" todir="${calculateurDeplacement.packDir}"/>		
+	</target>
+	
+	<!--
+	  CCC
+		-->
+	<target name="cccWeb">
+		<!-- remove the following line-->
+		<property name="foc.jarFile" value="" />
+
+		<!-- remove the following line-->
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${pimsInterface}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${scheduler}" antfile="build.xml" target="makeJar"/>
+		
+		<ant dir="${ccc}" antfile="build.xml" target="prepareDir"/>
+
+		<ant dir="${ccc}" antfile="build.xml" target="compile"/>
+		<ant dir="${ccc}" antfile="build.xml" target="makeJar"/>
+			
+		<preparePackDir packDir="${ccc.packDir}"/>
+		<addProjectToPack packDir="${ccc.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${ccc.packDir}" projectDir="${ccc.prjDir}" foc-app="app"/>		
+		
+		<addJarToPack packDir="${ccc.packDir}" jarfile="${scheduler.jarFile}"/>
+		<addJarToPack packDir="${ccc.packDir}" jarfile="${pimsInterface.jarFile}"/>
+		<jar basedir="${ccc.packDir}" destfile="${ccc.jarDir}/resources.jar" />
+		
+		
+		<call-obfuscate4 jar1="${foc.jarFile}" ojar1="${ccc.jarDir}/${foc.ojarName}" jar2="${ccc.jarFile}" ojar2="${ccc.jarDir}/${ccc.ojarName}" jar3="${pimsInterface.jarFile}" ojar3="${ccc.jarDir}/${pimsInterface.ojarName}" jar4="${scheduler.jarFile}" ojar4="${ccc.jarDir}/${scheduler.ojarName}"/>		
+		
+		<!-- <call-obfuscate2 jar1="${pimsInterface.jarFile}" ojar1="${ccc.jarDir}/${pimsInterface.ojarName}" jar2="${scheduler.jarFile}" ojar2="${ccc.jarDir}/${scheduler.ojarName}"/> -->
+		
+		<signjar jar="${ccc.jarDir}/${foc.ojarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>		
+		<signjar jar="${ccc.jarDir}/${ccc.ojarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		<signjar jar="${ccc.jarDir}/${pimsInterface.ojarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		<signjar jar="${ccc.jarDir}/${scheduler.ojarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<signjar jar="${ccc.jarDir}/resources.jar" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>		
+		
+		<copy file="${jFreeChartDir}/${jFreeChartFile1}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${jFreeChartFile1}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${jFreeChartDir}/${jFreeChartFile2}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${jFreeChartFile2}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${eclipseDir}/${eclipseFile1}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${eclipseFile1}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${eclipseDir}/${eclipseFile2}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${eclipseFile2}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${mysqlJarDir}/${mysqlJarName}" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${mysqlJarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+			
+		<copy file="${JasperReportDir}/${JasperReportFile1}" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile1}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+			
+		<copy file="${JasperReportDir}/${JasperReportFile2}" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile2}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+			
+		<copy file="${JasperReportDir}/${JasperReportFile3}" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile3}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+
+		<copy file="${JasperReportDir}/${JasperReportFile4}" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile4}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${JasperReportDir}/${JasperReportFile5}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile5}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${JasperReportDir}/${JasperReportFile6}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile6}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${JasperReportDir}/${JasperReportFile7}/" todir="${ccc.jarDir}"/>
+		<signjar jar="${ccc.jarDir}/${JasperReportFile7}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${ccc}/01barmaja.jnlp" todir="${ccc.jarDir}"/>
+	</target>
+	
+	<target name="hardwareidWeb">
+		
+		<ant dir="${hardwareid}" antfile="build.xml" target="prepareDir"/>
+		<ant dir="${hardwareid}" antfile="build.xml" target="compile"/>
+		<ant dir="${hardwareid}" antfile="build.xml" target="makeJar"/>
+		<!-- <preparePackDir packDir="${hardwareid.packDir}"/> -->
+		
+		<call-obfuscate1 jar1="${hardwareid.jarFile}" ojar1="${hardwareid.jarDir}/${hardwareid.ojarName}" />
+		<signjar jar="${hardwareid.jarDir}/${hardwareid.ojarName}" alias="01Barmaja" storepass="01Barmaja10" keystore="keystore-name"/>
+		
+		<copy file="${hardwareid}/01barmaja.jnlp" todir="${hardwareid.jarDir}"/>
+	</target>
+	
+	<!--
+  	Sales Contact
+	  -->
+
+	<target name="salesContact">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="salescontact" antfile="build.xml" target="makeJar"/>
+	</target>
+	
+	<!--
+  	Cedim pool
+	  -->
+
+	<target name="l3cedim" depends="devutil">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>				
+		<!--
+		No need for foc because devutil will do it
+		-->
+		<ant dir="${l3f}" antfile="build.xml" target="makeJar"/> 
+		
+		<ant dir="${l3cedim}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate3 jar1="${foc.jarFile}"     ojar1="${l3cedim.jarDir}/${foc.ojarName}" 
+			               jar2="${l3cedim.jarFile}" ojar2="${l3cedim.jarDir}/${l3cedim.ojarName}" 
+			               jar3="${l3f.jarFile}"     ojar3="${l3cedim.jarDir}/${l3f.ojarName}"/>		
+	
+		<preparePackDir packDir="${l3cedim.packDir}"/>
+		<addProjectToPack packDir="${l3cedim.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${l3cedim.packDir}" projectDir="${l3cedim.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${resources}/jar/${mysqlJarName}"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${l3cedim.buildDir}/jar/${l3cedim.ojarName}"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${l3cedim.buildDir}/jar/${l3f.ojarName}"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${l3cedim.buildDir}/jar/${foc.ojarName}"/>
+		<copy file="${l3cedim.prjDir}/ant/to_copy_run.cmd" tofile="${l3cedim.packDir}/run.cmd"/>
+		
+
+		<!-- COMM API files -->
+		<copy file="${resources}/win32com.dll" tofile="${l3cedim.packDir}/jre/bin/win32com.dll"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${commApiDir}/comm.jar"/>
+		<addJarToPack packDir="${l3cedim.packDir}" jarfile="${commApiDir}/javax.comm.properties"/>
+		
+		<jreZipWithAdd dirToCopyJreTo="${l3cedim.exeDir}/${jreDirName}.zip" dirToCopyJreFrom="/${jreFullPath}" fileToAdd="${resources}/win32com.dll" subdirToAddFileIn="bin" />
+		
+		<zip destfile="${l3cedim.exeDir}/${l3cedim}_properties.zip" basedir="${l3cedim.packDir}"
+			includes="properties/*.properties"
+	  />
+	 
+		<zip destfile="${l3cedim.exeDir}/${l3cedim}.zip" basedir="${l3cedim.packDir}"
+	  	excludes="properties/*.properties"
+	  />	
+		
+		
+		<!-- <jreCopy packdir="${l3cedim.packDir}"/> -->
+		
+
+
+		
+	</target>
+	
+	
+	
+		<!--
+	  	Ghorra pool
+	  -->
+
+		<property name="l3ghorra" value="l3ghorra"/>
+		<property name="l3ghorra.prjDir" value="${srcRoot}/${l3ghorra}"/>
+		<property name="l3ghorra.srcDir" value="${l3ghorra.prjDir}/src"/>
+		<property name="l3ghorra.exeDir" value="${exeRoot}/${appSubDir}/${l3ghorra}"/>
+		<property name="l3ghorra.buildDir" value="${l3ghorra.exeDir}/${buildSubDir}"/>
+		<property name="l3ghorra.classDir" value="${l3ghorra.buildDir}/${classSubDir}"/>
+		<property name="l3ghorra.jarDir" value="${l3ghorra.buildDir}/${jarSubDir}"/>
+		<property name="l3ghorra.jarFile" value="${l3ghorra.buildDir}/${jarSubDir}/01b-${l3ghorra}.jar"/>
+		<property name="l3ghorra.ojarName" value="${l3ghorra}.jar"/>
+		<property name="l3ghorra.packDir" value="${l3ghorra.exeDir}/${versionSubDir}"/>	
+
+		<target name="l3ghorra" depends="devutil">
+			
+			<ant dir="${foc}" antfile="build.xml" target="makeJar"/>				
+
+			<ant dir="${socketBasedService}" antfile="build.xml" target="makeJar"/> 
+			<ant dir="${l3f}" antfile="build.xml" target="makeJar"/> 
+			
+			
+			
+			<ant dir="${l3ghorra}" antfile="build.xml" target="makeJar"/>
+			
+			<call-obfuscate3 jar1="${foc.jarFile}"     ojar1="${l3ghorra.jarDir}/${foc.ojarName}" 
+				               jar2="${l3ghorra.jarFile}" ojar2="${l3ghorra.jarDir}/${l3ghorra.ojarName}" 
+				               jar3="${l3f.jarFile}"     ojar3="${l3ghorra.jarDir}/${l3f.ojarName}"/>		
+		
+			<preparePackDir packDir="${l3ghorra.packDir}"/>
+			<addProjectToPack packDir="${l3ghorra.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+			<addProjectToPack packDir="${l3ghorra.packDir}" projectDir="${l3ghorra.prjDir}" foc-app="app"/>
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${resources}/jar/${mysqlJarName}"/>
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${l3ghorra.buildDir}/jar/${l3ghorra.ojarName}"/>
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${l3ghorra.buildDir}/jar/${l3f.ojarName}"/>
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${l3ghorra.buildDir}/jar/${foc.ojarName}"/>
+			<copy file="${l3ghorra.prjDir}/ant/to_copy_run.cmd" tofile="${l3ghorra.packDir}/run.cmd"/>
+
+			<!-- COMM API files -->
+			<!--<jreZipWithAdd packDir="${l3ghorra.exeDir}" file="${resources}/win32com.dll" dir="jre${}" />-->
+			
+			
+			<jreZipWithAdd dirToCopyJreTo="${l3ghorra.exeDir}/${jreDirName}.zip" dirToCopyJreFrom="/${jreFullPath}" fileToAdd="${resources}/win32com.dll" subdirToAddFileIn="bin" />
+			<!--<zip destfile="${l3ghorra.exeDir}/${jreDirName}.zip" basedir="/${jreFullPath}"></zip>-->
+			<!--<copy file="${resources}/win32com.dll" tofile="${l3ghorra.packDir}/win32com.dll"/>-->
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${commApiDir}/comm.jar"/>
+			<addJarToPack packDir="${l3ghorra.packDir}" jarfile="${commApiDir}/javax.comm.properties"/>
+
+			<zip destfile="${l3ghorra.exeDir}/${l3ghorra}_properties.zip" basedir="${l3ghorra.packDir}"
+				includes="properties/*.properties"
+		  />
+			
+		  <zip destfile="${l3ghorra.exeDir}/${l3ghorra}.zip" basedir="${l3ghorra.packDir}"
+		  	excludes="properties/*.properties"
+		  />	
+			
+
+		</target>
+	
+
+	<!--
+  	HSG pool
+  -->
+
+	<property name="l3hsg" value="l3hsg"/>
+	<property name="l3hsg.prjDir" value="${srcRoot}/${l3hsg}"/>
+	<property name="l3hsg.srcDir" value="${l3hsg.prjDir}/src"/>
+	<property name="l3hsg.exeDir" value="${exeRoot}/${appSubDir}/${l3hsg}"/>
+	<property name="l3hsg.buildDir" value="${l3hsg.exeDir}/${buildSubDir}"/>
+	<property name="l3hsg.classDir" value="${l3hsg.buildDir}/${classSubDir}"/>
+	<property name="l3hsg.jarDir" value="${l3hsg.buildDir}/${jarSubDir}"/>
+	<property name="l3hsg.jarFile" value="${l3hsg.buildDir}/${jarSubDir}/01b-${l3hsg}.jar"/>
+	<property name="l3hsg.ojarName" value="${l3hsg}.jar"/>
+	<property name="l3hsg.packDir" value="${l3hsg.exeDir}/${versionSubDir}"/>	
+
+	<target name="l3hsg" depends="devutil">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>				
+		<ant dir="${socketBasedService}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${l3f}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${l3hsg}" antfile="build.xml" target="makeJar"/>
+		
+		
+		
+		
+		<!--copy file="${foc.jarFile}" tofile="${l3hsg.jarDir}/${foc.ojarName}"/>
+		<copy file="${l3hsg.jarFile}" tofile="${l3hsg.jarDir}/${l3hsg.ojarName}"/>
+		<copy file="${socketBasedService.jarFile}" tofile="${l3hsg.jarDir}/${socketBasedService.ojarName}"/>
+		<copy file="${l3f.jarFile}" tofile="${l3hsg.jarDir}/${l3f.ojarName}"/-->
+		
+		<yguard>
+	    <inoutpair in="${foc.jarFile}" out="${l3hsg.jarDir}/${foc.ojarName}"/>
+	    <inoutpair in="${l3hsg.jarFile}" out="${l3hsg.jarDir}/${l3hsg.ojarName}"/>
+	    <inoutpair in="${socketBasedService.jarFile}" out="${l3hsg.jarDir}/${socketBasedService.ojarName}"/>
+	    <inoutpair in="${l3f.jarFile}" out="${l3hsg.jarDir}/${l3f.ojarName}"/>
+
+	    <attribute name="Deprecated"/>
+
+			<rename mainclass="${main.class}" logfile="${obfuscationlog}" replaceClassNameStrings="false">
+	      <keep>
+					<class name="SecKeyFileMaker"/>
+					<class name="b01.sbs.remoteLauncherServer.RemoteLauncherServer" methods="public"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+	      </keep>
+	    </rename>
+		</yguard>
+		
+		<!--call-obfuscate4 jar1="${foc.jarFile}"                ojar1="${l3hsg.jarDir}/${foc.ojarName}" 
+			               jar2="${l3hsg.jarFile}"              ojar2="${l3hsg.jarDir}/${l3hsg.ojarName}" 
+							       jar3="${socketBasedService.jarFile}" ojar3="${l3hsg.jarDir}/${socketBasedService.ojarName}" 
+			               jar4="${l3f.jarFile}"                ojar4="${l3hsg.jarDir}/${l3f.ojarName}"/-->		
+		
+		<preparePackDir packDir="${l3hsg.packDir}"/>
+		<addProjectToPack packDir="${l3hsg.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${l3hsg.packDir}" projectDir="${l3hsg.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${mysqlJarDir}/${mysqlJarName_5.0.7}"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${resources}/jar/${oracleJarName}"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${l3hsg.buildDir}/jar/${l3hsg.ojarName}"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${l3hsg.buildDir}/jar/${l3f.ojarName}"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${l3hsg.buildDir}/jar/${foc.ojarName}"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${l3hsg.buildDir}/jar/${socketBasedService.ojarName}"/>
+		<copy file="${l3hsg.prjDir}/batches/run.bat" tofile="${l3hsg.packDir}/run.bat"/>
+		<copy file="${l3hsg.prjDir}/batches/runBackground.bat" tofile="${l3hsg.packDir}/runBackground.bat"/>
+		<copy file="${l3f.prjDir}/batches/runDriver.bat" tofile="${l3hsg.packDir}/runDriver.bat"/>
+		<copy file="${l3f.prjDir}/batches/runConnector.bat" tofile="${l3hsg.packDir}/runConnector.bat"/>
+		<copy file="${socketBasedService.prjDir}/batches/runLauncher.bat" tofile="${l3hsg.packDir}/runLauncher.bat"/>
+
+		<!-- COMM API files -->
+		<!--<jreZipWithAdd packDir="${l3hsg.exeDir}" file="${resources}/win32com.dll" dir="jre${}" />-->
+		
+		<jreZipWithAdd dirToCopyJreTo="${l3hsg.exeDir}/${jreDirName}.zip" dirToCopyJreFrom="/${jreFullPath}" fileToAdd="${resources}/win32com.dll" subdirToAddFileIn="bin" />
+		<!--<zip destfile="${l3hsg.exeDir}/${jreDirName}.zip" basedir="/${jreFullPath}"></zip>-->
+		<!--<copy file="${resources}/win32com.dll" tofile="${l3hsg.packDir}/win32com.dll"/>-->
+		
+		
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${commApiDir}/comm.jar"/>
+		<addJarToPack packDir="${l3hsg.packDir}" jarfile="${commApiDir}/javax.comm.properties"/>
+
+		<zip destfile="${l3hsg.exeDir}/${l3hsg}_properties.zip" basedir="${l3hsg.packDir}"
+			includes="properties/*.properties *.bat *.cmd"
+	  />
+		
+	  <zip destfile="${l3hsg.exeDir}/${l3hsg}.zip" basedir="${l3hsg.packDir}"
+	  	excludes="properties/*.properties *.bat *.cmd"
+	  />
+		
+		<if>
+			<available file="Z:/01barmaja/apps/l3" type="dir"/>
+			<then>
+				<copy file="${l3hsg.exeDir}/${l3hsg}.zip" tofile="Z:/01barmaja/apps/l3/${l3hsg}.zip"/>
+			</then>
+		</if>
+		
+	</target>
+	
+	<target name="trust">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${pimsInterface}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${trust}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate3 jar1="${foc.jarFile}" ojar1="${trust.jarDir}/${foc.ojarName}" jar2="${trust.jarFile}" ojar2="${trust.jarDir}/${trust.ojarName}" jar3="${pimsInterface.jarFile}" ojar3="${trust.jarDir}/${pimsInterface.ojarName}" />
+		
+		<preparePackDir packDir="${trust.packDir}"/>
+		<addProjectToPack packDir="${trust.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${trust.packDir}" projectDir="${trust.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${trust.packDir}" jarfile="${mysqlJarDir}/${mysqlJarName}"/>
+		<addJarToPack packDir="${trust.packDir}" jarfile="${trust.buildDir}/jar/${trust.ojarName}"/>
+		<addJarToPack packDir="${trust.packDir}" jarfile="${trust.buildDir}/jar/${foc.ojarName}"/>
+		<addJarToPack packDir="${trust.packDir}" jarfile="${trust.buildDir}/jar/${pimsInterface.ojarName}"/>
+		<addJasperToPack packDir="${trust.packDir}"/>
+		
+		<copy todir="${trust.packDir}/reports">
+	    <fileset dir="${trust.prjDir}/reports/"/>
+	  </copy>
+		
+		<copy file="${trust.prjDir}/ant/to_copy_run.cmd" tofile="${trust.packDir}/run.cmd"/>
+
+		<zip destfile="${trust.exeDir}/${trust}_properties.zip" basedir="${trust.packDir}"
+			includes="properties/*.properties"
+	  />
+		
+	  <zip destfile="${trust.exeDir}/${trust}.zip" basedir="${trust.packDir}"
+	  	excludes="properties/*.properties"
+	  />	
+		<!--jreCopy packdir="${trust.packDir}"/-->
+	</target>
+
+	<!--
+  	KURBAN TOURS
+	  -->
+
+	<property name="kurban" value="kurbanTours"/>
+	<property name="kurban.prjDir" value="${srcRoot}/app/${kurban}"/>
+	<property name="kurban.srcDir" value="${kurban.prjDir}/src"/>
+	<property name="kurban.buildDir" value="${exeRoot}/${appSubDir}/${kurban}/${buildSubDir}"/>
+	<property name="kurban.classDir" value="${kurban.buildDir}/${classSubDir}"/>
+	<property name="kurban.jarDir" value="${kurban.buildDir}/${jarSubDir}"/>
+	<property name="kurban.jarFile" value="${kurban.buildDir}/${jarSubDir}/01b-${kurban}.jar"/>
+	<property name="kurban.ojarName" value="${kurban}.jar"/>
+	<property name="kurban.packDir" value="${exeRoot}/${appSubDir}/${kurban}/${versionSubDir}"/>	
+
+	<target name="kurban">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="app/${kurban}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate2 jar1="${foc.jarFile}" ojar1="${kurban.jarDir}/${foc.ojarName}" jar2="${kurban.jarFile}" ojar2="${kurban.jarDir}/${kurban.ojarName}" />
+		
+		<preparePackDir packDir="${kurban.packDir}"/>
+		<addProjectToPack packDir="${kurban.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${kurban.packDir}" projectDir="${kurban.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${kurban.packDir}" jarfile="${sqlJarDir}/${sqlJarName}"/>
+		<addJarToPack packDir="${kurban.packDir}" jarfile="${kurban.buildDir}/jar/${kurban.ojarName}"/>
+		<addJarToPack packDir="${kurban.packDir}" jarfile="${kurban.buildDir}/jar/${foc.ojarName}"/>
+		<addJasperToPack packDir="${kurban.packDir}"/>
+		
+		<copy todir="${kurban.packDir}/reports">
+	    <fileset dir="${kurban.prjDir}/reports/"/>
+	  </copy>
+		
+		<copy file="${kurban.prjDir}/ant/to_copy_run.cmd" tofile="${kurban.packDir}/run.cmd"/>
+		
+		<jreCopy packdir="${kurban.packDir}"/>
+	</target>
+	
+	<!--
+  	FAST TRACK
+	  -->
+
+	<property name="fastTrack" value="fastTrack"/>
+	<property name="fastTrack.prjDir" value="${srcRoot}/app/${fastTrack}"/>
+	<property name="fastTrack.srcDir" value="${fastTrack.prjDir}/src"/>
+	<property name="fastTrack.buildDir" value="${exeRoot}/${appSubDir}/${fastTrack}/${buildSubDir}"/>
+	<property name="fastTrack.classDir" value="${fastTrack.buildDir}/${classSubDir}"/>
+	<property name="fastTrack.jarDir" value="${fastTrack.buildDir}/${jarSubDir}"/>
+	<property name="fastTrack.jarFile" value="${fastTrack.buildDir}/${jarSubDir}/01b-${fastTrack}.jar"/>
+	<property name="fastTrack.ojarName" value="${fastTrack}.jar"/>
+	<property name="fastTrack.packDir" value="${exeRoot}/${appSubDir}/${fastTrack}/${versionSubDir}"/>	
+
+	<target name="fastTrack">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="app/${pimsInterface}" antfile="build.xml" target="makeJar"/>
+		<ant dir="app/${fastTrack}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate3 jar1="${foc.jarFile}" ojar1="${fastTrack.jarDir}/${foc.ojarName}" jar2="${fastTrack.jarFile}" ojar2="${fastTrack.jarDir}/${fastTrack.ojarName}" jar3="${pimsInterface.jarFile}" ojar3="${fastTrack.jarDir}/${pimsInterface.ojarName}" />
+	
+		<preparePackDir packDir="${fastTrack.packDir}"/>
+		<addProjectToPack packDir="${fastTrack.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${fastTrack.packDir}" projectDir="${fastTrack.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${fastTrack.packDir}" jarfile="${mysqlJarDir}/${mysqlJarName}"/>
+		<addJarToPack packDir="${fastTrack.packDir}" jarfile="${fastTrack.buildDir}/jar/${fastTrack.ojarName}"/>
+		<addJarToPack packDir="${fastTrack.packDir}" jarfile="${fastTrack.buildDir}/jar/${foc.ojarName}"/>
+		<addJarToPack packDir="${fastTrack.packDir}" jarfile="${fastTrack.buildDir}/jar/${pimsInterface.ojarName}"/>
+		<copy file="${fastTrack.prjDir}/ant/to_copy_run.cmd" tofile="${fastTrack.packDir}/run.cmd"/>
+		
+		<jreCopy packdir="${fastTrack.packDir}"/>
+	</target>
+
+	<!--
+  	ASTM
+	  -->
+
+	<property name="astm" value="astm"/>
+	<property name="astm.prjDir" value="${srcRoot}/${astm}"/>
+	<property name="astm.srcDir" value="${astm.prjDir}/src"/>
+	<property name="astm.exeDir" value="${exeRoot}/${appSubDir}/${astm}"/>
+	<property name="astm.buildDir" value="${astm.exeDir}/${buildSubDir}"/>
+	<property name="astm.classDir" value="${astm.buildDir}/${classSubDir}"/>
+	<property name="astm.jarDir" value="${astm.buildDir}/${jarSubDir}"/>
+	<property name="astm.jarFile" value="${astm.buildDir}/${jarSubDir}/01b-${astm}.jar"/>
+	<property name="astm.ojarName" value="${astm}.jar"/>
+	<property name="astm.packDir" value="${exeRoot}/${appSubDir}/${astm}/${versionSubDir}"/>	
+	
+	<target name="astm">
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+		<ant dir="${astm}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate2 jar1="${foc.jarFile}" ojar1="${astm.jarDir}/${foc.ojarName}" jar2="${astm.jarFile}" ojar2="${astm.jarDir}/${astm.ojarName}" />
+	
+		<preparePackDir packDir="${astm.packDir}"/>
+		<addProjectToPack packDir="${astm.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		<addProjectToPack packDir="${astm.packDir}" projectDir="${astm.prjDir}" foc-app="app"/>
+		<addJarToPack packDir="${astm.packDir}" jarfile="${astm.buildDir}/jar/${foc.ojarName}"/>
+		<addJarToPack packDir="${astm.packDir}" jarfile="${astm.buildDir}/jar/${astm.ojarName}"/>
+		<copy file="${astm.prjDir}/ant/to_copy_run.cmd" tofile="${astm.packDir}/run.cmd"/>
+		
+		<addJarToPack packDir="${astm.packDir}" jarfile="${commApiDir}/comm.jar"/>
+		<addJarToPack packDir="${astm.packDir}" jarfile="${commApiDir}/javax.comm.properties"/>
+		
+		<zip destfile="${astm.exeDir}/${astm}_properties.zip" basedir="${astm.packDir}"
+			includes="properties/*.properties"
+	  />
+		
+	  <zip destfile="${astm.exeDir}/${astm}.zip" basedir="${astm.packDir}"
+	  	excludes="properties/*.properties"
+	  />		
+			
+		
+		<!--jreCopy packdir="${astm.packDir}"/-->
+
+		<!-- COMM API files -->
+		<!--copy file="${commApiDir}/win32com.dll" tofile="${astm.packDir}/jre/bin/win32com.dll"/>
+		<addJarToPack packDir="${astm.packDir}" jarfile="${commApiDir}/comm.jar"/>
+		<addJarToPack packDir="${astm.packDir}" jarfile="${commApiDir}/javax.comm.properties"/-->
+	</target>
+	
+	<!--
+  	FIRSTGROUP
+	  -->
+
+	<target name="firstGroup">
+		<preparePackDir packDir="${firstGroup.packDir}"/>
+		<addProjectToPack packDir="${firstGroup.packDir}" projectDir="${firstGroup.prjDir}" foc-app="app"/>	
+		<jar basedir="${firstGroup.packDir}" destfile="${firstGroup.packDir}/jar/resources.jar" />
+	
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/>
+		<ant dir="${firstGroup}" antfile="build.xml" target="makeJar"/>
+			
+  	<copy file="${foc.jarFile}" todir="${firstGroup.buildDir}/jar" />
+		<copy file="${firstGroup.jarFile}" todir="${firstGroup.buildDir}/jar" />
+		<addJasperToPack packDir="${firstGroup.packDir}"/>
+		<addJarToPack packDir="${firstGroup.packDir}" jarfile="${POIDir}/${POIFile1}"/>
+	
+		<doObfuscateDir jarDir="${firstGroup.buildDir}/jar" />
+
+		<copy todir="${firstGroup.packDir}/jar">
+	    <fileset dir="${firstGroup.buildDir}/jar">
+	      <exclude name="01b-*.jar"/>
+	    </fileset>
+	  </copy>
+	</target>
+	
+	<!--
+		GALLERIA
+	     -->
+
+		<target name="galleria">
+			<preparePackDir packDir="${galleria.packDir}"/>
+			<addProjectToPack packDir="${galleria.packDir}" projectDir="${galleria.prjDir}" foc-app="app"/>	
+			<jar basedir="${galleria.packDir}" destfile="${galleria.packDir}/jar/resources.jar" />
+			
+			<ant dir="${foc}" antfile="build.xml" target="makeJar"/>
+      	<ant dir="${pimsInterface}" antfile="build.xml" target="makeJar"/>
+			<ant dir="${galleria}" antfile="build.xml" target="makeJar"/>
+					
+		  	<copy file="${foc.jarFile}" todir="${galleria.buildDir}/jar" />
+			<copy file="${galleria.jarFile}" todir="${galleria.buildDir}/jar" />
+			<copy file="${pimsInterface.jarFile}" todir="${galleria.buildDir}/jar" />
+			<addJasperToPack packDir="${galleria.packDir}"/>
+        	<addJarToPack packDir="${galleria.packDir}" jarfile="${POIDir}/${POIFile1}"/>
+			
+			<doObfuscateDir jarDir="${galleria.buildDir}/jar" />
+
+			<copy todir="${galleria.packDir}/jar">
+			  <fileset dir="${galleria.buildDir}/jar">
+			    <exclude name="01b-*.jar"/>
+			  </fileset>
+			</copy>
+		</target>
+	
+	<!--
+  	DEVUTIL
+	  -->
+
+	<property name="devutil" value="devutil"/>
+	<property name="devutil.prjDir" value="${srcRoot}/${devutil}"/>
+	<property name="devutil.srcDir" value="${devutil.prjDir}/src"/>
+	<property name="devutil.buildDir" value="${exeRoot}/${appSubDir}/${devutil}/${buildSubDir}"/>
+	<property name="devutil.classDir" value="${devutil.buildDir}/${classSubDir}"/>
+	<property name="devutil.jarDir" value="${devutil.buildDir}/${jarSubDir}"/>
+	<property name="devutil.jarFile" value="${devutil.buildDir}/${jarSubDir}/01b-${devutil}.jar"/>
+	<property name="devutil.ojarName" value="${devutil}.jar"/>
+	<property name="devutil.packDir" value="${exeRoot}/${appSubDir}/${devutil}/${versionSubDir}"/>
+	<property name="devutil.ojarFullName" value="${devutil.buildDir}/jar/${devutil.ojarName}"/>
+
+
+	<target name="devutil">
+		<ant dir="${devutil}" antfile="build.xml" target="makeJar"/>
+		
+		<call-obfuscate1 jar1="${devutil.jarFile}" ojar1="${devutil.jarDir}/${devutil.ojarName}"/>
+	
+		<!--
+		<preparePackDir packDir="${devutil.packDir}"/>
+		<addProjectToPack packDir="${devutil.packDir}" projectDir="${foc.prjDir}" foc-app="foc"/>
+		-->		
+		<addJarToPack packDir="${devutil.packDir}" jarfile="${devutil.buildDir}/jar/${devutil.ojarName}"/>
+		<!--
+		<addJarToPack packDir="${devutil.packDir}" jarfile="${devutil.buildDir}/jar/${foc.ojarName}"/>		
+		<copy file="${devutil.prjDir}/ant/to_copy_run.cmd" tofile="${devutil.packDir}/run.cmd"/>
+		<jreCopy packdir="${devutil.packDir}"/>		
+		-->
+	</target>	
+	
+	<!--
+	    =====================================================
+	    =====================================================
+	  	MACRO - OBFUSCATE
+	    =====================================================
+	    =====================================================
+		-->	
+	
+	<macrodef name="call-obfuscate1">
+		<attribute name="jar1"/>
+					<attribute name="ojar1"/>
+					
+					<element name="ext-inoutpair" implicit="yes"/>
+					<sequential>
+						<if>
+							<equals arg1="${obfuscate}" arg2="true" />
+						 	<then>
+								<call-obfuscate1-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" />
+						 	</then>
+						 	<else>
+								<call-obfuscate1-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}"/>
+						 	</else>
+						</if>
+					</sequential>
+	</macrodef>
+	
+	<macrodef name="call-obfuscate1-doObfuscate">
+			<attribute name="jar1"/>
+			<attribute name="ojar1"/>
+			<element name="ext-inoutpair" implicit="yes"/>
+			<sequential>
+				<obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+					<!--  <property name="error-checking" value="pedantic"/>  -->
+
+					<inoutpair in="@{jar1}" out="@{ojar1}"/>
+					
+					<expose>
+						<class classes="public" methods="public" fields="public"	name="b01.ant.tasks.CreateSecurityJavaFile"/>
+						<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>
+						<method name="b01.foc.desc.FocDesc getFocDesc()">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>
+						<method name="b01.foc.desc.FocDesc getInstance()">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>					
+					</expose>
+				</obfuscate>
+			</sequential>
+		</macrodef>
+	
+		<macrodef name="call-obfuscate1-NO_OBFUSCATION">
+				<attribute name="jar1"/>
+				<attribute name="ojar1"/>
+
+				<element name="ext-inoutpair" implicit="yes"/>
+				<sequential>
+					<copy file="@{jar1}" tofile="@{ojar1}" />
+				</sequential>
+		</macrodef>
+	
+	<macrodef name="call-obfuscate2-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				<!--  <property name="error-checking" value="pedantic"/>  -->
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>				
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				
+				<expose>
+					<class classes="public" methods="public" fields="public"	name="b01.ant.tasks.CreateSecurityJavaFile"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate2-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="call-obfuscate2">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate2-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}"/>
+			 	</then>
+			 	<else>
+					<call-obfuscate2-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}"/>
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	
+	
+	<macrodef name="call-obfuscate3-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="false">
+
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+				
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate3-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate3">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate3-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}"/>
+			 	</then>
+			 	<else>
+					<call-obfuscate3-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}"/>
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="call-obfuscate4-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+			 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+			 	
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<class name="b01.sbs.remoteLauncherServer.RemoteLauncherServer"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate4-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+			<copy file="@{jar4}" tofile="@{ojar4}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate4">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate4-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" />
+			 	</then>
+			 	<else>
+					<call-obfuscate4-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" />
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="call-obfuscate6-doObfuscate">		
+			<attribute name="jar1"/>
+			<attribute name="ojar1"/>
+			<attribute name="jar2"/>
+			<attribute name="ojar2"/>
+			<attribute name="jar3"/>
+			<attribute name="ojar3"/>
+			<attribute name="jar4"/>
+			<attribute name="ojar4"/>
+			<attribute name="jar5"/>
+			<attribute name="ojar5"/>
+			<attribute name="jar6"/>
+			<attribute name="ojar6"/>
+			
+			<element name="ext-inoutpair" implicit="yes"/>
+			<sequential>
+				 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+					
+					<inoutpair in="@{jar1}" out="@{ojar1}"/>
+					<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+					<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+				 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+				 	<inoutpair in="@{jar5}" out="@{ojar5}"/>
+				 	<inoutpair in="@{jar6}" out="@{ojar6}"/>
+				 	
+					<expose>
+						<class name="SecKeyFileMaker"/>
+						<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>
+						<method name="b01.foc.desc.FocDesc getFocDesc()">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>
+						<method name="b01.foc.desc.FocDesc getInstance()">
+							<patternset>
+								<include name="**.*" />
+							</patternset>
+						</method>
+					</expose>
+				</obfuscate>
+			</sequential>
+		</macrodef>
+
+		<macrodef name="call-obfuscate6-NO_OBFUSCATION">
+			<attribute name="jar1"/>
+			<attribute name="ojar1"/>
+			<attribute name="jar2"/>
+			<attribute name="ojar2"/>
+			<attribute name="jar3"/>
+			<attribute name="ojar3"/>
+			<attribute name="jar4"/>
+			<attribute name="ojar4"/>
+			<attribute name="jar5"/>
+			<attribute name="ojar5"/>
+			<attribute name="jar6"/>
+			<attribute name="ojar6"/>
+			
+			<element name="ext-inoutpair" implicit="yes"/>
+			<sequential>
+				<copy file="@{jar1}" tofile="@{ojar1}" />
+				<copy file="@{jar2}" tofile="@{ojar2}" />
+				<copy file="@{jar3}" tofile="@{ojar3}" />
+				<copy file="@{jar4}" tofile="@{ojar4}" />
+				<copy file="@{jar5}" tofile="@{ojar5}" />
+				<copy file="@{jar6}" tofile="@{ojar6}" />
+			</sequential>
+		</macrodef>
+
+		<macrodef name="call-obfuscate6">		
+			<attribute name="jar1"/>
+			<attribute name="ojar1"/>
+			<attribute name="jar2"/>
+			<attribute name="ojar2"/>
+			<attribute name="jar3"/>
+			<attribute name="ojar3"/>
+			<attribute name="jar4"/>
+			<attribute name="ojar4"/>
+			<attribute name="jar5"/>
+			<attribute name="ojar5"/>
+			<attribute name="jar6"/>
+			<attribute name="ojar6"/>
+			
+			<element name="ext-inoutpair" implicit="yes"/>
+			<sequential>
+				<if>
+					<equals arg1="${obfuscate}" arg2="true" />
+				 	<then>
+						<call-obfuscate6-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" />
+				 	</then>
+				 	<else>
+						<call-obfuscate6-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" />
+				 	</else>
+				</if>
+			</sequential>
+		</macrodef>
+	
+	
+	<macrodef name="call-obfuscate7-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+			 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+			 	<inoutpair in="@{jar5}" out="@{ojar5}"/>
+			 	<inoutpair in="@{jar6}" out="@{ojar6}"/>
+			 	<inoutpair in="@{jar7}" out="@{ojar7}"/>
+			 	
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate7-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+			<copy file="@{jar4}" tofile="@{ojar4}" />
+			<copy file="@{jar5}" tofile="@{ojar5}" />
+			<copy file="@{jar6}" tofile="@{ojar6}" />
+			<copy file="@{jar7}" tofile="@{ojar7}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate7">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate7-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" />
+			 	</then>
+			 	<else>
+					<call-obfuscate7-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" />
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	
+	<macrodef name="call-obfuscate9-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+			 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+			 	<inoutpair in="@{jar5}" out="@{ojar5}"/>
+			 	<inoutpair in="@{jar6}" out="@{ojar6}"/>
+			 	<inoutpair in="@{jar7}" out="@{ojar7}"/>
+			 	<inoutpair in="@{jar8}" out="@{ojar8}"/>
+			 	<inoutpair in="@{jar9}" out="@{ojar9}"/>
+			 	
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate9-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+			<copy file="@{jar4}" tofile="@{ojar4}" />
+			<copy file="@{jar5}" tofile="@{ojar5}" />
+			<copy file="@{jar6}" tofile="@{ojar6}" />
+			<copy file="@{jar7}" tofile="@{ojar7}" />
+			<copy file="@{jar8}" tofile="@{ojar8}" />
+			<copy file="@{jar9}" tofile="@{ojar9}" />
+			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate9">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate9-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" />
+			 	</then>
+			 	<else>
+					<call-obfuscate9-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" />
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="call-obfuscate10-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+			 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+			 	<inoutpair in="@{jar5}" out="@{ojar5}"/>
+			 	<inoutpair in="@{jar6}" out="@{ojar6}"/>
+			 	<inoutpair in="@{jar7}" out="@{ojar7}"/>
+			 	<inoutpair in="@{jar8}" out="@{ojar8}"/>
+			 	<inoutpair in="@{jar9}" out="@{ojar9}"/>
+			 	<inoutpair in="@{jar10}" out="@{ojar10}"/>
+			 	
+				<if>
+					<equals arg1="@{jar11}" arg2="" />
+						 	<then>
+								<call-obfuscate9-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" />
+						 	</then>
+						 	<else>
+								<call-obfuscate9-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" />
+						 	</else>
+						</if>
+			 	
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate10-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+			<copy file="@{jar4}" tofile="@{ojar4}" />
+			<copy file="@{jar5}" tofile="@{ojar5}" />
+			<copy file="@{jar6}" tofile="@{ojar6}" />
+			<copy file="@{jar7}" tofile="@{ojar7}" />
+			<copy file="@{jar8}" tofile="@{ojar8}" />
+			<copy file="@{jar9}" tofile="@{ojar9}" />
+			<copy file="@{jar10}" tofile="@{ojar10}" />
+			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate10">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate10-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" jar10="@{jar10}" ojar10="@{ojar10}" />
+			 	</then>
+			 	<else>
+					<call-obfuscate10-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" jar10="@{jar10}" ojar10="@{ojar10}" />
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+  <!--
+  
+  	Foc compile and jar creation
+  	
+  -->
+
+  <property name="foc.build.dir" value="${exeRoot}/foc/build" />
+  <property name="foc.build.classes.dir" value="${foc.build.dir}/classes" />  
+	
+	<target name="full">
+
+	</target>
+	
+	<target name="createFiles">
+		<property name="machineCode" value=" 00-50-FC-87-3B-FC" />
+		<property name="workspaceDir" value="d:/${eclipseworkspace}/l3drivers/src" />		
+
+		<ant dir="${foc}" antfile="build.xml" target="makeJar"/> 
+
+		<taskdef name="createsecurityjavafile" classname="b01.ant.tasks.CreateSecurityJavaFile" classpath="${devutil.ojarFullName}"/>
+
+		<createsecurityjavafile packageName="b01.l3.drivers.axsym" srcDir="${workspaceDir}/b01/l3/drivers/axsym" code="${machineCode}"/><!-- Ghorra Cobas integra PC Aspire-->
+	</target>
+
+	
+	<macrodef name="call-obfuscate11-doObfuscate">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		<attribute name="jar11"/>
+		<attribute name="ojar11"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			 <obfuscate mainclass="${main.class}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+				
+				<inoutpair in="@{jar1}" out="@{ojar1}"/>
+				<inoutpair in="@{jar2}" out="@{ojar2}"/>				
+				<inoutpair in="@{jar3}" out="@{ojar3}"/>				
+			 	<inoutpair in="@{jar4}" out="@{ojar4}"/>
+			 	<inoutpair in="@{jar5}" out="@{ojar5}"/>
+			 	<inoutpair in="@{jar6}" out="@{ojar6}"/>
+			 	<inoutpair in="@{jar7}" out="@{ojar7}"/>
+			 	<inoutpair in="@{jar8}" out="@{ojar8}"/>
+			 	<inoutpair in="@{jar9}" out="@{ojar9}"/>
+			 	<inoutpair in="@{jar10}" out="@{ojar10}"/>
+			 	<inoutpair in="@{jar11}" out="@{ojar11}"/>
+			 	
+				<expose>
+					<class name="SecKeyFileMaker"/>
+					<method name="b01.foc.gui.FPanel newBrowsePanel(b01.foc.list.FocList, int)">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getFocDesc()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+					<method name="b01.foc.desc.FocDesc getInstance()">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</method>
+				</expose>
+			</obfuscate>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate11-NO_OBFUSCATION">
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		<attribute name="jar11"/>
+		<attribute name="ojar11"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<copy file="@{jar1}" tofile="@{ojar1}" />
+			<copy file="@{jar2}" tofile="@{ojar2}" />
+			<copy file="@{jar3}" tofile="@{ojar3}" />
+			<copy file="@{jar4}" tofile="@{ojar4}" />
+			<copy file="@{jar5}" tofile="@{ojar5}" />
+			<copy file="@{jar6}" tofile="@{ojar6}" />
+			<copy file="@{jar7}" tofile="@{ojar7}" />
+			<copy file="@{jar8}" tofile="@{ojar8}" />
+			<copy file="@{jar9}" tofile="@{ojar9}" />
+			<copy file="@{jar10}" tofile="@{ojar10}" />
+			<copy file="@{jar11}" tofile="@{ojar11}" />
+			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-obfuscate11">		
+		<attribute name="jar1"/>
+		<attribute name="ojar1"/>
+		<attribute name="jar2"/>
+		<attribute name="ojar2"/>
+		<attribute name="jar3"/>
+		<attribute name="ojar3"/>
+		<attribute name="jar4"/>
+		<attribute name="ojar4"/>
+		<attribute name="jar5"/>
+		<attribute name="ojar5"/>
+		<attribute name="jar6"/>
+		<attribute name="ojar6"/>
+		<attribute name="jar7"/>
+		<attribute name="ojar7"/>
+		<attribute name="jar8"/>
+		<attribute name="ojar8"/>
+		<attribute name="jar9"/>
+		<attribute name="ojar9"/>
+		<attribute name="jar10"/>
+		<attribute name="ojar10"/>
+		<attribute name="jar11"/>
+		<attribute name="ojar11"/>
+		
+		<element name="ext-inoutpair" implicit="yes"/>
+		<sequential>
+			<if>
+				<equals arg1="${obfuscate}" arg2="true" />
+			 	<then>
+					<call-obfuscate11-doObfuscate jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" jar10="@{jar10}" ojar10="@{ojar10}" jar11="@{jar11}" ojar11="@{ojar11}" />
+			 	</then>
+			 	<else>
+					<call-obfuscate11-NO_OBFUSCATION jar1="@{jar1}" ojar1="@{ojar1}" jar2="@{jar2}" ojar2="@{ojar2}" jar3="@{jar3}" ojar3="@{ojar3}" jar4="@{jar4}" ojar4="@{ojar4}" jar5="@{jar5}" ojar5="@{ojar5}" jar6="@{jar6}" ojar6="@{ojar6}" jar7="@{jar7}" ojar7="@{ojar7}" jar8="@{jar8}" ojar8="@{ojar8}" jar9="@{jar9}" ojar9="@{ojar9}" jar10="@{jar10}" ojar10="@{ojar10}" jar11="@{jar11}" ojar11="@{ojar11}" />
+			 	</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	
+</project>

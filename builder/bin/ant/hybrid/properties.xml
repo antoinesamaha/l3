@@ -1,0 +1,12 @@
+<project name="hybridProperties">
+	<property name="hybrid" value="budget"/>
+	<property name="hybrid.prjDir" value="${srcRoot}/${hybrid}"/>
+	<property name="hybrid.srcDir" value="${hybrid.prjDir}/src"/>
+	<property name="hybrid.exeDir" value="${exeRoot}/${appSubDir}/${hybrid}"/>
+	<property name="hybrid.buildDir" value="${hybrid.exeDir}/${buildSubDir}"/>
+	<property name="hybrid.classDir" value="${hybrid.buildDir}/${classSubDir}"/>
+	<property name="hybrid.jarDir" value="${hybrid.buildDir}/${jarSubDir}"/>
+	<property name="hybrid.jarFile" value="${hybrid.buildDir}/${jarSubDir}/01b-${hybrid}.jar"/>
+	<property name="hybrid.ojarName" value="${hybrid}.jar"/>
+	<property name="hybrid.packDir" value="${hybrid.exeDir}/${versionSubDir}"/>
+</project>

@@ -1,0 +1,11 @@
+<project name="fabrakaProperties">
+	<property name="fabraka" value="fabraka"/>
+	<property name="fabraka.prjDir" value="${srcRoot}/${fabraka}"/>
+	<property name="fabraka.srcDir" value="${fabraka.prjDir}/src"/>
+	<property name="fabraka.buildDir" value="${exeRoot}/${appSubDir}/${fabraka}/${buildSubDir}"/>
+	<property name="fabraka.classDir" value="${fabraka.buildDir}/${classSubDir}"/>
+	<property name="fabraka.jarDir" value="${fabraka.buildDir}/${jarSubDir}"/>
+	<property name="fabraka.jarFile" value="${fabraka.buildDir}/${jarSubDir}/01b-${fabraka}.jar"/>
+	<property name="fabraka.ojarName" value="${fabraka}.jar"/>
+
+</project>

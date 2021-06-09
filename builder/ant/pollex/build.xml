@@ -1,0 +1,38 @@
+<!--
+    =====================================================
+												  pollex
+    =====================================================
+  -->
+<project name="pollex" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${pollex.buildDir}" />
+		<mkdir dir="${pollex.buildDir}" />
+		<mkdir dir="${pollex.classDir}" />
+		<mkdir dir="${pollex.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${pollex.srcDir}" destdir="${pollex.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+				<pathelement path="${junitJAR}"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="makeJar" depends="compile">
+		<jar basedir="${pollex.classDir}" destfile="${pollex.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<attribute name="CLASS-PATH" value="foc.jar resources.jar ${mysqlJarName} ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${JasperReportFile4} ${POIFile1}"/>
+	    </manifest>
+		</jar>
+	</target>
+
+</project>

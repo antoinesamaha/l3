@@ -1,0 +1,35 @@
+1- Making the time out in the driver as a field in the Instrument. The driver would read the value of the time out from the instrument.
+2- The display of the fields showing the delays at the level of the instrument.
+   - Create a panel at the instrument level showing the dealy data. XXXXX when config only we can edit.
+3- Button to reset default values for the delays.
+4- Screen to show the instruments ON_HOLD status, in the dispatcher screen 
+    - now we have the tests dispatcing info.
+    - add a tabbed panel containing the samples browse panel. This one has the ON_HOLD status (no need for editing)
+5- In the dispatcher screen, color the test line that has currently the priority.
+   - Color the instrument that is connected
+   
+6- Secondarhy Instrument Dispatching
+
+
+- Foundation -
+--------------
+
+1- Create a FocObject (L3Connector) equivalent to Instrument with the following fields:
+   - polling time (int) (get inspired from DirSet see checkDelay Variable and from emultor Robot)
+   - Name
+   - connectorClassName (a class name that can be loaded fronm the factory and of L3IConnector type)
+   - Pool selection
+
+2- Like Instrument we have 2 displays - Configuration and Connection, and this for both: Browse and Details
+   example:
+   	- time delay shows in configuration but not in connection. 
+   	- className shows in config only.
+   	- Button for connection all and another onw for the single cocnnection of L3IConnector shows in the connection view
+
+3- A Connector Factory equivalent to the DriverFactory permitting to get L3IConnector objects
+   
+4- L3Connector and L3IConnector:
+	 - L3Connector does the polling, and knows if it is connected or not, 
+	   but it calls the L3IConnector to retreive data
+	 - Obviously L3Connector knows how to instanciate the specific L3IConnector comming from the Factory.
+	 

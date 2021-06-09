@@ -1,0 +1,16 @@
+<project name="precastConstructionProperties">
+	<property name="precastConstruction" value="precastConstruction"/>
+	<property name="precastConstruction.prjDir" value="${srcRoot}/${precastConstruction}"/>
+	<property name="precastConstruction.srcDir" value="${precastConstruction.prjDir}/src"/>
+	<property name="precastConstruction.exeDir" value="${exeRoot}/${appSubDir}/${precastConstruction}"/>	
+	<property name="precastConstruction.buildDir" value="${exeRoot}/${appSubDir}/${precastConstruction}/${buildSubDir}"/>
+	<property name="precastConstruction.classDir" value="${precastConstruction.buildDir}/${classSubDir}"/>
+	<property name="precastConstruction.jarDir" value="${precastConstruction.buildDir}/${jarSubDir}"/>
+	<property name="precastConstruction.jarFile" value="${precastConstruction.buildDir}/${jarSubDir}/01b-${precastConstruction}.jar"/>
+	<property name="precastConstruction.ojarName" value="${precastConstruction}.jar"/>
+	<property name="precastConstruction.pjarName" value="${precastConstruction}_protected.jar"/>
+	<property name="precastConstruction.packDir" value="${precastConstruction.exeDir}/${versionSubDir}"/>	
+	<property name="precastConstruction.keystore" value="${drive_java}:/${eclipseworkspace}/keystore/keystore-ccc"/>	
+	<property name="precastConstruction.signAlias" value="${global.signAlias}"/>	
+	<property name="precastConstruction.signStorepass" value="${global.signStorepass}"/>	
+</project>

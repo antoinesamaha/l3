@@ -1,0 +1,15 @@
+<!--
+    =====================================================
+												  	FOC
+    =====================================================
+  -->
+<project name="focProperties">
+	<property name="foc" value="foc"/>
+	<property name="foc.prjDir" value="${srcRoot}/foc"/>
+	<property name="foc.srcDir" value="${foc.prjDir}/src"/>
+	<property name="foc.buildDir" value="${exeRoot}/${foc}/${buildSubDir}"/>
+	<property name="foc.classDir" value="${foc.buildDir}/${classSubDir}"/>
+	<property name="foc.jarDir" value="${foc.buildDir}/${jarSubDir}"/>
+	<property name="foc.jarFile" value="${foc.buildDir}/${jarSubDir}/01b-${foc}.jar"/>
+	<property name="foc.ojarName" value="${foc}.jar"/>
+</project>

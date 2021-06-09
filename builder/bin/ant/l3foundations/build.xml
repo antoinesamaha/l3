@@ -1,0 +1,34 @@
+<!--
+    =====================================================
+												  	L3Foundation
+    =====================================================
+  -->
+<project name="l3foundations" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${l3f.buildDir}" />
+		<mkdir dir="${l3f.buildDir}" />
+		<mkdir dir="${l3f.classDir}" />
+		<mkdir dir="${l3f.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${l3f.srcDir}" destdir="${l3f.classDir}"
+		        executable="${javac1.6}" 
+			      fork="yes"
+			      includeantruntime="false" >
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${commApiDir}/comm.jar"/>
+				<pathelement path="${junitJAR}"/>
+				<pathelement path="${socketBasedService.jarFile}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${l3f.classDir}" destfile="${l3f.jarFile}" />
+	</target>
+</project>

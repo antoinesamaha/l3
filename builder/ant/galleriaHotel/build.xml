@@ -1,0 +1,39 @@
+<!--
+    =====================================================
+												  galleria
+    =====================================================
+  -->
+<project name="galleria" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${galleria.buildDir}" />
+		<mkdir dir="${galleria.buildDir}" />
+		<mkdir dir="${galleria.classDir}" />
+		<mkdir dir="${galleria.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${galleria.srcDir}" destdir="${galleria.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${pimsInterface.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>				
+				<pathelement path="${junitJAR}"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="makeJar" depends="compile">
+		<jar basedir="${galleria.classDir}" destfile="${galleria.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<attribute name="CLASS-PATH" value="foc.jar pimsInterface.jar resources.jar ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${POIFile1}"/>
+	    </manifest>
+		</jar>
+	</target>
+
+</project>

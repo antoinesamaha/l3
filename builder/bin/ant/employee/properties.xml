@@ -1,0 +1,10 @@
+<project name="employeeProperties">
+	<property name="employee" value="employee"/>
+	<property name="employee.prjDir" value="${srcRoot}/${employee}"/>
+	<property name="employee.srcDir" value="${employee.prjDir}/src"/>
+	<property name="employee.buildDir" value="${exeRoot}/${appSubDir}/${employee}/${buildSubDir}"/>
+	<property name="employee.classDir" value="${employee.buildDir}/${classSubDir}"/>
+	<property name="employee.jarDir" value="${employee.buildDir}/${jarSubDir}"/>
+	<property name="employee.jarFile" value="${employee.buildDir}/${jarSubDir}/01b-${employee}.jar"/>
+	<property name="employee.ojarName" value="${employee}.jar"/>
+</project>

@@ -1,0 +1,12 @@
+<project name="mboqProperties">
+	<property name="mboq" value="mboq"/>
+	<property name="mboq.prjDir" value="${srcRoot}/${mboq}"/>
+	<property name="mboq.srcDir" value="${mboq.prjDir}/src"/>
+	<property name="mboq.exeDir" value="${exeRoot}/${appSubDir}/${mboq}"/>
+	<property name="mboq.buildDir" value="${mboq.exeDir}/${buildSubDir}"/>
+	<property name="mboq.classDir" value="${mboq.buildDir}/${classSubDir}"/>
+	<property name="mboq.jarDir" value="${mboq.buildDir}/${jarSubDir}"/>
+	<property name="mboq.jarFile" value="${mboq.buildDir}/${jarSubDir}/01b-${mboq}.jar"/>
+	<property name="mboq.ojarName" value="${mboq}.jar"/>
+	<property name="mboq.packDir" value="${mboq.exeDir}/${versionSubDir}"/>	
+</project>

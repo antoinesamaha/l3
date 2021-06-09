@@ -1,0 +1,57 @@
+<!--
+    =====================================================
+												  	FABRAKA
+    =====================================================
+  -->
+<project name="fabraka" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${fabraka.buildDir}" />
+		<mkdir dir="${fabraka.buildDir}" />
+		<mkdir dir="${fabraka.classDir}" />
+		<mkdir dir="${fabraka.jarDir}" />
+		
+		<delete dir="${fabraka.versionDir}" />
+		<mkdir dir="${fabraka.versionDir}" />
+	</target>
+
+
+	<target name="compile" depends="prepareDir" >
+		<javac srcdir="${fabraka.srcDir}" destdir="${fabraka.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${scheduler.jarFile}/"/>
+				<pathelement path="${stock.jarFile}/"/>
+					
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+				<pathelement path="${junitJAR}"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile1}/"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile2}/"/>
+				
+			</classpath>
+		</javac>
+
+		
+	</target>
+	
+	<target name="makeJar" depends="compile" >
+		<jar basedir="${fabraka.classDir}" destfile="${fabraka.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<attribute name="CLASS-PATH" value="foc.jar basics.jar pimsInterface.jar scheduler.jar resources.jar properties/. "/>
+	    </manifest>
+		</jar>
+	</target>
+
+	<target name="makeJarAll">
+		<ant target="prepareDir" />		
+		<ant target="compile" />		
+		<ant target="makeJar" />		
+	</target>	
+	
+</project>

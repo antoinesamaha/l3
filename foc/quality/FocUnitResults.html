@@ -1,0 +1,22 @@
+<html>
+<body>
+<script language="javascript">
+// Load XML 
+var xml = new ActiveXObject("Microsoft.XMLDOM")
+xml.async = false
+xml.load("FocUnitResults.xml")
+
+// Load the XSL
+var xsl = new ActiveXObject("Microsoft.XMLDOM")
+xsl.async = false
+//xsl.load("unitTestSumary.xsl")
+//xsl.load("XMLexample.xsl")
+//xsl.load("nodes.xsl")
+xsl.load("FocUnit.xsl")
+
+// Transform
+document.write(xml.transformNode(xsl))
+</script>
+
+</body>
+</html>

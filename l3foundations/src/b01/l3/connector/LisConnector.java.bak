@@ -1,0 +1,637 @@
+package b01.l3.connector;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import b01.foc.Application;
+import b01.foc.Globals;
+import b01.foc.IExitListener;
+import b01.foc.db.SQLFilter;
+import b01.foc.db.SQLSelect;
+import b01.foc.db.SQLUpdate;
+import b01.foc.desc.FocConstructor;
+import b01.foc.desc.FocDesc;
+import b01.foc.desc.FocObject;
+import b01.foc.desc.field.FField;
+import b01.foc.gui.FPanel;
+import b01.foc.list.FocList;
+import b01.foc.property.FBoolean;
+import b01.foc.property.FInt;
+import b01.foc.property.FMultipleChoiceStringBased;
+import b01.foc.property.FObject;
+import b01.foc.property.FString;
+import b01.l3.Instrument;
+import b01.l3.L3Application;
+import b01.l3.L3ApplicationDesc;
+import b01.l3.L3Globals;
+import b01.l3.MessageListener;
+import b01.l3.PoolKernel;
+import b01.l3.data.L3Message;
+import b01.l3.data.L3Sample;
+import b01.l3.data.L3SampleMessageJoinDesc;
+import b01.l3.data.L3SampleTestJoinDesc;
+import b01.l3.data.L3SampleTestJoinFilter;
+import b01.l3.data.L3Test;
+import b01.l3.data.L3TestDesc;
+import b01.l3.dispatcher.IDispatcher;
+import b01.l3.dispatcher.L3GeneralDispatcher;
+import b01.l3.exceptions.L3Exception;
+import b01.sbs.BService;
+import b01.sbs.BServiceClient;
+import b01.sbs.BServiceInterface;
+import b01.sbs.BServiceServer;
+import b01.sbs.LogInterface;
+
+public class LisConnector extends FocObject implements Runnable, MessageListener, IExitListener, BServiceInterface{
+	
+  private L3IConnector iConnector        = null;
+  
+	private IDispatcher dispatcher         = null;
+	private Thread  postToLisThread        = null;
+  private boolean stopDbPooling          = false;
+	private Application application        = null;
+  private ArrayList<PoolKernel> poolList = null;
+  private boolean busyReading            = false;
+  private boolean busyWriting            = false;
+  
+  private static final int DELAY_FOR_DB_POLLING_TO_POST_TO_LIS = 5000;
+  
+  public LisConnector (FocConstructor constr) throws Exception {
+    super(constr);
+  	new FString(this, LisConnectorDesc.FLD_NAME, "");
+  	new FString(this, LisConnectorDesc.FLD_ROOT_DIR, "");
+    new FString(this, LisConnectorDesc.FLD_RECEIVE_DIR, "");
+    new FString(this, LisConnectorDesc.FLD_SEND_DIR, "");
+    new FString(this, LisConnectorDesc.FLD_ARCHIVE_DIR, "");
+    new FString(this, LisConnectorDesc.FLD_ERROR_DIR, "");
+    new FBoolean(this, LisConnectorDesc.FLD_CONNECTED, false);
+    new FObject (this, LisConnectorDesc.FLD_POOL, null);
+    new FMultipleChoiceStringBased(this, LisConnectorDesc.FLD_FILE_IO_CLASS_NAME, "b01.l3.connector.fileConnector.DefaultFileIO");
+    new FMultipleChoiceStringBased(this, LisConnectorDesc.FLD_CONNECTOR_CLASS_NAME, "b01.l3.connector.fileConnector.LisFileConnector");
+    new FString(this, LisConnectorDesc.FLD_SERVICE_HOST, "");
+    new FInt(this, LisConnectorDesc.FLD_SERVICE_PORT, 0);
+    new FBoolean(this, LisConnectorDesc.FLD_LAUNCHED, false);
+  }
+  
+  public boolean isBusyReading() {
+		return busyReading;
+	}
+
+	public void setBusyReading(boolean busyReading) {
+		this.busyReading = busyReading;
+	}
+
+	public boolean isBusyWriting() {
+		return busyWriting;
+	}
+
+	public void setBusyWriting(boolean busyWriting) {
+		this.busyWriting = busyWriting;
+	}
+
+	public void refreshLaunched(){
+  	boolean launched = false;
+  	try{
+  		launched = !getService().ping();
+  	}catch(Exception e){
+  		Globals.logString("Normal exception in refreshLaunched");
+  		launched = false;  		
+  	}
+  	setPropertyBoolean(LisConnectorDesc.FLD_LAUNCHED, launched);
+  	if(!launched){
+  		setPropertyBoolean(LisConnectorDesc.FLD_CONNECTED, false);
+  		updateConnected(false);
+  	}
+		Instrument.adjustColor(this, LisConnectorDesc.FLD_LAUNCHED, LisConnectorDesc.FLD_CONNECTED, FField.NO_FIELD_ID);
+  }
+  
+  private void setAsExitListener(){
+    if (application == null){
+      application = Globals.getApp();
+      application.addExitListener(this);
+    }
+  }
+
+  private IDispatcher getDispatcher() throws Exception{
+  	if(dispatcher == null){
+	  	/*FocDesc desc = PoolKernel.getFocDesc();
+			FocList list = new FocList(new FocLinkSimple(desc));// il faut avoir la liste des pool attache a cet lis file connector seulement ou  la pool unique si la relation est 1 to 1
+			list.loadIfNotLoadedFromDB();
+			PoolKernel p = (PoolKernel)list.getFocObject(0);*/
+      //PoolKernel p = PoolKernel.getPool("Pool-1");
+			//ArrayList<PoolKernel> arr = new ArrayList<PoolKernel>();
+      ArrayList<PoolKernel> arr = getPoolList();
+      //arr.add(p);
+			dispatcher = new L3GeneralDispatcher();
+      dispatcher.init(arr);
+  	}
+  	return dispatcher;
+  }
+
+  public L3IConnector getLisConnector() throws Exception{
+    if(iConnector == null){
+      String lisConnectorClassName = getPropertyString(LisConnectorDesc.FLD_CONNECTOR_CLASS_NAME);
+      Class lisConnectorClass = (Class) (LisConnectorFactory.getInstance().getLisConnector(lisConnectorClassName));
+      if(lisConnectorClass == null){
+        throw new L3Exception("LisConnector not found. Connector class name = ("+lisConnectorClassName+")"); 
+      }
+      //The TempLisConnector is very important
+      //In case an exception occures before the end of that function, 
+      //the Iconnector would still = null, and this is what we want. 
+      L3IConnector tempLisConnector = (L3IConnector) lisConnectorClass.newInstance();
+      if(tempLisConnector != null){
+        tempLisConnector.setLisConnector(this);
+      }
+      iConnector = tempLisConnector;
+    }
+    return iConnector;
+  }
+
+  public ArrayList<PoolKernel> getPoolList(){
+    if (poolList == null){
+      poolList = new ArrayList<PoolKernel>();
+      if (L3Application.getAppInstance().getMode() == L3Globals.APPLICATION_MODE_SAME_THREAD ){
+        PoolKernel pool = getPool();
+        pool.addMessageListener(this);
+        poolList.add(pool);
+      }else{
+        FocList focList = PoolKernel.getList(FocList.LOAD_IF_NEEDED);
+        for(int i = 0; i < focList.size(); i++ ){
+          poolList.add((PoolKernel)focList.getFocObject(i));
+        }
+      }
+    }
+    return poolList;
+  }
+  
+  public void connectAllPools(){
+    ArrayList<PoolKernel> list = getPoolList();
+    for (int i = 0; i < list.size(); i++){
+      list.get(i).connectAllInstruments();
+      //list.get(i).validate(false);
+    }
+  }
+  
+  public void disconnectAllPools(){
+    ArrayList<PoolKernel> list = getPoolList();
+    for (int i = 0; i < list.size(); i++){
+      list.get(i).disconnectAllInstrument();
+    }
+  }
+  
+  public boolean isAnythingConnected(){
+  	boolean b = isConnected();
+  	if(!b){
+      ArrayList<PoolKernel> list = getPoolList();
+      for (int i = 0; i < list.size() && !b; i++){
+        PoolKernel pool = list.get(i);
+        b = pool.isAnyInstrumentConnect();
+      }
+  	}
+  	return b;
+  }
+  
+  public Instrument getInstrumentFromAnyPool(String code){
+    ArrayList<PoolKernel> list = getPoolList();
+    Instrument instrument = null;
+    for (int i = 0; i < list.size(); i++){
+      PoolKernel p = list.get(i);
+      instrument = p.getInstrument(code);
+      if (instrument != null){
+        break;
+      }
+    }
+    return instrument;
+  }
+ 
+	public void dispose(){
+    super.dispose();
+    if(dispatcher != null){
+    	dispatcher.dispose();
+    	dispatcher = null;
+    }
+    if(iConnector != null){
+    	iConnector.dispose();
+    	iConnector = null;
+    }
+    if(service != null){
+    	service.dispose();
+    	service = null;
+    }
+	}
+	 	
+  public boolean postSample(boolean instrumentWait, boolean sampleResultConfirmed){
+    return !instrumentWait || (instrumentWait  && sampleResultConfirmed);
+  }
+  
+  public static void createNullPointerException(){
+    L3Sample sample = null;
+    sample.getId();
+  }
+  
+  public boolean treatMessage(L3Message message) throws Exception{
+    boolean error = false;
+    boolean firstSample = true;
+    
+    Iterator sampleIterator = message != null ? message.sampleIterator() : null;
+    while (sampleIterator != null && sampleIterator.hasNext()){
+      L3Sample sample = (L3Sample)sampleIterator.next();
+      
+      if(firstSample){
+      	getDispatcher().prepareForNewMessage();
+      	firstSample = false;
+      }
+      
+      sample.loadReferenceFromDatabaseAccordingToKey();
+      if(sample.hasRealReference()){
+      	Iterator<L3Test> iter = sample.testIterator();
+      	while(iter != null && iter.hasNext()){
+      		L3Test test = iter.next();
+      		test.loadReferenceFromDatabaseAccordingToKey();
+      	}
+      }
+      
+      getDispatcher().dispatchSample(sample);
+      sample.forceControler(true);
+      sample.validate(false);
+    }
+    return error; 
+  }
+   
+  public void startListeningToFiles(){
+		try {
+			getLisConnector().connect();      
+      setConnected(true);
+      updateConnected(true);
+      getFocProperty(LisConnectorDesc.FLD_CONNECTED).backup();
+    } catch (Exception e) {
+      Globals.logException(e);
+    }
+	}
+
+	public void stopListeningToFiles(){
+    try {      
+      getLisConnector().disconnect();
+      setConnected(false);
+      // this may also work without need for updateConnected(false) and backup()
+      //getConnectedPropertyListener().propertyModified(getFocProperty(LisFileConnectorDesc.FLD_CONNECTED));
+      updateConnected(false);
+      getFocProperty(LisConnectorDesc.FLD_CONNECTED).backup();
+    } catch (Exception e) {
+      Globals.logException(e);
+    }
+	}
+  
+  public void startListeningToDb(){
+    stopDbPooling = false;
+    try {
+      if (postToLisThread == null){
+        postToLisThread = new Thread(this);
+        postToLisThread.start();
+      }
+    } catch (Exception e) {
+      Globals.logException(e);
+    }
+  }
+
+  public void stopListeningToDb(){
+    stopDbPooling = true;
+  }
+    	  
+  public void messageReceived(L3Message message) {
+    //message.upgradeMessageSamples(pool.getInstrument(message.getInstrumentCode()), L3SampleDesc.SAMPLE_STATUS_ANALYSING,L3SampleDesc.SAMPLE_STATUS_RESULT_AVAILABLE);
+  	/*
+    Iterator sampleIterator = message.sampleIterator();
+    while (sampleIterator.hasNext()){
+      try {
+        iConnector.postSampleToLis((L3Sample)sampleIterator.next(), message.getInstrumentCode());
+      } catch (Exception e) {
+        Globals.logException(e);
+      }
+      //message.upgradeMessageSamples(getInstrumentFromAnyPool(message.getInstrumentCode()), L3SampleDesc.SAMPLE_STATUS_COMMITED_TO_LIS);
+    }
+    */
+  }
+  
+  public void uselessSleep()throws Exception {
+  	Thread.sleep(200);
+  }
+  
+  public void run() {
+    try{
+      while(true){
+        if (!stopDbPooling){
+          if(isConnected()){
+        	Globals.logString("P6-Prepare Filter and Set Active");
+          	L3SampleTestJoinFilter filter = L3SampleTestJoinDesc.newListWithFilter();
+          	filter.setStatusEquals(L3TestDesc.TEST_STATUS_RESULT_AVAILABLE);
+          	filter.setActive(true);
+          	Globals.logString("P7-After Set Active");
+          	
+          	//FocList list = filter.getFocList();
+          	L3Message message = filter != null ? filter.convertToMessage() : null;
+          	if(message != null){
+          		Iterator iter = message.sampleIterator();
+          		while(iter != null && iter.hasNext()){
+          			L3Sample sample = (L3Sample) iter.next();
+              	try{
+              		setBusyWriting(true);
+                    //Globals.logString("P8-Before Post Sample to LIS SampleID = "+sample.getId());
+              		iConnector.postSampleToLis(sample);
+              		//Globals.logString("P9-After Post Sample to LIS");
+              		setBusyWriting(false);
+              		//Globals.logString("P10-Before small sleep");
+              		uselessSleep();
+              		//Globals.logString("P11-After small sleep");
+              	}catch(Exception e){
+              		setBusyWriting(false);
+              		Globals.logException(e);
+              	}
+          		}
+          	}
+          	
+          	if(message != null){
+	          	message.dispose();
+	          	message = null;
+          	}
+          	
+          	if(filter != null){
+	          	FocList listToDispose = filter.getFocList();
+	          	if(listToDispose != null){
+	          		listToDispose.dispose();
+	          		listToDispose = null;
+	          		filter.setFocList(null);
+	          	}
+          	
+	          	filter.dispose();
+	          	filter = null;
+          	}
+          	
+            FocList l3SampleInstrMessageJoinList = L3SampleMessageJoinDesc.newListOfNonCommited();
+            Globals.logString("P1-Before Load L3Samples From DB");
+            l3SampleInstrMessageJoinList.loadIfNotLoadedFromDB();
+            Globals.logString("P2-After Load L3Samples From DB");
+            iConnector.postMessagesToLis(l3SampleInstrMessageJoinList);
+            Globals.logString("P3-After Post Message to LIS");
+            if(l3SampleInstrMessageJoinList != null){
+              l3SampleInstrMessageJoinList.dispose();
+              l3SampleInstrMessageJoinList = null;
+            }
+          }
+        }
+        Globals.logString("P4-Before Sleep "+DELAY_FOR_DB_POLLING_TO_POST_TO_LIS+" ms");
+        Thread.sleep(DELAY_FOR_DB_POLLING_TO_POST_TO_LIS);
+        Globals.logString("P5-After Sleep "+DELAY_FOR_DB_POLLING_TO_POST_TO_LIS+" ms");
+      }
+    }catch(Exception e){
+      Globals.logException(e);
+      setBusyWriting(false);
+    }
+    setBusyWriting(false);
+  }
+  
+	public String getRootDir() {
+		FString root = (FString) getFocProperty(LisConnectorDesc.FLD_ROOT_DIR);
+    return (root != null) ? root.getString() :"";
+	}
+
+	public void setRootDir(String dir) {
+		FString root = (FString) getFocProperty(LisConnectorDesc.FLD_ROOT_DIR);
+    if(root != null){
+      root.setString(dir);
+    }
+	}
+	
+	public String getName() {
+		FString name = (FString) getFocProperty(LisConnectorDesc.FLD_NAME);
+	  return (name!= null) ? name.getString() :"";
+	}
+
+  public void setName(String name) {
+		FString n= (FString) getFocProperty(LisConnectorDesc.FLD_NAME);
+	  if(n != null){
+	    n.setString(name);
+	  }
+	}
+  
+	public String getReceiveDir() {
+		FString in = (FString) getFocProperty(LisConnectorDesc.FLD_RECEIVE_DIR);
+    return (in != null) ? in.getString() :"";
+	}
+
+	public void setInDir(String dir) {
+		FString in = (FString) getFocProperty(LisConnectorDesc.FLD_RECEIVE_DIR);
+    if(in != null){
+      in.setString(dir);
+    }
+	}
+  
+	public String getSendDir() {
+		FString out = (FString) getFocProperty(LisConnectorDesc.FLD_SEND_DIR);
+    return (out!= null) ? out.getString() :"";
+	}
+
+	public void setOutDir(String dir) {
+		FString out = (FString) getFocProperty(LisConnectorDesc.FLD_SEND_DIR);
+    if(out!= null){
+      out.setString(dir);
+    }
+	}
+	
+	public String getArchiveDir() {
+		FString archive = (FString) getFocProperty(LisConnectorDesc.FLD_ARCHIVE_DIR);
+    return (archive != null) ? archive.getString() :"";
+	}
+
+	public void setArchiveDir(String dir) {
+		FString archive= (FString) getFocProperty(LisConnectorDesc.FLD_ARCHIVE_DIR);
+    if(archive != null){
+      archive.setString(dir);
+    }
+	}
+	
+	public String getErrorDir() {
+		FString error= (FString) getFocProperty(LisConnectorDesc.FLD_ERROR_DIR);
+    return (error != null) ? error.getString() :"";
+	}
+
+	public void setErrorDir(String dir) {
+		FString error = (FString) getFocProperty(LisConnectorDesc.FLD_ERROR_DIR);
+    if(error != null){
+      error.setString(dir);
+    }
+	}
+  
+  public PoolKernel getPool(){
+    FObject p = (FObject) getFocProperty(LisConnectorDesc.FLD_POOL);
+    return (PoolKernel)((p != null) ? p.getObject_CreateIfNeeded():null);
+  }
+  
+  public void setPool (PoolKernel pk){
+    FObject p = (FObject)getFocProperty(LisConnectorDesc.FLD_POOL);
+    if (p != null){
+      p.setObject(pk);
+    }
+  }
+  
+  public boolean isConnected() {
+    return ((FBoolean) getFocProperty(LisConnectorDesc.FLD_CONNECTED)).getBoolean();
+  }
+    
+  private void setConnected(boolean connected) {
+    ((FBoolean) getFocProperty(LisConnectorDesc.FLD_CONNECTED)).setBoolean(connected);
+  }
+  
+  public void updateConnected(boolean connected){
+    FocDesc focDesc = getThisFocDesc();
+    if (focDesc != null) {
+      setConnected(connected);
+      SQLUpdate sqlUpdate = new SQLUpdate(focDesc, this);
+      sqlUpdate.addQueryField(LisConnectorDesc.FLD_CONNECTED);
+      sqlUpdate.execute();
+    }
+  }
+  
+  public void refreshConnected(){
+    FocDesc focDesc = getThisFocDesc();
+    if (focDesc != null) {
+    	SQLFilter filter = new SQLFilter(this, SQLFilter.FILTER_ON_IDENTIFIER);    	
+      SQLSelect sqlSelect = new SQLSelect(this, LisConnectorDesc.getInstance(), filter);
+      sqlSelect.addQueryField(FField.REF_FIELD_ID);
+      sqlSelect.addQueryField(LisConnectorDesc.FLD_CONNECTED);
+      sqlSelect.execute();
+      Instrument.adjustColor(this, LisConnectorDesc.FLD_LAUNCHED, LisConnectorDesc.FLD_CONNECTED, FField.NO_FIELD_ID);
+    }
+  }
+     
+  public void replyToExit(){
+    switchOff();
+    validate(false);
+    forceControler(true);
+    validate(false);
+  }
+  
+  public void logException(Exception e){
+  	Globals.logString(getName()+"->Exception");
+  	Globals.logException(e);
+  }
+
+  public void logString(String str){
+ 		Globals.logString(getName()+"->"+str);
+  }
+  
+ 
+	//---------------------------------
+  //    PANEL
+  // ---------------------------------
+	public FPanel newDetailsPanel(int viewID) {
+		return new LisConnectorGuiDetailsPanel(viewID,this);
+	};
+	
+	public static FPanel newBrowsePanel(FocList list, int viewID) {
+		return new LisConnectorGuiBrowsePanel(list, viewID); 
+	}
+	
+	//ooooooooooooooooooooooooooooooooooo
+  // oooooooooooooooooooooooooooooooooo
+  // DESCRIPTION
+  // oooooooooooooooooooooooooooooooooo
+  // oooooooooooooooooooooooooooooooooo
+
+  private static FocDesc focDesc = null;
+  
+	public static FocDesc getFocDesc() {
+		 if (focDesc == null) {
+		  	focDesc = new LisConnectorDesc();
+		  }
+		  return focDesc;
+	}
+
+	private BService service = null;
+	
+	public boolean exit() {
+		Globals.getApp().exit(true);
+		return true;
+	}
+
+	public boolean isOn() {
+		return isConnected();
+	}
+
+	public void refreshSwitchStatus() {
+		refreshConnected();
+	}
+	
+	public void refreshLaunchStatus() {
+		refreshLaunched();
+	}
+	
+	public boolean switchOff() {
+    stopListeningToFiles();
+    stopListeningToDb();
+    Globals.logString(getName()+ " : Disconnected.");
+		return false;
+	}
+
+	public boolean switchOn() {
+    setAsExitListener();
+    startListeningToFiles();
+    startListeningToDb();
+    updateConnected(true);
+    Globals.logString(getName()+ " : Connected...");
+    return false;
+	}
+	
+	public BService getService(){
+		if(service == null){
+			if(L3Application.getAppInstance().getBackgroundTask() == L3Application.BACKGROUND_TASK_CONNECTOR){
+				int port = getPropertyInteger(LisConnectorDesc.FLD_SERVICE_PORT);
+				if(port > 0){
+					service = new BServiceServer(this, port);
+					((BServiceServer)service).setLogInterface(new LogInterface(){
+						public void logException(Exception e) {
+							((LisConnector)getThis()).logException(e);
+						}
+
+						public void logString(String str) {
+							((LisConnector)getThis()).logString(str);
+						}
+					});
+				}
+			}else{
+				L3Application l3App = L3Application.getAppInstance();
+				String launcherHost = l3App.getPropertyString(L3ApplicationDesc.FLD_REMOTE_LAUNCHER_HOST);
+				int launcherPort = l3App.getPropertyInteger(L3ApplicationDesc.FLD_REMOTE_LAUNCHER_PORT);
+				service = new BServiceClient(this, getPropertyString(LisConnectorDesc.FLD_SERVICE_HOST), getPropertyInteger(LisConnectorDesc.FLD_SERVICE_PORT), launcherHost, launcherPort);
+				((BServiceClient)service).setLogInterface(new LogInterface(){
+					public void logException(Exception e) {
+						((LisConnector)getThis()).logException(e);
+					}
+
+					public void logString(String str) {
+						((LisConnector)getThis()).logString(str);
+					}
+				});
+			}
+		}
+		return service;
+	}
+
+	public String getLaunchCommand() {
+		L3Application l3App = L3Application.getAppInstance();
+		String appDir = l3App.getPropertyString(L3ApplicationDesc.FLD_APPLICATION_DIRECTORY);
+		return appDir+"/runConnector.bat "+getName();
+	}
+	
+	  public static LisConnector getConnector(String connectorCode){
+	  	LisConnector foundInstrument = null;
+	    FocList list = LisConnector.getFocDesc().getDefaultFocList(FocList.LOAD_IF_NEEDED);
+	    for (int i=0; i<list.size() && foundInstrument == null; i++){
+	    	LisConnector connector = (LisConnector)list.getFocObject(i);
+	    	if(connector.getName().equals(connectorCode)){
+	    		foundInstrument = connector;	
+	    	}
+	    }
+	    return foundInstrument;
+	  }
+}

@@ -1,0 +1,43 @@
+<!--
+    =====================================================
+												 HARDWAREID
+    =====================================================
+  -->
+<project name="hardwareid" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${hardwareid.buildDir}" />
+		<mkdir dir="${hardwareid.buildDir}" />
+		<mkdir dir="${hardwareid.classDir}" />
+		<mkdir dir="${hardwareid.jarDir}" />
+		
+		<delete dir="${hardwareid.versionDir}" />
+		<mkdir dir="${hardwareid.versionDir}" />
+	</target>
+
+	<target name="compile">
+		<javac srcdir="${hardwareid.srcDir}" destdir="${hardwareid.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+			</classpath>
+		</javac>
+
+		
+	</target>
+	
+	<target name="makeJar">
+		<jar basedir="${hardwareid.classDir}" destfile="${hardwareid.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    </manifest>
+		</jar>
+	</target>
+
+	<target name="makeJarAll">
+		<ant target="prepareDir" />		
+		<ant target="compile" />		
+		<ant target="makeJar" />		
+	</target>	
+	
+</project>

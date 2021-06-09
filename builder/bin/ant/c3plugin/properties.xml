@@ -1,0 +1,10 @@
+<project name="c3plugin">
+	<property name="c3plugin" value="c3plugin"/>
+	<property name="c3plugin.prjDir" value="${srcRoot}/${clientplugin_dir}"/>
+	<property name="c3plugin.srcDir" value="${c3plugin.prjDir}/src"/>
+	<property name="c3plugin.buildDir" value="${exeRoot}/${appSubDir}/${c3plugin}/${buildSubDir}"/>
+	<property name="c3plugin.classDir" value="${c3plugin.buildDir}/${classSubDir}"/>
+	<property name="c3plugin.jarDir" value="${c3plugin.buildDir}/${jarSubDir}"/>
+	<property name="c3plugin.jarFile" value="${c3plugin.buildDir}/${jarSubDir}/01b-${c3plugin}.jar"/>
+	<property name="c3plugin.ojarName" value="${c3plugin}.jar"/>
+</project>

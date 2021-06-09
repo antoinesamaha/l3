@@ -1,0 +1,88 @@
+<!--
+    =====================================================
+												  	CCC
+    =====================================================
+  -->
+<project name="ccc" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${ccc.buildDir}" />
+		<mkdir dir="${ccc.buildDir}" />
+		<mkdir dir="${ccc.classDir}" />
+		<mkdir dir="${ccc.jarDir}" />
+		
+		<delete dir="${ccc.versionDir}" />
+		<mkdir dir="${ccc.versionDir}" />
+	</target>
+
+	<!--target name="compile" depends="prepareDir">
+		<ant target="compileNoPrepareDir" />
+	</target-->
+
+	<!-- <target name="compile" >  ***VERY IMPORTANT*** IF COMPILED ALONE --> 
+	<target name="compile" depends="prepareDir" >
+		<javac srcdir="${ccc.srcDir}" destdir="${ccc.classDir}">
+			<classpath>
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${payment.jarFile}/"/>
+				<pathelement path="${pimsInterface.jarFile}/"/>
+				<pathelement path="${scheduler.jarFile}/"/>
+				<pathelement path="${officeLink.jarFile}/"/>
+				<pathelement path="${attachments.jarFile}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+				<pathelement path="${junitJAR}"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile1}/"/>
+				<pathelement path="${jFreeChartDir}/${jFreeChartFile2}/"/>
+			</classpath>
+		</javac>
+	
+		<!--
+		<copy todir="${mag.classDir}/icons">
+			<fileset dir="e:/eclipseworkspace/mag/icons"/>
+		</copy>
+		
+		<copy todir="${mag.classDir}/icons">
+			<fileset dir="e:/eclipseworkspace/foc/icons"/>
+		</copy>
+		
+		<copy todir="${mag.classDir}/properties">
+			<fileset dir="e:/eclipseworkspace/mag/properties"/>
+		</copy>
+		
+		<copy todir="${mag.classDir}/reports">
+			<fileset dir="e:/eclipseworkspace/mag/reports"/>
+		</copy>
+		
+		<copy todir="${mag.classDir}/testDB">
+			<fileset dir="e:/eclipseworkspace/mag/testDB"/>
+		</copy>
+		
+		<copy todir="${mag.classDir}/properties/languages/foc">
+			<fileset dir="e:/eclipseworkspace/foc/properties/languages/foc"/>
+		</copy>
+		-->
+		
+	</target>
+	<!-- <target name="makeJar" > ***VERY IMPORTANT*** IF COMPILED ALONE -->
+	
+	<target name="makeJar" depends="compile" >
+		<jar basedir="${ccc.classDir}" destfile="${ccc.jarFile}" >			
+			<manifest>
+	    	<attribute name="Manifest-Version" value="1.0"/>
+	    	<attribute name="Main-Class" value="b01.Main"/>
+	    	<attribute name="CLASS-PATH" value="foc.jar pimsInterface.jar scheduler.jar resources.jar ${jFreeChartFile1} ${jFreeChartFile2} ${mysqlJarName} ${eclipseFile1} ${eclipseFile2} ${JasperReportFile1} ${JasperReportFile2} ${JasperReportFile3} ${JasperReportFile4} ${JasperReportFile5} ${JasperReportFile6} ${JasperReportFile7} properties/. "/>
+	    </manifest>
+		</jar>
+	</target>
+
+	<target name="makeJarAll">
+		<ant target="prepareDir" />		
+		<ant target="compile" />		
+		<ant target="makeJar" />		
+	</target>	
+	
+</project>

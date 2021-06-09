@@ -1,0 +1,64 @@
+<!--
+    =====================================================
+												  	L3Cedim
+    =====================================================
+  -->
+<project name="l3cedim" default="makeJar">
+	
+	<taskdef name="createsecurityjavafile" classname="b01.ant.tasks.CreateSecurityJavaFile" classpath="${devutil.ojarFullName}"/>
+	
+	<target name="prepareDir">
+		<delete dir="${l3cedim.buildDir}" />
+		<mkdir dir="${l3cedim.buildDir}" />
+		<mkdir dir="${l3cedim.classDir}" />
+		<mkdir dir="${l3cedim.jarDir}" />
+		
+		<delete dir="${l3cedim.versionDir}" />
+		<mkdir dir="${l3cedim.versionDir}" />
+	</target>
+
+	<target name="compile">
+		<javac srcdir="${l3cedim.srcDir}" destdir="${l3cedim.classDir}">
+			<!-- exclude name="${l3cedim.srcDir}/b01/l3/specific/cedim/unit/UnitMainCedim.java"  -->
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${l3f.jarFile}/"/>
+				<pathelement path="${l3drivers.jarFile}/"/>
+				<pathelement path="${commApiDir}/comm.jar"/>
+				<pathelement path="${junitJAR}"/>				
+			</classpath>
+		</javac>
+	</target>
+
+	<macrodef name="l3driver_compile">
+		<attribute name="srcDir" default="NOT_SET"/>
+		<attribute name="packageName" default="NOT_SET" />
+		<attribute name="tarDir" default="NOT_SET"/>
+		<element name="justdoit" implicit="yes"/>
+		<sequential>
+			<createsecurityjavafile packageName="@{packageName}" srcDir="@{srcDir}" code=" 00-13-20-8E-3B-78"/><!-- Cedim PC de connection-->
+			
+			<javac srcdir="@{srcDir}" destdir="@{tarDir}">
+				<classpath>
+					<!-- <pathelement location="lib/"/> -->
+					<pathelement path="${java.class.path}/"/>
+					<pathelement path="${foc.jarFile}/"/>
+					<pathelement path="${l3f.jarFile}/"/>
+					<pathelement path="${commApiDir}/comm.jar"/>
+					<pathelement path="${junitJAR}"/>
+				</classpath>
+			</javac>
+		</sequential>
+	</macrodef>
+
+	<target name="makeJar">
+		<antcall target="prepareDir"></antcall>
+		<l3driver_compile packageName="b01.l3.drivers.unit" srcDir="${l3drivers.srcDir}/b01/l3/drivers/unit" tarDir="${l3cedim.classDir}"/>
+		<l3driver_compile packageName="b01.l3.drivers.kermit" srcDir="${l3drivers.srcDir}/b01/l3/drivers/kermit" tarDir="${l3cedim.classDir}"/>
+		<!-- <l3driver_compile packageName="b01.l3.drivers.roches" srcDir="${l3drivers.srcDir}/b01/l3/drivers/roches" tarDir="${l3cedim.classDir}"/>-->
+		<antcall target="compile"></antcall>
+		<jar basedir="${l3cedim.classDir}" destfile="${l3cedim.jarFile}" />
+	</target>
+</project>

@@ -1,0 +1,44 @@
+<!--
+    =====================================================
+												  	C3 PLUGIN Interface
+    =====================================================
+  -->
+	
+<project name="c3plugin" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${c3plugin.buildDir}" />
+		<mkdir dir="${c3plugin.buildDir}" />
+		<mkdir dir="${c3plugin.classDir}" />
+		<mkdir dir="${c3plugin.jarDir}" />
+	</target>
+
+	<macrodef name="compileMacro">
+		<attribute name="tarDir" default="NOT_SET"/>
+		<element name="justdoit" implicit="yes"/>
+		<sequential>
+			<javac srcdir="${c3plugin.srcDir}" destdir="@{tarDir}">
+				<classpath>
+					<pathelement path="${java.class.path}/"/>
+					<pathelement path="${foc.jarFile}/"/>
+					<pathelement path="${basics.jarFile}/"/>
+					<pathelement path="${officeLink.jarFile}/"/>
+					<pathelement path="${POIDir}/${POIFile1}/"/>
+					<pathelement path="${POIDir}/${POIFile2}/"/>				
+				</classpath>
+			</javac>
+		</sequential>
+	</macrodef>
+
+	<target name="compile" depends="prepareDir" >
+		<compileMacro tarDir="${c3plugin.classDir}"/>
+	</target>
+	
+	<target name="compileForPrecast">
+		<compileMacro tarDir="${precastConstruction.classDir}"/>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${c3plugin.classDir}" destfile="${c3plugin.jarFile}" />
+	</target>
+</project>

@@ -1,0 +1,15 @@
+<project name="magProperties">
+	<property name="mag" value="mag"/>
+	<property name="mag.prjDir" value="${srcRoot}/${mag}"/>
+	<property name="mag.srcDir" value="${mag.prjDir}/src"/>
+	<property name="mag.exeDir" value="${exeRoot}/${appSubDir}/${mag}"/>
+	<property name="mag.buildDir" value="${mag.exeDir}/${buildSubDir}"/>
+	<property name="mag.classDir" value="${mag.buildDir}/${classSubDir}"/>
+	<property name="mag.jarDir" value="${mag.buildDir}/${jarSubDir}"/>
+	<property name="mag.jarFile" value="${mag.buildDir}/${jarSubDir}/01b-${mag}.jar"/>
+	<property name="mag.ojarName" value="${mag}.jar"/>
+	<property name="mag.packDir" value="${mag.exeDir}/${versionSubDir}"/>	
+	<property name="mag.keystore" value="${drive_java}:/${eclipseworkspace}/keystore/keystore-mag"/>	
+	<property name="mag.signAlias" value="${global.signAlias}"/>	
+	<property name="mag.signStorepass" value="${global.signStorepass}"/>	
+</project>

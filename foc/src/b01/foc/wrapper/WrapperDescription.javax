@@ -1,0 +1,136 @@
+package b01.foc.wrapper;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import b01.foc.Globals;
+import b01.foc.desc.field.FBoolField;
+import b01.foc.desc.field.FCharField;
+import b01.foc.desc.field.FField;
+import b01.foc.desc.field.FIntField;
+import b01.foc.desc.field.FNumField;
+
+public class WrapperDescription {
+
+  private WrapperLevel              rootLevel                   = null;
+  private WrapperLevel              childLevel                  = null;
+  private WrapperFocDesc            wrapperDesc                 = null;
+  private ArrayList<FField>         tempFieldsArray             = null;
+  private HashMap<Integer, Integer> tempFieldIdToRealFielsIdMap = null;
+  
+  public WrapperDescription() {
+  }
+  
+  public WrapperDescription(WrapperLevel rootLevel) {
+    setRootLevel(rootLevel);
+  }
+
+  public void dispose() {
+    wrapperDesc = null;
+    if (rootLevel != null) {
+      rootLevel.dispose();
+      rootLevel = null;
+    }
+    if (childLevel != null) {
+      childLevel.dispose();
+      childLevel = null;
+    }
+    disposeTempFieldArray();
+    if(tempFieldIdToRealFielsIdMap != null){
+    	tempFieldIdToRealFielsIdMap.clear();
+    	tempFieldIdToRealFielsIdMap = null;
+    }
+  }
+  
+  private void disposeTempFieldArray(){
+  	if(tempFieldsArray != null){
+  		for(int i = 0; i < tempFieldsArray.size(); i++){
+  			FField tempField = tempFieldsArray.get(i);
+  			if(tempField != null){
+  				tempField.dispose();
+  			}
+  		}
+  		tempFieldsArray.clear();
+  		tempFieldsArray = null;
+  	}
+  }
+  
+  public void setRootLevel(WrapperLevel rootLevel) {
+    this.rootLevel = rootLevel;
+  }
+  
+  private ArrayList<FField> getTempFieldsArray(){
+  	if(this.tempFieldsArray == null){
+  		this.tempFieldsArray = new ArrayList<FField>();
+  	}
+  	return tempFieldsArray;
+  }
+  
+  public void addTempField(FField tempField){
+  	getTempFieldsArray().add(tempField);
+  }
+  
+  public WrapperFocDesc getFocDesc(){
+    if(wrapperDesc == null){
+      wrapperDesc = new WrapperFocDesc();
+      ArrayList<WrapperLevel> childWrapperList = getChildWrapperLevel(rootLevel);
+      int fieldID = wrapperDesc.newObjectField(rootLevel.getFocDesc());
+      rootLevel.setObjectFieldID(fieldID);
+      addLevelToDesc(wrapperDesc, childWrapperList);
+      addNonLevelFieldsToWrapperFocDesc(wrapperDesc);
+    }
+    return wrapperDesc;
+  }
+  
+  private ArrayList<WrapperLevel> getChildWrapperLevel(WrapperLevel fatherWrapperLevel){
+    ArrayList<WrapperLevel> childrenLevelList = fatherWrapperLevel.getChildrenLevelList();
+    return childrenLevelList;
+  }
+
+  private WrapperLevel addLevelToDesc(WrapperFocDesc wrapperDesc, ArrayList<WrapperLevel> childrenLevelList){
+    for (int i=0; i<childrenLevelList.size(); i++){
+      childLevel = childrenLevelList.get(i);
+      int fieldID = wrapperDesc.newObjectField(childLevel.getFocDesc());
+      childLevel.setObjectFieldID(fieldID);
+      addLevelToDesc(wrapperDesc, getChildWrapperLevel(childLevel));
+    }
+    return childLevel;
+  }
+  
+  public WrapperLevel getRootLevel() {
+    return rootLevel;
+  }
+  
+  private void addNonLevelFieldsToWrapperFocDesc(WrapperFocDesc wrapperFocDesc){
+  	if(wrapperFocDesc != null){
+  		ArrayList<FField> tempFieldsArray = getTempFieldsArray();
+  		for(int i = 0; i < tempFieldsArray.size(); i++){
+  			FField tempField = tempFieldsArray.get(i);
+  			if(tempField != null){
+  				FField realField = null;
+  				int sqlType = tempField.getSqlType();
+  				if(sqlType == FIntField.SqlType()){
+						FIntField tempFieldInt = (FIntField) tempField;
+						realField = new FIntField(tempFieldInt.getName(), tempFieldInt.getTitle(), wrapperFocDesc.getNextFieldId(),tempFieldInt.getKey(), tempFieldInt.getSize(), tempFieldInt.isGroupingUsed());
+  				}else if(sqlType == FNumField.SqlType()){
+  					FNumField tempFieldNum = (FNumField) tempField;
+  					realField = new FNumField(tempFieldNum.getName(), tempFieldNum.getTitle(), wrapperFocDesc.getNextFieldId(),tempFieldNum.getKey(), tempFieldNum.getSize(), tempFieldNum.getDecimals(), tempFieldNum.isGroupingUsed());
+  				}else if(sqlType == FBoolField.SqlType()){
+  					realField = new FBoolField(tempField.getName(), tempField.getTitle(), wrapperFocDesc.getNextFieldId(), tempField.getKey());
+  				}else if(sqlType == FCharField.SqlType()){
+  					realField = new FCharField(tempField.getName(), tempField.getTitle(), wrapperFocDesc.getNextFieldId(), tempField.getKey(), tempField.getSize());
+  				}else{
+						Exception e = new Exception("Unkown type");
+						Globals.logException(e);
+						break;
+					}
+  				
+  				if(realField != null){
+  					wrapperFocDesc.addField(realField);
+  				}
+  			}
+  		}
+  	}
+  	disposeTempFieldArray();
+  }
+}

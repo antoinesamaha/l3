@@ -1,0 +1,34 @@
+<project name="mgProperties">
+	<property name="mg" value="mg"/>
+	<property name="mg.prjDir" value="${srcRoot}/${mg}"/>
+	<property name="mg.srcDir" value="${mg.prjDir}/src"/>
+	<property name="mg.exeDir" value="${exeRoot}/${appSubDir}/${mg}"/>
+	<property name="mg.buildDir" value="${mg.exeDir}/${buildSubDir}"/>
+	<property name="mg.classDir" value="${mg.buildDir}/${classSubDir}"/>
+	<property name="mg.jarDir" value="${mg.buildDir}/${jarSubDir}"/>
+	<property name="mg.jarFile" value="${mg.buildDir}/${jarSubDir}/01b-${mg}.jar"/>
+	<property name="mg.ojarName" value="${mg}.jar"/>
+	<property name="mg.packDir" value="${mg.exeDir}/${versionSubDir}"/>
+	<property name="mg.keystore" value="${drive_java}:/${eclipseworkspace}/keystore/keystore-mg"/>	
+	<property name="mg.signAlias" value="${global.signAlias}"/>	
+	<property name="mg.signStorepass" value="${global.signStorepass}"/>	
+	
+	<macrodef name="mgSignJar">
+		<attribute name="jar" default="NOT_SET"/>
+		<element name="justdoit" implicit="yes"/>
+		<sequential>
+			<signjar jar="${mg.packDir}/jar/@{jar}" alias="${mg.signAlias}" storepass="${mg.signStorepass}" keystore="${mg.keystore}"/>			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="mgCopySignJar">
+		<attribute name="fromDir" default="NOT_SET"/>
+		<attribute name="toDir" default="NOT_SET"/>
+		<attribute name="jar" default="NOT_SET"/>
+		<element name="justdoit" implicit="yes"/>
+		<sequential>
+			<copySignJar srcDir="@{fromDir}" tarDir="@{toDir}" jar="@{jar}" alias="${mg.signAlias}" storepass="${mg.signStorepass}" keystore="${mg.keystore}"/>
+		</sequential>
+	</macrodef>
+	
+</project>

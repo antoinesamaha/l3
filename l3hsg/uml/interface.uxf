@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><element><type>com.umlet.element.base.Class</type><coordinates><x>60</x><y>120</y><w>340</w><h>190</h></coordinates><panel_attributes>SGH_SAMPLE
+--
+CURRENT_DATE_TIME (DATETIME)
+SAMPLE_ID (INTEGER)
+LIQUID_TYPE (VARCHAR: SERUM, URIN, CSF)
+COLLECTION_DATE (DATE)
+PATIENT_FIRST_NAME (VARCHAR2)
+PATIENT_LAST_NAME (VARCHAR2)
+PATIENT_MIDDLE_INITIAL (VARCHAR2)
+PATIENT_AGE (INTEGER)
+PATIENT_SEX (VARCHAR2: M,F)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>60</x><y>400</y><w>420</w><h>280</h></coordinates><panel_attributes>SGH_TEST
+--
+SEQ_ID (INTEGER, SEQUENCE to be linked on oracle)
+SAMPLE_ID (INTEGER)
+TEST (VARCHAR2)
+STATUS (INTEGER = 
+                0 just inserted by HIS, 
+                1 l3 read it, 
+                2 result updated by L3, 
+                3 result commited by HIS)
+ANALYSER_CODE(VARCHAR2)
+                	if filled on send use this analyser otherwise dispatcher.
+                	On reception L3 will mark the analyser used (for info)
+RESULT (NUMERIC)
+UNIT (VARCHAR2)
+MESSAGE (VERCHAR2)
+</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>220</x><y>290</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;20;20;110</additional_attributes></element></umlet_diagram>

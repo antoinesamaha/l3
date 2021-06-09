@@ -1,0 +1,10 @@
+<project name="l3fProperties">
+	<property name="l3f" value="l3foundations"/>
+	<property name="l3f.prjDir" value="${drive_workspace}:/${eclipseworkspace}/l3foundations"/>
+	<property name="l3f.srcDir" value="${l3f.prjDir}/src"/>
+	<property name="l3f.buildDir" value="${exeRoot}/${l3f}/${buildSubDir}"/>
+	<property name="l3f.classDir" value="${l3f.buildDir}/${classSubDir}"/>
+	<property name="l3f.jarDir" value="${l3f.buildDir}/${jarSubDir}"/>
+	<property name="l3f.jarFile" value="${l3f.buildDir}/${jarSubDir}/01b-l3f.jar"/>
+	<property name="l3f.ojarName" value="l3f.jar"/>
+</project>

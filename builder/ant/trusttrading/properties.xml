@@ -1,0 +1,12 @@
+<project name="trustProperties">
+	<property name="trust" value="trustTrading"/>
+	<property name="trust.prjDir" value="${srcRoot}/${trust}"/>
+	<property name="trust.srcDir" value="${trust.prjDir}/src"/>
+	<property name="trust.exeDir" value="${exeRoot}/${appSubDir}/${trust}"/>	
+	<property name="trust.buildDir" value="${trust.exeDir}/${buildSubDir}"/>
+	<property name="trust.classDir" value="${trust.buildDir}/${classSubDir}"/>
+	<property name="trust.jarDir" value="${trust.buildDir}/${jarSubDir}"/>
+	<property name="trust.jarFile" value="${trust.buildDir}/${jarSubDir}/01b-${trust}.jar"/>
+	<property name="trust.ojarName" value="${trust}.jar"/>
+	<property name="trust.packDir" value="${exeRoot}/${appSubDir}/${trust}/${versionSubDir}"/>	
+</project>

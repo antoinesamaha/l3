@@ -1,0 +1,36 @@
+<!--
+    =====================================================
+												  	Stock
+    =====================================================
+  -->
+	
+<project name="stock" default="makeJar">
+			
+	<target name="prepareDir">
+		<delete dir="${stock.buildDir}" />
+		<mkdir dir="${stock.buildDir}" />
+		<mkdir dir="${stock.classDir}" />
+		<mkdir dir="${stock.jarDir}" />
+	</target>
+
+	<target name="compile" depends="prepareDir">
+		<javac srcdir="${stock.srcDir}" destdir="${stock.classDir}">
+			<classpath>
+				<!-- <pathelement location="lib/"/> -->
+				<pathelement path="${java.class.path}/"/>
+				<pathelement path="${foc.jarFile}/"/>
+				<pathelement path="${basics.jarFile}/"/>
+				<pathelement path="${pimsInterface.jarFile}/"/>
+				<pathelement path="${POIDir}/${POIFile1}/"/>
+				<pathelement path="${POIDir}/${POIFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile1}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile2}/"/>
+				<pathelement path="${JasperReportDir}/${JasperReportFile3}/"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="makeJar" depends="compile">
+		<jar basedir="${stock.classDir}" destfile="${stock.jarFile}" />
+	</target>
+</project>

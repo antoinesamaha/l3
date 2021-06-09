@@ -1,0 +1,15 @@
+<project name="calculateurDeplacementProperties">
+	<property name="calculateurDeplacement" value="calculateurDeplacement"/>
+	<property name="calculateurDeplacement.prjDir" value="${srcRoot}/${calculateurDeplacement}"/>
+	<property name="calculateurDeplacement.srcDir" value="${calculateurDeplacement.prjDir}/src"/>
+	<property name="calculateurDeplacement.exeDir" value="${exeRoot}/${appSubDir}/${calculateurDeplacement}"/>	
+	<property name="calculateurDeplacement.buildDir" value="${exeRoot}/${appSubDir}/${calculateurDeplacement}/${buildSubDir}"/>
+	<property name="calculateurDeplacement.classDir" value="${calculateurDeplacement.buildDir}/${classSubDir}"/>
+	<property name="calculateurDeplacement.jarDir" value="${calculateurDeplacement.buildDir}/${jarSubDir}"/>
+	<property name="calculateurDeplacement.jarFile" value="${calculateurDeplacement.buildDir}/${jarSubDir}/01b-${calculateurDeplacement}.jar"/>
+	<property name="calculateurDeplacement.ojarName" value="${calculateurDeplacement}.jar"/>
+	<property name="calculateurDeplacement.packDir" value="${calculateurDeplacement.exeDir}/${versionSubDir}"/>	
+	<property name="calculateurDeplacement.keystore" value="${drive_java}:/${eclipseworkspace}/keystore/keystore-ccc"/>	
+	<property name="calculateurDeplacement.signAlias" value="${global.signAlias}"/>	
+	<property name="calculateurDeplacement.signStorepass" value="${global.signStorepass}"/>	
+</project>

@@ -1,0 +1,49 @@
+package b01.foc.wrapper;
+
+import b01.foc.desc.FocDesc;
+import b01.foc.desc.field.FCharField;
+import b01.foc.desc.field.FField;
+import b01.foc.desc.field.FObjectField;
+
+public class WrapperFocDesc extends FocDesc {
+
+  public static final int     FATHER_NODE_ID      = 1;
+  public static final String  FATHER_NODE_ID_NAME = "FATHERNODE";
+  public static final int     FLD_NODE_NAME       = 2;
+  public static final int     FLD_FIRST_OBJECT    = 10;
+  
+  private int fieldCountID = 0;
+  
+  public WrapperFocDesc() {
+    super(Wrapper.class, FocDesc.NOT_DB_RESIDENT, "Wrapper", false);
+    FField fField = addReferenceField();
+    
+    fField = new FCharField ("NODE_NAME", "Node Name", FLD_NODE_NAME, false, 20);
+    addField(fField);
+    
+    FObjectField fatherNode = new FObjectField(FATHER_NODE_ID_NAME, FATHER_NODE_ID_NAME, FATHER_NODE_ID, false, this, "FATHER_");
+    fatherNode.setNullValueMode(FObjectField.NULL_VALUE_ALLOWED_AND_SHOWN);
+    fatherNode.setComboBoxCellEditor(FField.REF_FIELD_ID);
+    addField(fatherNode);
+    setFObjectTreeFatherNodeID(FATHER_NODE_ID);
+  }
+  
+  /*public int newObjectField(FocDesc desc){
+    int currentFieldID = FLD_FIRST_OBJECT + fieldCountID;
+    FObjectField objField = new FObjectField(desc.getStorageName(), desc.getStorageName(), currentFieldID , false, desc, desc.getStorageName()+"_");
+    addField(objField);
+    fieldCountID++;
+    return currentFieldID; 
+  }*/
+  
+  public int newObjectField(FocDesc desc){
+    int currentFieldID = getNextFieldId();
+    FObjectField objField = new FObjectField(desc.getStorageName(), desc.getStorageName(), currentFieldID , false, desc, desc.getStorageName()+"_");
+    addField(objField);
+    return currentFieldID; 
+  }
+  
+  public int getNextFieldId(){
+  	return FLD_FIRST_OBJECT + fieldCountID++;
+  }
+}

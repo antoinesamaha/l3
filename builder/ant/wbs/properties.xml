@@ -1,0 +1,12 @@
+<project name="cccProperties">
+	<property name="ccc" value="budget"/>
+	<property name="ccc.prjDir" value="${srcRoot}/${ccc}"/>
+	<property name="ccc.srcDir" value="${ccc.prjDir}/src"/>
+	<property name="ccc.exeDir" value="${exeRoot}/${appSubDir}/${ccc}"/>
+	<property name="ccc.buildDir" value="${ccc.exeDir}/${buildSubDir}"/>
+	<property name="ccc.classDir" value="${ccc.buildDir}/${classSubDir}"/>
+	<property name="ccc.jarDir" value="${ccc.buildDir}/${jarSubDir}"/>
+	<property name="ccc.jarFile" value="${ccc.buildDir}/${jarSubDir}/01b-${ccc}.jar"/>
+	<property name="ccc.ojarName" value="${ccc}.jar"/>
+	<property name="ccc.packDir" value="${ccc.exeDir}/${versionSubDir}"/>
+</project>

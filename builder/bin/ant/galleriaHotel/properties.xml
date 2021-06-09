@@ -1,0 +1,17 @@
+<!--
+    =====================================================
+											galleria
+    =====================================================
+  -->
+<project name="galleriaProperties">
+	<property name="galleria" value="galleriaHotel"/>
+	<property name="galleria.prjDir" value="${srcRoot}/${galleria}"/>
+	<property name="galleria.srcDir" value="${galleria.prjDir}/src"/>
+	<property name="galleria.exeDir" value="${exeRoot}/${appSubDir}/${galleria}"/>
+	<property name="galleria.buildDir" value="${galleria.exeDir}/${buildSubDir}"/>
+	<property name="galleria.classDir" value="${galleria.buildDir}/${classSubDir}"/>
+	<property name="galleria.jarDir" value="${galleria.buildDir}/${jarSubDir}"/>
+	<property name="galleria.jarFile" value="${galleria.buildDir}/${jarSubDir}/01b-${galleria}.jar"/>
+	<property name="galleria.ojarName" value="${galleria}.jar"/>
+	<property name="galleria.packDir" value="${galleria.exeDir}/${versionSubDir}"/>
+</project>

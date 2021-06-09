@@ -1,0 +1,21 @@
+<Barmaja>
+<Date>Wed Jul 25 17:34:52 EEST 2012</Date>
+<Suite name='HSG Complete Suite'>
+    <Test name='testLogin'>
+        <GuiAction componentType='TextField' componentName='Login' action='Insert CONNECT'>
+            <Assert>Gui Component 'FUSER.NAME' Found
+            </Assert>
+            <GuiAction componentType='FGTextField' componentName='FUSER.NAME' action='setTextCONNECT'>
+                <Assert>RequestFocuse for 
+                </Assert>
+            </GuiAction>
+        </GuiAction>
+        <GuiAction componentType='JButton' componentName=' VALIDATE' action='Click'>
+            <Assert>Gui Component 'VALIDATE' Found
+            </Assert>
+            <Assert>RequestFocuse for 
+            </Assert>
+        </GuiAction>
+        <Status>Success</Status>
+    </Test>
+    <Test name='test_DRIVER_Pentra120'>

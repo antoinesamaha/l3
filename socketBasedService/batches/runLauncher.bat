@@ -1,0 +1,1 @@
+java -classpath jar\socketBasedService.jar b01/sbs/remoteLauncherServer/RemoteLauncherServer 8899

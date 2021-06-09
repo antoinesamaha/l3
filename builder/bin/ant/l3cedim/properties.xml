@@ -1,0 +1,12 @@
+<project name="l3cedimProperties">
+	<property name="l3cedim" value="l3cedim"/>
+	<property name="l3cedim.prjDir" value="${srcRoot}/${l3cedim}"/>
+	<property name="l3cedim.srcDir" value="${l3cedim.prjDir}/src"/>
+	<property name="l3cedim.exeDir" value="${exeRoot}/${appSubDir}/${l3cedim}"/>
+	<property name="l3cedim.buildDir" value="${exeRoot}/${appSubDir}/${l3cedim}/${buildSubDir}"/>
+	<property name="l3cedim.classDir" value="${l3cedim.buildDir}/${classSubDir}"/>
+	<property name="l3cedim.jarDir" value="${l3cedim.buildDir}/${jarSubDir}"/>
+	<property name="l3cedim.jarFile" value="${l3cedim.buildDir}/${jarSubDir}/01b-${l3cedim}.jar"/>
+	<property name="l3cedim.ojarName" value="${l3cedim}.jar"/>
+	<property name="l3cedim.packDir" value="${exeRoot}/${appSubDir}/${l3cedim}/${versionSubDir}"/>	
+</project>
