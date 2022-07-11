@@ -124,6 +124,10 @@ public class AstmReceiver implements L3SerialPortListener {
 	public void setResultLineReader(ResultLineReader resultLineReader) {
 		this.resultLineReader = resultLineReader;
 	}
+	
+	public void setCommentResultReader(CommentResultReader commentResultReader) {
+		this.commentResultReader = commentResultReader;
+	}
 
 	private StringBuffer getConcatenationBuffer() {
 		if (concatenationBuffer == null) {
@@ -480,5 +484,31 @@ public class AstmReceiver implements L3SerialPortListener {
 		} catch (Exception e) {
 			Globals.logException(e);
 		}
+	}
+	
+	public void unitTesting_treatResultFrame(AstmFrame frame) {
+		if (message == null) {
+			initMessage();
+		}
+		treatResultFrame(frame);
+	}
+	
+	public void unitTesting_PrintMessage() {
+		if(message != null) {
+			for(int i=0; i<message.getNumberOfSamples(); i++) {
+				L3Sample sample = message.getSample(i);
+				Globals.logString("- Sample: ID:"+sample.getId()+" FN:"+sample.getFirstName()+" LN:"+sample.getLastName());
+				for(int t=0; t<sample.getTestListWithoutLoad().size(); t++) {
+					L3Test test = (L3Test) sample.getTestListWithoutLoad().getFocObject(t);
+					if(test != null) {
+						Globals.logString("  - Test: Lbl:"+test.getLabel()+" Value:"+test.getValue()+" Notes:"+test.getValueNotes()+" Alarm:"+test.getAlarm());
+					}
+				}
+			}
+		}
+	}
+
+	public CommentResultReader getCommentResultReader() {
+		return commentResultReader;
 	}
 }

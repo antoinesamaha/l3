@@ -145,7 +145,7 @@ public class InstrumentGuiBrowsePanel extends FPanel{
           selectionPanel.setMainPanelSising(FPanel.MAIN_PANEL_FILL_VERTICAL);
         }
         //EAntoine - Permute
-        add(selectionPanel, 0, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.VERTICAL);
+        add(selectionPanel, 0, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);//add(selectionPanel, 0, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.VERTICAL);
         if(realViewId == L3Globals.VIEW_NORMAL) refreshLaunchedAndConnected(getInstrumentList());
       }
     }

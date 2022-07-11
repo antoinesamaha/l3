@@ -32,8 +32,8 @@ public class PoolKernelGuiDetailsPanel extends FPanel {
   }
  
   public void newDetailsPanelAllViews() {
-		setFill(FILL_VERTICAL);
-  	setMainPanelSising(MAIN_PANEL_FILL_VERTICAL);
+  	setFill(FILL_BOTH);//setFill(FILL_VERTICAL);
+  	setMainPanelSising(MAIN_PANEL_FILL_BOTH);//setMainPanelSising(MAIN_PANEL_FILL_VERTICAL);
   	headerPanel = new FPanel();
   	{
   		headerPanel.add(pool, PoolKernelDesc.FLD_NAME, 0, 0);
@@ -43,14 +43,15 @@ public class PoolKernelGuiDetailsPanel extends FPanel {
   	}
 
     FPanel InstrumentPanel = Instrument.newBrowsePanel(pool.getInstrumentList(), L3Globals.view_BuildViewId(realView, isLocked));
-    InstrumentPanel.setFill(FPanel.FILL_VERTICAL);
-    add(InstrumentPanel, 0, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.VERTICAL);
+    InstrumentPanel.setFill(FPanel.FILL_BOTH);//InstrumentPanel.setFill(FPanel.FILL_VERTICAL);
+    add(InstrumentPanel, 0, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
   	
   	add(headerPanel, 0, 0, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 
     setFrameTitle ("Pool: "+pool.getName());
     //setMainPanelSising(FPanel.FILL_VERTICAL);
-    setFill(FPanel.FILL_VERTICAL);
+    //setFill(FPanel.FILL_VERTICAL);
+    setFill(FPanel.FILL_BOTH);
     FValidationPanel validPanel = showValidationPanel(true);
     if(realView == L3Globals.VIEW_CONFIG){
     	validPanel.addSubject(pool);

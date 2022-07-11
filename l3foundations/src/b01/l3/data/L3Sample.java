@@ -20,7 +20,6 @@ import b01.foc.list.FocList;
 import b01.foc.list.FocListElement;
 import b01.foc.list.FocListIterator;
 import b01.foc.property.FBoolean;
-import b01.foc.property.FDate;
 import b01.foc.property.FDateTime;
 import b01.foc.property.FInt;
 import b01.foc.property.FList;
@@ -199,6 +198,7 @@ public class L3Sample extends FocObject {
   public void copyWithoutTests(L3Sample sample){
     setId(sample.getId());
     setPatientId(sample.getPatientId());
+    setOrigin(sample.getOrigin());
     setLastName(sample.getLastName());
     setFirstName(sample.getFirstName());
     setMiddleInitial(sample.getMiddleInitial());
@@ -303,7 +303,7 @@ public class L3Sample extends FocObject {
   
   public StringBuffer toStringBuffer(){
     StringBuffer buff = new StringBuffer();
-    buff.append(getId()+" liq:"+getLiquidType()+"PatientId="+getPatientId()+" FirstName="+getFirstName()+" MidInitial="+getMiddleInitial()+" LastName="+getLastName()+" Sexe"+getSexe()+"\n");
+    buff.append(getId()+" liq:"+getLiquidType()+"PatientId="+getPatientId()+" FirstName="+getFirstName()+" MidInitial="+getMiddleInitial()+" LastName="+getLastName()+" Sexe"+getSexe()+" Origin="+getOrigin()+"\n");
     int i=0;
     Iterator iter = testIterator();
     while(iter != null && iter.hasNext()){
@@ -348,6 +348,17 @@ public class L3Sample extends FocObject {
    }
  }
 
+ public String getOrigin(){
+   FString origin = (FString)getFocProperty(L3SampleDesc.FLD_ORIGIN);
+   return origin != null ? origin.getString() : "";
+ }
+ 
+ public void setOrigin(String origin){
+   FString originProp = (FString)getFocProperty(L3SampleDesc.FLD_ORIGIN);
+   if(originProp != null){
+     originProp.setString(origin);
+   }
+ }
  public int getAge(){
 	 return getPropertyInteger(L3SampleDesc.FLD_AGE);
  }

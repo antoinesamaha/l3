@@ -33,10 +33,11 @@ public class L3SampleDesc extends FocDesc {
   public static final int FLD_OK_TO_BE_SENT= 13;
   public static final int FLD_ENTRY_DATE= 14;
   public static final int FLD_AGE = 16;
+  public static final int FLD_ORIGIN = 17;
   
-  public static final int FLD_INSTRUMENT_MESSAGE_LIST = 17;
+  public static final int FLD_INSTRUMENT_MESSAGE_LIST = 18;
     
-  public static final int FLD_DATE_OF_BIRTH = 18;
+  public static final int FLD_DATE_OF_BIRTH = 19;
   
   public static final String FNAME_ID = "ID";
   
@@ -48,6 +49,7 @@ public class L3SampleDesc extends FocDesc {
   
   public static final int SAMPLE_ID_LENGTH    = 15;
   public static final int PATIENT_ID_LENGTH   = 15;
+  public static final int ORIGIN_LENGTH       = 10;
   public static final int LEN_LAST_NAME       = 30;
   public static final int LEN_FIRST_NAME      = 30;
   public static final int LEN_MIDDLE_INITIAL  = 1;
@@ -70,6 +72,8 @@ public class L3SampleDesc extends FocDesc {
     addField(focFld);
     focFld = new FCharField("PATIENT_ID", "Patient id", FLD_PATIENT_ID, false, PATIENT_ID_LENGTH);
     addField(focFld);
+    focFld = new FCharField("ORIGIN", "Origin", FLD_ORIGIN, false, ORIGIN_LENGTH);
+    addField(focFld);    
     focFld = new FCharField ("LAST_NAME", "Last name", FLD_LAST_NAME, false, 30);
     addField(focFld);
     focFld = new FCharField ("FIRST_NAME", "First name", FLD_FIRST_NAME, false, 30);

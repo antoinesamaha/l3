@@ -19,6 +19,7 @@ import b01.l3.connector.dbConnector.lisConnectorTables.LisConnectorModule;
 
 public class Main {
 
+	
 	public static void mainMySQLs(String[] args) {
 		try {
 			// Globals.logString("Loading...");
@@ -192,6 +193,18 @@ public class Main {
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.dadeBehring.bct.BCTDriver", b01.l3.drivers.dadeBehring.bct.BCTDriver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.dadeBehring.bcs.BCSDriver", b01.l3.drivers.dadeBehring.bcs.BCSDriver.class);
 
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Driver", b01.l3.drivers.cs2500.CS2500Driver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Emulator", b01.l3.drivers.cs2500.CS2500Emulator.class);
+
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDDriver", b01.l3.drivers.alcor.ised.ISEDDriver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDEmulator", b01.l3.drivers.alcor.ised.ISEDEmulator.class);
+
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Driver", b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Driver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Emulator", b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Emulator.class);
+
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.vitek.bci.VitekBCIDriver", b01.l3.drivers.vitek.bci.VitekBCIDriver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.vitek.bci.VitekBCIEmulator", b01.l3.drivers.vitek.bci.VitekBCIEmulator.class);
+
 			FileIOFactory.getInstance().addFileIO("b01.l3.connector.fileConnector.DefaultFileIO", b01.l3.connector.fileConnector.DefaultFileIO.class);
 
 			LisConnectorFactory.getInstance().addLisConnector("b01.l3.connector.fileConnector.LisFileConnector", b01.l3.connector.fileConnector.LisFileConnector.class);
@@ -212,7 +225,7 @@ public class Main {
 				l3Main.popupTheRightPanel();
 			}
 //			Globals.logString("Build date : 23/06/2015");
-			Globals.logString("Build date : 04/11/2018");
+			Globals.logString("Build date : 10/03/2019");
 
 			l3Main.executeBackgroundTasks();
 			

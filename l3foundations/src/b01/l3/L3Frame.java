@@ -102,6 +102,12 @@ public abstract class L3Frame implements Cloneable{
   public void append2Data(char inc) {
     append2Buffer(data, inc);
   }
+  
+  public void append2Data(char inc, int count) {
+  	for(int i=0; i<count; i++) {
+  		append2Data(inc);
+  	}
+  }
 
   public void append2DataWithFrame(String inc) {
     append2Buffer(dataWithFrame, inc);
@@ -114,10 +120,12 @@ public abstract class L3Frame implements Cloneable{
   public void append2DataWithFrame(StringBuffer buffer){
     dataWithFrame.append(buffer);
   }
-public boolean isDoNotAnswerThatFrameBecauseReceivedAnotherMessage() {
-	return doNotAnswerThatFrameBecauseReceivedAnotherMessage;
-}
-public void setDoNotAnswerThatFrameBecauseReceivedAnotherMessage(boolean doNotAnswerThatFrameBecauseReceivedAnotherMessage) {
-	this.doNotAnswerThatFrameBecauseReceivedAnotherMessage = doNotAnswerThatFrameBecauseReceivedAnotherMessage;
-}
+  
+  public boolean isDoNotAnswerThatFrameBecauseReceivedAnotherMessage() {
+  	return doNotAnswerThatFrameBecauseReceivedAnotherMessage;
+  }
+  
+  public void setDoNotAnswerThatFrameBecauseReceivedAnotherMessage(boolean doNotAnswerThatFrameBecauseReceivedAnotherMessage) {
+  	this.doNotAnswerThatFrameBecauseReceivedAnotherMessage = doNotAnswerThatFrameBecauseReceivedAnotherMessage;
+  }
 }

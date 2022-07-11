@@ -1,5 +1,7 @@
 package b01.l3.drivers.roches.cobas.infinity;
 
+import java.util.StringTokenizer;
+
 import b01.foc.Globals;
 import b01.foc.util.ASCII;
 import b01.l3.data.L3Test;
@@ -137,11 +139,37 @@ public class CobasInfinity_ResultLineReader extends ResultLineReader {
 
 				try{
 					if(token != null && token.length() > 0 && test != null){
-						int alarmCode = Integer.valueOf(token);
-						if(alarmCode > 0 && alarmCode < infinityAlarms.length){
-							String message = infinityAlarms[alarmCode];
-							test.setNotificationMessage(message);
-						}
+						//if(token.contains(",")) {
+							String message = "";
+					    StringTokenizer tok = new StringTokenizer(token, ",", false);      
+					    while(tok.hasMoreTokens()){
+					    	String currentMessage = null;
+					      
+					    	String subToken = tok.nextToken();
+					      try {
+					      	int alarmCode = Integer.valueOf(subToken);
+									if(alarmCode > 0 && alarmCode < infinityAlarms.length){
+										currentMessage = infinityAlarms[alarmCode];
+									}
+					      } catch(Exception e) {
+					      	//currentMessage = subToken;
+					      }
+
+					      if (currentMessage != null && !currentMessage.isEmpty()) {
+					      	if(!message.isEmpty()) message += ", ";
+					      	message += currentMessage;
+					      }
+					    }
+					    test.setNotificationMessage(message);
+							
+//						} else {
+//							int alarmCode = Integer.valueOf(token);
+//							if(alarmCode > 0 && alarmCode < infinityAlarms.length){
+//								String message = infinityAlarms[alarmCode];
+//								test.setNotificationMessage(message);
+//							}
+//							
+//						}
 					}
 				}catch(Exception e){
 					Globals.logExceptionWithoutPopup(e);

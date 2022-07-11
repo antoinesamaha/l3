@@ -52,6 +52,9 @@ public class CobasInfinityFrameCreator extends Cobas501FrameCreator {
 				// Patient
 				//B-PatientID-20151123
 				//frame.append2Data("P|1||PatID|||||");
+				String origin = sam != null ? sam.getOrigin() : "";
+				if(origin == null) origin = "";
+				
 				String patientID = sam != null ? sam.getPatientId() : null;
 				if(patientID == null || patientID.equals("")) patientID = "PatID";
 				
@@ -123,10 +126,15 @@ public class CobasInfinityFrameCreator extends Cobas501FrameCreator {
 				frame.append2Data("O|1|" + sam.getId() + "|" + sam.getId()
 						+ "^^^^S" + liquidTypeString + "^SC|");
 
+				String priority = "R";
+				
 				boolean isFirst = true;
 				Iterator tIter = sam.testIterator();
 				while (tIter != null && tIter.hasNext()) {
 					L3Test test = (L3Test) tIter.next();
+					if(test != null && test.getPriority() != null && test.getPriority().equals("S")) {
+						priority = "S";
+					}
 					String machineTest = test != null ? driver.testMaps_getInstCode(test.getLabel()) : null;
 					if (machineTest != null) {
 						// Order Frame
@@ -146,7 +154,9 @@ public class CobasInfinityFrameCreator extends Cobas501FrameCreator {
 						// }
 					}
 				}
-				frame.append2Data("|R||");
+				frame.append2Data("|");
+				frame.append2Data(priority);//R or S
+				frame.append2Data("||");
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 				if (sam.getEntryDate().getTime() < 24 * 60 * 60 * 1000) {
@@ -158,6 +168,9 @@ public class CobasInfinityFrameCreator extends Cobas501FrameCreator {
 					frame.append2Data(sdf.format(sam.getEntryDate()));
 				}
 
+				frame.append2Data("|");
+				frame.append2Data(origin);
+				
 				// frame.append2Data("||||N||||1||||||||||O");
 				frame.append2Data("||||N||||" + liquidTypeString
 						+ "||||||||||O");

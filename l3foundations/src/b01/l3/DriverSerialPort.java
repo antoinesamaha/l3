@@ -18,7 +18,8 @@ import b01.l3.connection.L3SecurePorte;
 public abstract class DriverSerialPort extends Driver {
 	protected abstract void synchronizeSequenceID() throws Exception;
 	
-	protected L3SerialPort l3SerialPort = null;
+	protected L3SerialPort l3SerialPort    = null;
+	protected L3SerialPort l3SerialPortBis = null;
 	private boolean unitTesting = false;
 	protected HashMap<String, String> mapLis2Inst = null;
 	protected HashMap<String, String> mapInst2Lis = null;
@@ -31,6 +32,10 @@ public abstract class DriverSerialPort extends Driver {
 		if (l3SerialPort != null) {
 			l3SerialPort.dispose();
 			l3SerialPort = null;
+		}
+		if(l3SerialPortBis != null) {
+			l3SerialPortBis.dispose();
+			l3SerialPortBis = null;
 		}
 		if (mapLis2Inst != null) {
 			mapLis2Inst.clear();
@@ -92,6 +97,16 @@ public abstract class DriverSerialPort extends Driver {
 		l3SerialPort.setParametersFromProperties(props);
 	}
 
+	public void newSerialPortBis(Properties props) throws Exception {
+		l3SerialPortBis = new L3SerialPort();
+		l3SerialPortBis.setParametersFromProperties(props);
+	}
+
+	public void newSecureSerialPortBis(Properties props) throws Exception {
+		l3SerialPortBis = new L3SecurePorte();
+		l3SerialPortBis.setParametersFromProperties(props);
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -134,6 +149,10 @@ public abstract class DriverSerialPort extends Driver {
 
 	public L3SerialPort getL3SerialPort() {
 		return l3SerialPort;
+	}
+	
+	public L3SerialPort getL3SerialPortBis() {
+		return l3SerialPortBis;
 	}
 
 	private void uselessWait() {

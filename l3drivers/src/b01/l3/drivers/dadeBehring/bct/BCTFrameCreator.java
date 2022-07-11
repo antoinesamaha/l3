@@ -37,6 +37,7 @@ public class BCTFrameCreator extends AstmFrameCreator{
     return frame;
   }
   
+  //J %P %O %30*               -%Y,%T
   public AstmFrame newOrderFrame (Instrument instrument, int sequence, L3Sample sample, String testString) throws Exception{
     BCTFrame frame = new BCTFrame(instrument, sequence, AstmFrame.FRAME_TYPE_NONE);
     
@@ -47,6 +48,7 @@ public class BCTFrameCreator extends AstmFrameCreator{
     frame.append2Data(sampleID, 23);
     frame.append2Data(ASCII.SPACE);
 
+    /*
     ///////////////////////
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     if(sample.getEntryDate().getTime() < 24*60*60*1000){
@@ -61,12 +63,19 @@ public class BCTFrameCreator extends AstmFrameCreator{
     sdf = new SimpleDateFormat("HH:mm");
     frame.append2Data(sdf.format(sample.getEntryDate()));
     frame.append2Data(ASCII.SPACE);
-    /////////////
+    /////////////     
+     */
     
     frame.append2Data("1");	// additionnal request
     frame.append2Data(ASCII.SPACE);
 
     frame.append2Data(testString);
+    
+    //2019-09-16
+    //Appending a silly nonsense integer because the machine was not taking the last test. 
+    //So we added a dummy one at the end
+    frame.append2Data(ASCII.SPACE);
+    frame.append2Data("99");
     return frame;
   }
 

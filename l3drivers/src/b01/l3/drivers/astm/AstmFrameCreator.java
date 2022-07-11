@@ -157,9 +157,9 @@ public class AstmFrameCreator {
   
   protected void appendASingleTest(AstmFrame frame, String instrCode, int testCodeLength) throws Exception{
   	for (int i=0; i<3; i++){
-		frame.append2Data(AstmFrame.COMPONENT_DELIMITER);
-	}
-	frame.append2Data(instrCode, testCodeLength);    	
+  		frame.append2Data(AstmFrame.COMPONENT_DELIMITER);
+  	}
+  	frame.append2Data(instrCode, testCodeLength);    	
   }
   
   public AstmFrame newOrderFrame (Instrument instrument, int sequence, int sequence_num, String specimen, String testId, Date collectionDate) throws Exception{
@@ -338,15 +338,15 @@ public class AstmFrameCreator {
         frame = newSpecificComments(driver.getInstrument(), getNextSequence_WithoutIncrementing(), sampleSequence, sam);//For conventional ML DISABLED
         if(frame != null){
           incrementSequence();
-		  driver.addFrame(frame);
-	    }        
+		      driver.addFrame(frame);
+	      }        
         
         // Comment frame
         if(driver.getAstmParams().isSendCommentFrameFromHost()){
-    	  frame = newCommentFrame(driver.getInstrument(), getNextSequence(), sampleSequence, sam);
-    	  if(frame != null){
-    		  driver.addFrame(frame);
-    	  }
+	    	  frame = newCommentFrame(driver.getInstrument(), getNextSequence(), sampleSequence, sam);
+	    	  if(frame != null){
+	    		  driver.addFrame(frame);
+	    	  }
         }
         // -------------
         

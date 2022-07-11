@@ -31,10 +31,11 @@ public class CobasInfinityDriver extends Cobas501Driver {
 	
 	@Override
 	protected void initDriverReceiver() {
-		super.initDriverReceiver();
-		AstmReceiver astmReceiver = (AstmReceiver) getDriverReceiver();
+		CobasInfinity_AstmReceiver astmReceiver = new CobasInfinity_AstmReceiver(this);
+		setDriverReceiver(astmReceiver);
 		if(astmReceiver != null){
 			astmReceiver.setResultLineReader(new CobasInfinity_ResultLineReader(this));
+			astmReceiver.setCommentResultReader(new CobasInfinity_CommentResultReader());
 		}
 	}
 }

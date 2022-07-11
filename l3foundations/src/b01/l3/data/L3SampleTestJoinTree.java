@@ -60,6 +60,7 @@ public class L3SampleTestJoinTree extends FCriteriaTree{
   							fatherSampleTest.setPropertyMultiChoice(L3SampleDesc.FLD_AGE, sampleTestJoin.getPropertyMultiChoice(L3SampleDesc.FLD_LIQUIDE_TYPE));
   							fatherSampleTest.setPropertyString(L3SampleDesc.FLD_PATIENT_ID, sampleTestJoin.getPropertyString(L3SampleDesc.FLD_PATIENT_ID));
   							fatherSampleTest.setPropertyString(L3SampleDesc.FLD_SEXE, sampleTestJoin.getPropertyString(L3SampleDesc.FLD_SEXE));
+  							fatherSampleTest.setPropertyString(L3SampleDesc.FLD_ORIGIN, sampleTestJoin.getPropertyString(L3SampleDesc.FLD_ORIGIN));
 							}										
 						}
 					

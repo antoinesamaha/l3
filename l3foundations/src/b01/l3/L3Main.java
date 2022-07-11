@@ -17,7 +17,7 @@ import b01.l3.devTesting.DevTesting;
 import b01.sbs.BService;
 import b01.sbs.remoteLauncherServer.RemoteLauncherServer;
 
-public class L3Main extends ArgumentsHash{
+public class L3Main extends ArgumentsHash {
 
 	private int    guiNavigatorType   = DisplayManager.GUI_NAVIGATOR_MDI;
 	private String fileConnectorValue = null;
@@ -78,7 +78,7 @@ public class L3Main extends ArgumentsHash{
 	public Application newApplicationVersionAndModuleDeclaration(String[] args){
 		args = addLogFilePrefixIfNeeded(args);
 	  Application app = Globals.newApplication(true, true, guiNavigatorType, args);
-	  FocVersion.addVersion("L3", "l3-1.0" , 1004); //1003
+	  FocVersion.addVersion("L3", "l3-1.0" , 1005); //1003
 	  app.declareModule(new L3KernelModule());
 	  app.declareModule(new CalendarModule());
 	  return app;
@@ -94,8 +94,8 @@ public class L3Main extends ArgumentsHash{
 		if(executeSQL){
 			DevTesting devTesting = new DevTesting();
 			devTesting.test_InsertSampleThenOneTestForThatSample1();
+			devTesting.test_DriverU601();
 			
-//			devTesting.test_DriverU601();
 		}else if(instrumentCode != null){
 			stopLaunchcerHangAndStopLogConsoleActive();
 			Instrument instr = PoolKernel.getInstrumentForAnyPool(instrumentCode);

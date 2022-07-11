@@ -22,6 +22,7 @@ public class LisSampleDesc extends FocDesc{
   public static final int FLD_PATIENT_SEX            = 9;
   public static final int FLD_PATIENT_ID             =10;
   public static final int FLD_DATE_OF_BIRTH          =11;
+  public static final int FLD_ORIGIN                 =12;
   
   public LisSampleDesc() {
     super(LisSample.class, FocDesc.DB_RESIDENT, "LISSAMPLE", false);
@@ -62,6 +63,9 @@ public class LisSampleDesc extends FocDesc{
     addField(focFld);
     
     focFld = new FCharField("PATIENT_ID", "Patient id", FLD_PATIENT_ID, false, L3SampleDesc.PATIENT_ID_LENGTH);
+    addField(focFld);
+    
+    focFld = new FCharField("ORIGIN", "Origin", FLD_ORIGIN, false, L3SampleDesc.ORIGIN_LENGTH);
     addField(focFld);
   }
   

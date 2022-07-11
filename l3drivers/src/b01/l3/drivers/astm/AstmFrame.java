@@ -28,6 +28,8 @@ public class AstmFrame extends L3Frame {
 	public static final char ETX = 3;
 	public static final char CR = 13;
 	public static final char LF = 10;
+	public static final char VT = ASCII.VT;
+	public static final char FS = ASCII.FS;
 
 	public final static char FRAME_TYPE_HEADER = 'H';
 	public final static char FRAME_TYPE_PATIENT = 'P';
@@ -48,6 +50,7 @@ public class AstmFrame extends L3Frame {
 	public static final char COMPONENT_DELIMITER = '^';
 	public static final char ESCAPE_DELIMITER = '&';
 	public static final char REPEAT_DELIMITER = '\\';// 92
+	public static final char REPEAT_SUB_FIELD_DELIMITER = '~';
 
 	public AstmFrame(Instrument instrument) {
 		super(instrument);

@@ -139,6 +139,21 @@ public class CobasU601701_ResultLineReader extends ResultLineReader {
 					
 					if(machineCode.equals("WBC") || machineCode.equals("RBC")) {
 						String numValueText = token.trim();
+						
+						getTest().setAlarm(L3TestDesc.TEST_RESULT_EMPTY_ALARM);
+						if(numValueText.charAt(0) == '>' || numValueText.charAt(0) == '<'){
+							if (numValueText.charAt(0) == '>') { 
+								getTest().setAlarm(L3TestDesc.TEST_RESULT_GREATER_THAN);
+							}else if (numValueText.charAt(0) == '<') { 
+								getTest().setAlarm(L3TestDesc.TEST_RESULT_LESS_THAN);
+							}
+							numValueText = numValueText.substring(1);
+							int indexOfDot = numValueText.indexOf(".");
+							if(indexOfDot > 0) {
+								numValueText = numValueText.substring(0, indexOfDot);
+							}
+						}
+						
 						try{
 							double numValue = Double.valueOf(numValueText);
 							numValue = Math.floor(numValue);

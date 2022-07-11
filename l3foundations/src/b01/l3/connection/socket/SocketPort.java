@@ -13,6 +13,7 @@ import b01.l3.exceptions.L3SerialPortOpeningException;
 
 public class SocketPort implements SerialPortInterface {
 	private PhysicalSocket physicalSocket = null;
+//	private PhysicalSocket physicalSocketReceptionOnly = null;//Some Drivers require separate ports for Send Receive
 
 	public SocketPort(Properties props) throws Exception {
 		setParametersFromProperties(props);
@@ -24,11 +25,19 @@ public class SocketPort implements SerialPortInterface {
 			physicalSocket.dispose();
 			physicalSocket = null;
 		}
+//		if (physicalSocketReceptionOnly != null) {
+//			physicalSocketReceptionOnly.dispose();
+//			physicalSocketReceptionOnly = null;
+//		}
 	}
 	
 	public PhysicalSocket getPhysicalSocket(){
 		return physicalSocket;
 	}
+	
+//	public PhysicalSocket getPhysicalSocketReceiPhysicalSocket(){
+//		return physicalSocketReceptionOnly;
+//	}
 
 	public boolean isSerialPortNull() {
 		return physicalSocket == null;
@@ -60,6 +69,18 @@ public class SocketPort implements SerialPortInterface {
 			}
 
 			physicalSocket = new PhysicalSocket(portNbtInt);
+			
+			//Checking if 2 separate ports for send/receive
+			//---------------------------------------------
+			/*
+			Globals.logString("Checking if we need 2 TCPIP ports");
+			if(props.get("tcpip") != null && props.get("tcpip").equals("2")){
+				portNbtInt = portNbtInt+1;
+				Globals.logString("Opening additional port at : "+(portNbtInt));
+				physicalSocketReceptionOnly = new PhysicalSocket(portNbtInt);
+			}
+			*/
+			//---------------------------------------------
 		}
 	}
 
@@ -69,6 +90,10 @@ public class SocketPort implements SerialPortInterface {
 			physicalSocket.closeSocket();
 			physicalSocket = null;
 		}
+//		if (physicalSocketReceptionOnly != null) {
+//			physicalSocketReceptionOnly.closeSocket();
+//			physicalSocketReceptionOnly = null;
+//		}
 	}
 
 	@Override

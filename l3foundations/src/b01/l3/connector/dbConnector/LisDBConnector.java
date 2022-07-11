@@ -323,6 +323,7 @@ public class LisDBConnector implements L3IConnector, Runnable {
       String testTableName      = lisConnectorTestDesc.getStorageName();
       String sampleId           = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_SAMPLE_ID).getName();
       String patientId          = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_PATIENT_ID).getName();
+      String origin             = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_ORIGIN).getName();
       String firstName          = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_PATIENT_FIRST_NAME).getName();
       String lastName           = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_PATIENT_LAST_NAME).getName();
       String middleInitial      = lisConnectorSampleDesc.getFieldByID(LisSampleDesc.FLD_PATIENT_MIDDLE_INITIAL).getName();          
@@ -372,7 +373,10 @@ public class LisDBConnector implements L3IConnector, Runnable {
 
           String patientIDValue = resultSet.getString(patientId);
           sample.setPatientId(patientIDValue);
-          
+
+          String originValue = resultSet.getString(origin);
+          sample.setOrigin(originValue);
+
           sample.setAge(resultSet.getInt(ageFldName));
           sample.setSexe(resultSet.getString(sexFldName));
 
