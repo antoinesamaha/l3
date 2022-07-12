@@ -1,5 +1,8 @@
 package b01.l3.drivers.cs2500;
 
+import java.util.Properties;
+
+import b01.l3.Instrument;
 import b01.l3.drivers.astm.AstmDriver;
 
 public class CS2500Driver extends AstmDriver{
@@ -20,5 +23,14 @@ public class CS2500Driver extends AstmDriver{
 		getAstmParams().setReadResultComment(true);
 		getAstmParams().setTreatHigherLessAlarmSeparately(false);
 	}
+	
+	@Override
+	public void init(Instrument instrument, Properties props) throws Exception {
+		if(props != null){
+			props.put("tcpip", "1");
+		}
+		super.init(instrument, props);
+	}
+
 }
 
