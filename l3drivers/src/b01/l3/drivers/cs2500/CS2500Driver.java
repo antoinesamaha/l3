@@ -18,7 +18,7 @@ public class CS2500Driver extends AstmDriver{
 		getAstmParams().setTestCodeLength(3);
 		getAstmParams().setPhysicalMachineInfo(new b01.l3.drivers.cs2500.PhMaInfo());
 		getAstmParams().setCheckResultFrameTestCodeWithOrderFrameTestCode(false);
-		getAstmParams().setConcatenatedFrames(true);
+		getAstmParams().setConcatenatedFrames(false);
 		getAstmParams().setReadComment3(true);
 		getAstmParams().setReadResultComment(true);
 		getAstmParams().setTreatHigherLessAlarmSeparately(false);

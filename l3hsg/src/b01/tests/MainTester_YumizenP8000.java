@@ -10,36 +10,24 @@ import b01.foc.Globals;
 import b01.foc.admin.FocGroup;
 import b01.foc.gui.DisplayManager;
 import b01.foc.menu.FMenuList;
-import b01.foc.util.ASCII;
 import b01.l3.DriverFactory;
-import b01.l3.DriverSerialPort;
 import b01.l3.FileIOFactory;
 import b01.l3.FocAppGroup;
 import b01.l3.Instrument;
-import b01.l3.InstrumentDesc;
-import b01.l3.L3ConfigInfo;
 import b01.l3.L3KernelModule;
 import b01.l3.L3Main;
-import b01.l3.connection.L3SerialPort;
 import b01.l3.connection.socket.SocketPort;
 import b01.l3.connector.LisConnectorFactory;
 import b01.l3.connector.dbConnector.lisConnectorTables.LisConnectorModule;
 import b01.l3.data.L3Message;
 import b01.l3.data.L3Sample;
 import b01.l3.data.L3Test;
-import b01.l3.drivers.astm.AstmFrame;
-import b01.l3.drivers.astm.AstmReceiver;
-import b01.l3.drivers.cs2500.CS2500Driver;
-import b01.l3.drivers.cs2500.CS2500FrameCreator;
 import b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Driver;
 import b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Emulator;
 import b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Frame;
 import b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Receiver;
-import b01.l3.drivers.vitek.bci.VitekBCIDriver;
-import b01.l3.drivers.vitek.bci.VitekBCIFrame;
-import b01.l3.drivers.vitek.bci.VitekBCIReceiver;
 
-public class MainTester {
+public class MainTester_YumizenP8000 {
 	
 	public static void mainMySQLs(String[] args) {
 		try {
@@ -211,9 +199,6 @@ public class MainTester {
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.helena.junior24.Junior24Driver", b01.l3.drivers.helena.junior24.Junior24Driver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.helena.junior24.Junior24Emulator", b01.l3.drivers.helena.junior24.Junior24Emulator.class);
 
-			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Driver", b01.l3.drivers.cs2500.CS2500Driver.class);
-			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Emulator", b01.l3.drivers.cs2500.CS2500Emulator.class);
-
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.bectonDickinson.sedi15.Sedi15Driver", b01.l3.drivers.bectonDickinson.sedi15.Sedi15Driver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.bectonDickinson.sedi15.Sedi15Emulator", b01.l3.drivers.bectonDickinson.sedi15.Sedi15Emulator.class);
 
@@ -231,185 +216,48 @@ public class MainTester {
 			LisConnectorFactory.getInstance().addLisConnector("b01.l3.connector.fileConnector.LisFileConnector", b01.l3.connector.fileConnector.LisFileConnector.class);
 			LisConnectorFactory.getInstance().addLisConnector("b01.l3.connector.dbConnector.LisDBConnector", b01.l3.connector.dbConnector.LisDBConnector.class);
 			
-			testCS2500();
+			testYumizenP8000();
 		} catch (Exception e) {
 			Globals.logException(e);
 		}
 	}
-
-	private static void testCS2500() throws Exception {
-		L3ConfigInfo.setEmulationMode(true);
 		
-		//Preparation of the Instrument Driver and Frame
+	private static void testYumizenP8000() throws Exception {
 		Properties props = new Properties();
-		props.put("instrument.code","CS2500");
-		props.put("instrument.name","CS2500");
-		props.put("instrument.driver", "b01.l3.drivers.cs2500.CS2500Driver");
-//		props.put("serialPort.name", "10002");
-		Instrument   instr  = new Instrument(props) {
-			@Override
-			public Properties getProperties() throws Exception {
-				Properties prop = super.getProperties();
-				prop.put("test.PH1", "041");
-				prop.put("test.PH2", "042");
-				prop.put("test.PH3", "043");
-				return prop;
-			}
-		};
-//		instr.setPropertyString(InstrumentDesc.FLD_SERIAL_PORT_NAME, "9999");
-        instr.setPropertyBoolean(InstrumentDesc.FLD_IS_EMULATOR, true);
-		final CS2500Driver driver = (CS2500Driver) instr.getDriver();
-		driver.connect();
-		
-		//driver.testMaps_fillFromProperties
-		
-		//If you want to Simulate a reception of multiple frames
-		//------------------------------------------------------
-		AstmReceiver receiver = (AstmReceiver) driver.getDriverReceiver();
-		AstmFrame    frame    = new AstmFrame(instr);
-
-		for(int i=0; i<resultsFromCS2500_Array.length; i++) {
-			frame.setDataWithFrame(new StringBuffer(resultsFromCS2500_Array[i]));
-			receiver.received(frame);
-		}
-		//------------------------------------------------------		
-	}
-	
-	private static String resultsFromCS2500_Array[] = {
-		String.valueOf(AstmFrame.ENQ),
-		ASCII.STX+"1H|\\^&|||CS-2500^01-70^23788^^^CP^BV981798||||||||E1394-97"+ASCII.ETX+"13"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"2P|1||||"+ASCII.ETX+"22"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"3O|1||000001^01^        4709035^B^||R||||||N"+ASCII.ETX+"52"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"4R|1|^^^041^PT THS~sec^100.00^A^^^|  12.6|sec||N||||||20220907093833"+ASCII.ETX+"99"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"5R|2|^^^042^PT THS~%^100.00^A^^^| 102.0|%||N||||||20220907093833"+ASCII.ETX+"7A"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"6R|3|^^^043^PT THS~INR^100.00^A^^^|  1.04|||N||||||20220907093833"+ASCII.ETX+"0E"+ASCII.CR+ASCII.LF,
-		"" + ASCII.STX+"7L|1|N"+ASCII.ETX+"FD"+ASCII.CR+ASCII.LF,
-		"" + ASCII.EOT
-	};
-
-	
-	private static void testCS2500_old() throws Exception {
-		L3ConfigInfo.setEmulationMode(true);
-		
-		Properties props = new Properties();
-//		props.put("serialPort.name", "10002");
-//		SocketPort serverPort = new SocketPort(props);
-//		serverPort.openConnection();
+		props.put("serialPort.name", "10002");
+		SocketPort serverPort = new SocketPort(props);
+		serverPort.openConnection();
 //		serverPort.addEventListener(nw );
 		
 		//Preparation of the Instrument Driver and Frame
 		props = new Properties();
-		props.put("instrument.code","CS2500");
-		props.put("instrument.name","CS2500");
-		props.put("instrument.driver", "b01.l3.drivers.cs2500.CS2500Driver");
-//		props.put("serialPort.name", "10002");
-		Instrument   instr  = new Instrument(props);
-		instr.setPropertyBoolean(InstrumentDesc.FLD_IS_EMULATOR, true);
-		final CS2500Driver driver = (CS2500Driver) instr.getDriver();
+		props.put("instrument.code","YP8K");
+		props.put("instrument.name","YP8K");
+		props.put("instrument.driver", "b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Driver");
+		props.put("serialPort.name", "10002");
+		Instrument instr = new Instrument(props);
+		YumizenP8000Driver   driver   = (YumizenP8000Driver) instr.getDriver();
 		//----------------------------------------------
 		
 		//Preparation of the Instrument Driver and Frame
-//		props = new Properties();
-//		props.put("instrument.code","YP8K_Emul");
-//		props.put("instrument.name","YP8K_Emul");
-//		props.put("instrument.driver", "b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Emulator");
-//		props.put("serialPort.name", "10002");
-//		Instrument instrEmul = new Instrument(props);
-//		YumizenP8000Emulator emmul = (YumizenP8000Emulator) instrEmul.getDriver();
+		props = new Properties();
+		props.put("instrument.code","YP8K_Emul");
+		props.put("instrument.name","YP8K_Emul");
+		props.put("instrument.driver", "b01.l3.drivers.horiba.yumizenP8000.YumizenP8000Emulator");
+		props.put("serialPort.name", "10002");
+		Instrument instrEmul = new Instrument(props);
+		YumizenP8000Emulator emmul = (YumizenP8000Emulator) instrEmul.getDriver();
 		//----------------------------------------------
 		
-		//AstmReceiver receiver = (AstmReceiver) driver.getDriverReceiver();
-		//driver.getL3SerialPort().addListener(receiver);
-		driver.connect();
+		L3Message message = new L3Message();
+		L3Sample sample = new L3Sample("123123");
+		sample.setFirstName("Antoine");
+		sample.setLastName("Samaha");
+		message.addSample(sample);
+		L3Test test = sample.addTest();
+		test.setLabel("RDW-SD");
 		
-		try { 
-			Thread thread = new Thread(new Runnable() {
-				public void run() {
-					StringBuffer buffer = null;
-					//sleep(3);
-					// driver send ENQ
-					buffer = new StringBuffer("" + ASCII.ENQ);
-					//public void cumulateBufferAndAttemptToExtractFrame(StringBuffer incrementalBuffer){
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-					
-					// send 01
-					buffer = new StringBuffer("" + ASCII.STX+"1H|\\^&|||CS-2500^01-70^23788^^^CP^BV981798||||||||E1394-97"+ASCII.ETX+"13"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-					
-					// send msg
-					buffer = new StringBuffer("" + ASCII.STX+"2P|1||||"+ASCII.ETX+"22"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-					
-					// send ENQ
-					buffer = new StringBuffer("" + ASCII.STX+"3O|1||000001^01^        4709035^B^||R||||||N"+ASCII.ETX+"52"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-	
-					buffer = new StringBuffer("" + ASCII.STX+"4R|1|^^^041^PT THS~sec^100.00^A^^^|  12.6|sec||N||||||20220907093833"+ASCII.ETX+"99"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-
-					buffer = new StringBuffer("" + ASCII.STX+"5R|2|^^^042^PT THS~%^100.00^A^^^| 102.0|%||N||||||20220907093833"+ASCII.ETX+"7A"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-					
-					buffer = new StringBuffer("" + ASCII.STX+"6R|3|^^^043^PT THS~INR^100.00^A^^^|  1.04|||N||||||20220907093833"+ASCII.ETX+"0E"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-
-					buffer = new StringBuffer("" + ASCII.STX+"7L|1|N"+ASCII.ETX+"FD"+ASCII.CR+ASCII.LF);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-
-					buffer = new StringBuffer("" + ASCII.EOT);
-					driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					sleep(100);
-
-					//buffer.append('A');
-					//driver.getL3SerialPort().extractAnswerFromBuffer(buffer);
-					
-					//ASCII.ENQ
-					//ASCII.STX+"1H|\^&|||CS-2500^01-70^23788^^^CP^BV981798||||||||E1394-97"+ASCII.ETX+"13"+ASCII.CR+ASCII.LF
-					//ASCII.STX+"2P|1||||"+ASCII.ETX+"22"+ASCII.CR+ASCII.LF
-					//ASCII.STX+"3O|1||000001^01^        4709035^B^||R||||||N"+ASCII.ETX+"52"+ASCII.CR+ASCII.LF				
-					//ASCII.STX+"4R|1|^^^041^PT THS~sec^100.00^A^^^|  12.6|sec||N||||||20220907093833"+ASCII.ETX+"99"+ASCII.CR+ASCII.LF
-					//ASCII.STX+"5R|2|^^^042^PT THS~%^100.00^A^^^| 102.0|%||N||||||20220907093833"+ASCII.ETX+"7A"+ASCII.CR+ASCII.LF
-					//ASCII.STX+"6R|3|^^^043^PT THS~INR^100.00^A^^^|  1.04|||N||||||20220907093833"+ASCII.ETX+"0E"+ASCII.CR+ASCII.LF
-					
-					//ASCII.STX+"7L|1|N"+ASCII.ETX+"FD"+ASCII.CR+ASCII.LF
-					//ASCII.EOT
-//							08:20:01:139 : Concatenated Frame : H|\^&|||CS-2500^01-70^23788^^^CP^BV981798||||||||E1394-97P|1||||O|1||000001^01^[.][.][.][.][.][.][.][.]4709035^B^||R||||||NR|1|^^^041^PT[.]THS~sec^100.00^A^^^|[.][.]12.6|sec||N||||||20220907093833R|2|^^^042^PT[.]THS~%^100.00^A^^^|[.]102.0|%||N||||||20220907093833R|3|^^^043^PT[.]THS~INR^100.00^A^^^|[.][.]1.04|||N||||||20220907093833L|1|N
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-				}
-			});
-	
-			thread.start();
-			Thread.sleep(500000);
-		} catch (Exception e) {
-			Globals.logException(e);
-		}
-
-	}
-	
-	public static void sleep(long l) {
-		try {
-			Thread.sleep(l);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		driver.send(message);
 	}
 	
 	private static String resultsFromYumizenP8000[] = {
