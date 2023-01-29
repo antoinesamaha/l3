@@ -1,12 +1,5 @@
 package b01.l3.drivers.cs2500;
 
-import java.text.SimpleDateFormat;
-import java.util.Iterator;
-
-import b01.foc.Globals;
-import b01.l3.data.L3Message;
-import b01.l3.data.L3Sample;
-import b01.l3.data.L3Test;
 import b01.l3.drivers.astm.AstmDriver;
 import b01.l3.drivers.astm.AstmFrame;
 import b01.l3.drivers.astm.AstmFrameCreator;
@@ -30,6 +23,7 @@ public class CS2500FrameCreator extends AstmFrameCreator {
     driver.addFrame(remainingFrame);
   }
 	
+  /*
   public void buildFrameArray(AstmDriver driver, L3Message message, boolean fromDriver) throws Exception {
     
     // ENQ frame
@@ -146,4 +140,5 @@ public class CS2500FrameCreator extends AstmFrameCreator {
     driver.addFrame(frame);
     // -------------
   }
+  */
 }
