@@ -196,6 +196,9 @@ public class Main {
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Driver", b01.l3.drivers.cs2500.CS2500Driver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.cs2500.CS2500Emulator", b01.l3.drivers.cs2500.CS2500Emulator.class);
 
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.maglumi.MaglumiDriver", b01.l3.drivers.maglumi.MaglumiDriver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.maglumi.MaglumiEmulator", b01.l3.drivers.maglumi.MaglumiEmulator.class);
+
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDDriver", b01.l3.drivers.alcor.ised.ISEDDriver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDEmulator", b01.l3.drivers.alcor.ised.ISEDEmulator.class);
 
@@ -225,8 +228,9 @@ public class Main {
 				l3Main.popupTheRightPanel();
 			}
 //			Globals.logString("Build date : 23/06/2015");
-			Globals.logString("Build date : 10/03/2019");
-
+//			Globals.logString("Build date : 10/03/2019");
+			Globals.logString("Build date : 21/12/2022");
+			
 			l3Main.executeBackgroundTasks();
 			
 			/*
