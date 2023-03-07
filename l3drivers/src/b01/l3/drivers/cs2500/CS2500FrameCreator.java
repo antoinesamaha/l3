@@ -40,7 +40,9 @@ public class CS2500FrameCreator extends AstmFrameCreator {
 		frame.append2Data(String.valueOf(sequence_num));
 		frame.append2Data(AstmFrame.FIELD_SEPERATOR);
 		{		
+			frame.append2Data("000001");
 			frame.append2Data(AstmFrame.COMPONENT_DELIMITER);
+			frame.append2Data("01");
 			frame.append2Data(AstmFrame.COMPONENT_DELIMITER);
 			for(int i=0; i<15-specimen.length(); i++) {
 				frame.append2Data(" ");
