@@ -422,6 +422,69 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 		}
 		return driverSaidToTryLater;
 	}
+	
+	public void sendASampleAnsweringInquiry(String sampleId) {
+		logString("Instrument : sendASampleAnsweringInquiry 1 sample : "+sampleId);
+		L3SampleTestJoinFilter filter = getSampleListToSend();
+		filter.setSampleID(sampleId);
+		filter.setActive(true);
+		
+		logString("Instrument : sendASampleAnsweringInquiry 2 ");
+		
+		L3Message messageReadyToSend = filter.convertToMessage();
+		int size = messageReadyToSend != null ? messageReadyToSend.getNumberOfSamples() : 0;
+		
+		logString("Instrument : sendASampleAnsweringInquiry 3 size : " +size);
+		
+		if (size > 0) {
+			logString("Instrument : sendASampleAnsweringInquiry 4 nbrSamples : " +messageReadyToSend.getNumberOfSamples());
+			for (int i = 0; i < messageReadyToSend.getNumberOfSamples(); i++) {
+				L3Sample sample = messageReadyToSend.getSample(i);
+				L3SampleTestJoinFilter pendingList = getSampleTestList_PendingTestsToBeResentWithNewTests();
+				pendingList.setSampleID(sample.getId());
+				pendingList.setActive(true);
+				pendingList.addAllTestsToSameSample(sample);
+		
+				logString("Instrument : sendASampleAnsweringInquiry 5 ");
+				
+				if (!driver.reserve()) {
+					L3Message message = new L3Message();
+					// sample.updateStatus(L3SampleDesc.SAMPLE_STATUS_SENDING_TO_INSTRUMENT);
+					message.addSample(sample);// we have to test the
+												// status of the sample;
+												// if it is blocked we
+												// dont add
+					try {
+						logString("Instrument : sendASampleAnsweringInquiry 6 - Sending ");
+						send(message);
+						logString("Instrument : sendASampleAnsweringInquiry 7 - Send done");
+						i++;
+					} catch (L3TryLaterException e) {
+						logString("L3TryLaterException Driver suspended comunication.");
+						//driverSaidToTryLater = true;
+					} catch (L3InstrumentDoesNotRespondTryLaterException e) {
+						logString("L3InstrumentDoesNotRespondTryLaterException Driver not responding");
+						logString(e.getMessage());
+						//driverSaidToTryLater = true;
+					} catch (Exception e) {
+						i++;
+						logException(e);
+						sample.updateBlockedForTests(true);
+						sample.updateStatusForTests(L3TestDesc.TEST_STATUS_RESULT_AVAILABLE);
+						sample.updateNotificationMessageForTests("WHEN SEND TO INST:"
+								+ e.getMessage());
+					}
+					driver.release();
+				}
+			}
+		}
+		
+		if (filter != null) {
+			filter.dispose();
+			filter = null;
+		}
+	}
+	
 
 	/*
 	 * (non-Javadoc)
@@ -781,9 +844,11 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 		boolean error = false;
 		try {
 			getDriver().connect();
-			if (senderThread == null) {
-				senderThread = new Thread(this);
-				senderThread.start();
+			if (!getDriver().isInquiryBased()) {
+				if (senderThread == null) {
+					senderThread = new Thread(this);
+					senderThread.start();
+				}
 			}
 			setAsExitListener();
 			updateConnected(true);

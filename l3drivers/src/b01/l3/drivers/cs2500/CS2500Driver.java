@@ -31,6 +31,10 @@ public class CS2500Driver extends AstmDriver{
 		}
 		super.init(instrument, props);
 	}
+	
+	public boolean isInquiryBased() {
+		return true;
+	}
 
 }
 

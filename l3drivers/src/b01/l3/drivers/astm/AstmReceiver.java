@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 import b01.foc.ConfigInfo;
 import b01.foc.Globals;
 import b01.foc.util.ASCII;
+import b01.l3.Instrument;
 import b01.l3.L3Frame;
 import b01.l3.connection.L3SerialPortListener;
 import b01.l3.data.L3Message;
@@ -35,6 +36,7 @@ public class AstmReceiver implements L3SerialPortListener {
 	private CommentLineReader commentLineReader = null;
 	private ResultLineReader resultLineReader = null;
 	private CommentResultReader commentResultReader = null;
+	private InformationInquiryReader informationEnquiryReader = null;
 
 	private StringBuffer concatenationBuffer = null;
 
@@ -53,6 +55,7 @@ public class AstmReceiver implements L3SerialPortListener {
 		commentLineReader = new CommentLineReader();
 		resultLineReader = new ResultLineReader(driver);
 		commentResultReader = new CommentResultReader();
+		informationEnquiryReader = new InformationInquiryReader();
 	}
 
 	public void disposeMessage() {
@@ -115,6 +118,10 @@ public class AstmReceiver implements L3SerialPortListener {
 			commentResultReader = null;
 		}
 
+		if (informationEnquiryReader != null) {
+			informationEnquiryReader.dispose();
+			informationEnquiryReader = null;
+		}
 	}
 
 	public AstmDriver getDriver() {
@@ -272,6 +279,12 @@ public class AstmReceiver implements L3SerialPortListener {
 		}
 	}
 
+	protected void parseInformationInquiryFrame(StringBuffer data) {
+		if (getDriver().isInquiryBased() && informationEnquiryReader != null) {
+			informationEnquiryReader.scanTokens(data);
+		}
+	}
+	
 	protected void parseResultFrame(StringBuffer data) {
 		resultLineReader.setSample(sample);
 		resultLineReader.setTest(test);
@@ -306,12 +319,18 @@ public class AstmReceiver implements L3SerialPortListener {
 		StringBuffer data = frame.getData();
 
 		if (frame.getType() == AstmFrame.FRAME_TYPE_HEADER) {
+			if(getDriver().isInquiryBased()) {
+				informationEnquiryReader.clear();
+			}
+			
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_LAST) {
 			// sendMessageBackToInstrument();
 			// disposeMessage();
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_PATIENT) {
 			// initMessage();
 			parsePatientFrame(data);
+		} else if (frame.getType() == AstmFrame.FRAME_TYPE_INFORMATION_INQUIRY) {
+			if(getDriver().isInquiryBased()) parseInformationInquiryFrame(data);			
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_ORDER) {
 			parseOrderFrame(data);
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_RESULT) {
@@ -412,6 +431,8 @@ public class AstmReceiver implements L3SerialPortListener {
 
 				driver.release();
 
+				respondToInquiryIfNecessary();
+
 			} else {
 				StringBuffer sb = getConcatenationBuffer();
 				frame.concatenateToBuffer(sb);
@@ -424,6 +445,18 @@ public class AstmReceiver implements L3SerialPortListener {
 		return frameTypeToReturn;
 	}
 
+	public void respondToInquiryIfNecessary() {
+		if (		getDriver() != null && getDriver().isInquiryBased()
+				&&  informationEnquiryReader != null
+				&& 	informationEnquiryReader.getSampleId() != null
+				&& !informationEnquiryReader.getSampleId().isEmpty()
+				&&  informationEnquiryReader.getSampleIdAttrib().equals("B")
+				) {
+			Instrument instrument = driver.getInstrument();
+			instrument.sendASampleAnsweringInquiry(informationEnquiryReader.getSampleId());
+		}
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 

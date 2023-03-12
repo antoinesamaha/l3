@@ -34,6 +34,7 @@ public class AstmFrame extends L3Frame {
 	public final static char FRAME_TYPE_HEADER = 'H';
 	public final static char FRAME_TYPE_PATIENT = 'P';
 	public final static char FRAME_TYPE_ORDER = 'O';
+	public final static char FRAME_TYPE_INFORMATION_INQUIRY = 'Q';	
 	public final static char FRAME_TYPE_RESULT = 'R';
 	public final static char FRAME_TYPE_LAST = 'L';
 	public final static char FRAME_TYPE_COMMENT = 'C';

@@ -27,4 +27,6 @@ public interface IDriver {
   public void    completeListOfAvailableTests(FocList testList) throws Exception;
   public boolean isResendAllPendingTests();
   public void    makeSpecialCommentTreatmentBeforeSendingToLIS(L3Message message);
+  
+  public boolean isInquiryBased();
 }

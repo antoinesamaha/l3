@@ -1,6 +1,5 @@
 package b01.l3.drivers.astm;
 
-import b01.l3.drivers.astm.FrameReader;
 import b01.l3.data.L3Test;
 
 public class OrderLineReader extends FrameReader{

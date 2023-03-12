@@ -40,6 +40,10 @@ public abstract class Driver implements IDriver{
     listenersMap = null;
   }
 
+  public boolean isInquiryBased() {
+	return false;
+  }
+  
   /* (non-Javadoc)
    * @see b01.l3.Driver#isBusy()
    */
