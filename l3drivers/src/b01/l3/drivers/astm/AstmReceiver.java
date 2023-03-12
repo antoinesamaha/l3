@@ -453,7 +453,7 @@ public class AstmReceiver implements L3SerialPortListener {
 				&&  informationEnquiryReader.getSampleIdAttrib().equals("B")
 				) {
 			Instrument instrument = driver.getInstrument();
-			instrument.sendASampleAnsweringInquiry(informationEnquiryReader.getSampleId());
+			instrument.sendASampleAnsweringInquiry(informationEnquiryReader.getRackNumber(), informationEnquiryReader.getTubePosition() ,informationEnquiryReader.getSampleId());
 		}
 	}
 	

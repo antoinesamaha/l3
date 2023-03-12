@@ -423,7 +423,7 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 		return driverSaidToTryLater;
 	}
 	
-	public void sendASampleAnsweringInquiry(String sampleId) {
+	public void sendASampleAnsweringInquiry(String rackNumber, String tubePosition, String sampleId) {
 		logString("Instrument : sendASampleAnsweringInquiry 1 sample : "+sampleId);
 		L3SampleTestJoinFilter filter = getSampleListToSend();
 		filter.setSampleID(sampleId);
@@ -440,6 +440,9 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 			logString("Instrument : sendASampleAnsweringInquiry 4 nbrSamples : " +messageReadyToSend.getNumberOfSamples());
 			for (int i = 0; i < messageReadyToSend.getNumberOfSamples(); i++) {
 				L3Sample sample = messageReadyToSend.getSample(i);
+				sample.setRackNumber(rackNumber);
+				sample.setTubePosition(tubePosition);
+				
 				L3SampleTestJoinFilter pendingList = getSampleTestList_PendingTestsToBeResentWithNewTests();
 				pendingList.setSampleID(sample.getId());
 				pendingList.setActive(true);

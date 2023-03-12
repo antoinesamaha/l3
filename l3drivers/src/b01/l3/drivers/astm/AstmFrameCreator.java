@@ -3,7 +3,6 @@ package b01.l3.drivers.astm;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 
 import b01.foc.Globals;
@@ -163,10 +162,10 @@ public class AstmFrameCreator {
   }
   
   public AstmFrame newOrderFrame (Instrument instrument, int sequence, int sequence_num, String specimen, String testId, Date collectionDate) throws Exception{
-	  return newOrderFrame(instrument, sequence, sequence_num, specimen, testId, null, collectionDate, null);
+	  return newOrderFrame(instrument, sequence, sequence_num, specimen, testId, null, collectionDate, null, null, null);
   }
   
-  public AstmFrame newOrderFrame (Instrument instrument, int sequence, int sequence_num, String specimen, String testId, ArrayList<String> testArrayList, Date collectionDate, String priority) throws Exception{
+  public AstmFrame newOrderFrame (Instrument instrument, int sequence, int sequence_num, String specimen, String testId, ArrayList<String> testArrayList, Date collectionDate, String priority, String rackNumber, String tubePosition) throws Exception{
     AstmFrame frame = new AstmFrame(instrument, sequence, AstmFrame.FRAME_TYPE_ORDER);
     
     frame.append2Data(AstmFrame.FIELD_SEPERATOR);
@@ -276,7 +275,7 @@ public class AstmFrameCreator {
           }
         }
         
-        AstmFrame frame = newOrderFrame(driver.getInstrument(), getNextSequence(), testSequence, sam.getId(), null, profilesArray, sam.getEntryDate(), urgent ? "S" : "R");
+        AstmFrame frame = newOrderFrame(driver.getInstrument(), getNextSequence(), testSequence, sam.getId(), null, profilesArray, sam.getEntryDate(), urgent ? "S" : "R", sam.getRackNumber(), sam.getTubePosition());
         driver.addFrame(frame);        	
     }else{
 	    Iterator tIter = sam.testIterator(); 
@@ -284,7 +283,7 @@ public class AstmFrameCreator {
 	      L3Test test = (L3Test) tIter.next();
 	      if(test != null){
 	        // Order Frame
-	        AstmFrame frame = newOrderFrame(driver.getInstrument(), getNextSequence(), testSequence, sam.getId(), test.getLabel(), null, sam.getEntryDate(), test.getPriority());
+	        AstmFrame frame = newOrderFrame(driver.getInstrument(), getNextSequence(), testSequence, sam.getId(), test.getLabel(), null, sam.getEntryDate(), test.getPriority(), null, null);
 	        driver.addFrame(frame);
 	        // ---------------
 		      if (fromDriver == false){

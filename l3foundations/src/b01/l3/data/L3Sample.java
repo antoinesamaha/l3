@@ -57,6 +57,9 @@ public class L3Sample extends FocObject {
 
   private String graph = null;
   
+  private String rackNumber     = "";
+  private String tubePosition   = "";
+  
   private void initFocProperties(String id){
   	setPropertyString(L3SampleDesc.FLD_ID, id);
   	setPropertyMultiChoice(L3SampleDesc.FLD_LIQUIDE_TYPE, -1);
@@ -600,4 +603,20 @@ public class L3Sample extends FocObject {
       graphDBLine.validate(false);
     }
   }
+
+public String getRackNumber() {
+	return rackNumber;
+}
+
+public void setRackNumber(String rackNumber) {
+	this.rackNumber = rackNumber;
+}
+
+public String getTubePosition() {
+	return tubePosition;
+}
+
+public void setTubePosition(String tubePosition) {
+	this.tubePosition = tubePosition;
+}
 }
