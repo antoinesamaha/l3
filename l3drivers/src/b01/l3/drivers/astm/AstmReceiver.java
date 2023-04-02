@@ -329,8 +329,10 @@ public class AstmReceiver implements L3SerialPortListener {
 			// initMessage();
 			parsePatientFrame(data);
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_INFORMATION_INQUIRY) {
+			Globals.logString("Frame Type Q Enquiry detected");
 			if(getDriver().isInquiryBased()) parseInformationInquiryFrame(data);			
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_ORDER) {
+			Globals.logString("Frame Type O Order detected");
 			parseOrderFrame(data);
 		} else if (frame.getType() == AstmFrame.FRAME_TYPE_RESULT) {
 			parseResultFrame(data);
