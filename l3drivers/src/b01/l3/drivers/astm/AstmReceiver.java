@@ -455,18 +455,18 @@ public class AstmReceiver implements L3SerialPortListener {
 				&& !informationEnquiryReader.getSampleId().isEmpty()
 				&&  informationEnquiryReader.getSampleIdAttrib().equals("B")
 				) {
-			Globals.logDebug("Calling sendASampleAnsweringInquiry : "+informationEnquiryReader.getRackNumber() +" "+ informationEnquiryReader.getTubePosition() +" "+ informationEnquiryReader.getSampleId());
+			Globals.logString("Calling sendASampleAnsweringInquiry : "+informationEnquiryReader.getRackNumber() +" "+ informationEnquiryReader.getTubePosition() +" "+ informationEnquiryReader.getSampleId());
 			Instrument instrument = driver.getInstrument();
 			instrument.sendASampleAnsweringInquiry(informationEnquiryReader.getRackNumber(), informationEnquiryReader.getTubePosition() ,informationEnquiryReader.getSampleId());
 		} else {
 			if (getDriver() == null || !getDriver().isInquiryBased()){
-				Globals.logDebug("Will not respond to Enquiry: Driver not Inquiry Based");
+				Globals.logString("Will not respond to Enquiry: Driver not Inquiry Based");
 			} else if (informationEnquiryReader.getSampleId() == null || informationEnquiryReader.getSampleId().isEmpty()){
-				Globals.logDebug("Will not respond to Enquiry: Sample Id is empty");
+				Globals.logString("Will not respond to Enquiry: Sample Id is empty");
 			} else if (informationEnquiryReader.getSampleIdAttrib() != null){
-				Globals.logDebug("Will not respond to Enquiry: Sample Id Attribute "+informationEnquiryReader.getSampleIdAttrib());
+				Globals.logString("Will not respond to Enquiry: Sample Id Attribute "+informationEnquiryReader.getSampleIdAttrib());
 			} else {
-				Globals.logDebug("Will not respond to Enquiry: Other reason");
+				Globals.logString("Will not respond to Enquiry: Other reason");
 			}
 		}
 	}

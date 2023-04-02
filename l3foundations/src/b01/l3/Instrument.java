@@ -856,11 +856,13 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 		boolean error = false;
 		try {
 			getDriver().connect();
-			if (!getDriver().isInquiryBased()) {
+			if (!getDriver().isInquiryBased()) {				
 				if (senderThread == null) {
 					senderThread = new Thread(this);
 					senderThread.start();
 				}
+			} else {
+				Globals.logString("Driver is Enquiry based");
 			}
 			setAsExitListener();
 			updateConnected(true);
