@@ -425,8 +425,7 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 	
 	public void sendASampleAnsweringInquiry(String rackNumber, String tubePosition, String sampleId) {
 		logString("Instrument : sendASampleAnsweringInquiry 1 sample : "+sampleId);
-		L3SampleTestJoinFilter filter = getSampleListToSend();
-		filter.setSampleID(sampleId);
+		L3SampleTestJoinFilter filter = getSampleListToSendAfterEnquiry(sampleId);
 		filter.setActive(true);
 		
 		logString("Instrument : sendASampleAnsweringInquiry 2 ");
@@ -707,6 +706,16 @@ public class Instrument extends FocObject implements Runnable, MessageListener,
 		L3SampleTestJoinFilter filter = L3SampleTestJoinDesc
 				.newListWithFilter();
 		filter.setInstrumentStatus(this, L3TestDesc.TEST_STATUS_AVAILABLE_IN_L3);
+		return filter;
+	}
+
+
+	public L3SampleTestJoinFilter getSampleListToSendAfterEnquiry(String sampleId) {
+		L3SampleTestJoinFilter filter = L3SampleTestJoinDesc
+				.newListWithFilter();
+		filter.setInstrumentEquals(this);
+		filter.setBlockedEquals(false);
+		filter.setSampleID(sampleId);
 		return filter;
 	}
 

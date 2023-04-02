@@ -26,12 +26,16 @@ public class InformationInquiryReader extends FrameReader{
 		if(fieldPos == FLD_SAMPLE_LOCATION_AND_ID){
 			if(compPos == CMP_RACK_NBR) {
 				rackNumber = token;
+				b01.foc.Globals.logDetail("    rackNumber = "+token);
 			}else if(compPos == CMP_TUBE_POS) {
 				tubePosition = token;
+				b01.foc.Globals.logDetail("    tubePosition = "+token);
 			}else if(compPos == CMP_SAMPLE_ID) {
 				sampleId = token;
+				b01.foc.Globals.logDetail("    sampleId = "+token);
 			}else if(compPos == CMP_SAMPLE_ID_ATTRIBUTE) {
 				sampleIdAttrib = token;
+				b01.foc.Globals.logDetail("    sampleIdAttrib = "+token);
 			}
 		}
 	}

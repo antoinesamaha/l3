@@ -14,7 +14,6 @@ import b01.l3.connection.L3SerialPortListener;
 import b01.l3.data.L3Message;
 import b01.l3.data.L3Sample;
 import b01.l3.data.L3Test;
-import b01.l3.drivers.astm.AstmFrame;
 import b01.l3.exceptions.L3UnexpectedFrameSequenceException;
 
 /**
@@ -422,6 +421,7 @@ public class AstmReceiver implements L3SerialPortListener {
 						if (message == null) {
 							initMessage();
 						}
+						Globals.logDebug("Treat result frame");
 						treatResultFrame(concatFrame);
 					}
 				}
@@ -431,6 +431,7 @@ public class AstmReceiver implements L3SerialPortListener {
 
 				driver.release();
 
+				Globals.logDebug("Calling Respond to Inquiry if necessary");
 				respondToInquiryIfNecessary();
 
 			} else {
@@ -452,8 +453,19 @@ public class AstmReceiver implements L3SerialPortListener {
 				&& !informationEnquiryReader.getSampleId().isEmpty()
 				&&  informationEnquiryReader.getSampleIdAttrib().equals("B")
 				) {
+			Globals.logDebug("Calling sendASampleAnsweringInquiry : "+informationEnquiryReader.getRackNumber() +" "+ informationEnquiryReader.getTubePosition() +" "+ informationEnquiryReader.getSampleId());
 			Instrument instrument = driver.getInstrument();
 			instrument.sendASampleAnsweringInquiry(informationEnquiryReader.getRackNumber(), informationEnquiryReader.getTubePosition() ,informationEnquiryReader.getSampleId());
+		} else {
+			if (getDriver() == null || !getDriver().isInquiryBased()){
+				Globals.logDebug("Will not respond to Enquiry: Driver not Inquiry Based");
+			} else if (informationEnquiryReader.getSampleId() == null || informationEnquiryReader.getSampleId().isEmpty()){
+				Globals.logDebug("Will not respond to Enquiry: Sample Id is empty");
+			} else if (informationEnquiryReader.getSampleIdAttrib() != null){
+				Globals.logDebug("Will not respond to Enquiry: Sample Id Attribute "+informationEnquiryReader.getSampleIdAttrib());
+			} else {
+				Globals.logDebug("Will not respond to Enquiry: Other reason");
+			}
 		}
 	}
 	
