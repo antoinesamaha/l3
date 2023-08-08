@@ -160,13 +160,19 @@ public class AstmDriver extends DriverSerialPort {
 					char type = resFrame.getType();
 					switch (type) {
 					case AstmFrame.FRAME_TYPE_ENQ:
-						if (getAstmParams().isSlaveBehaviour()) {
-							setReceivedENQWhileSendingENQ(true);
+						if (isInquiryBased()) {
+							//In CS2500 Inquiry based the answer to ENQ is ENQ according to support							
+							numberOfFailures = 0;
+							break;
+						} else {
+							if (getAstmParams().isSlaveBehaviour()) {
+								setReceivedENQWhileSendingENQ(true);
+							}
+							throw new L3TryLaterException();// This is only thrown
+															// when we receive an
+															// ENQ while sending
+															// info to the machine
 						}
-						throw new L3TryLaterException();// This is only thrown
-														// when we receive an
-														// ENQ while sending
-														// info to the machine
 					case AstmFrame.FRAME_TYPE_ACK:
 						numberOfFailures = 0;
 						break;
