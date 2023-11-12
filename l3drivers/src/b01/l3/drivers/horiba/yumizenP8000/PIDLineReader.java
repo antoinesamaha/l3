@@ -14,6 +14,13 @@ public class PIDLineReader extends FrameReader{
 		super('|', '^');
 	}
 
+	public void reset() {
+		patientId = null;
+		lastName = null;
+		firstName = null;
+		midInitial = null;		
+	}
+	
 	/*
 		PID|||P0002^^^LIS^PI||DOE^JOHN^^^^^||19601206|M|||Main
 		Street^^Springfield^NY^65466^USA^ATC1|||||||ABC123|||||||||||||Y

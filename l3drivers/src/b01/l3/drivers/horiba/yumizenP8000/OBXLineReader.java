@@ -26,6 +26,15 @@ public class OBXLineReader extends FrameReader{
 		driver = null;
 	}
 
+	public void reset() {
+		testCode = null;
+		value    = null;
+		status   = null;
+		unitLabel= null;
+				
+		valueType = null;
+	}
+	
 	public boolean isImage() {
 		return valueType != null && valueType.equals("ED");
 	}

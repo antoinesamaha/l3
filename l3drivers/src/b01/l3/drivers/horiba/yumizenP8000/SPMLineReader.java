@@ -11,6 +11,10 @@ public class SPMLineReader extends FrameReader{
 		super('|', '^');
 	}
 
+	public void reset() {
+		sampleId = null;
+	}
+	
 	/*
 		SPM|1|201604163002||EDTA||||MAIN LAB
 	 */

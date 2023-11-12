@@ -168,6 +168,10 @@ public class YumizenP8000Receiver implements L3SerialPortListener, YumizenP8000C
 					case TYPE_MSH: {
 						StringBuffer data = frame.getDataWithFrame();
 						headerLineReader.scanTokens(data);
+
+						if(patientLineReader != null) patientLineReader.reset();
+						if(sampleLineReader != null) sampleLineReader.reset();
+						if(resultLineReader != null) resultLineReader.reset();
 					} break;
 					case TYPE_PID: {
 						StringBuffer data = frame.getDataWithFrame();
