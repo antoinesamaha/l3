@@ -1,0 +1,189 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x6d84f8f9, pid=5956, tid=3460
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0_02-b06 mixed mode, sharing)
+# Problematic frame:
+# V  [jvm.dll+0x8f8f9]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x030e7c00):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=3460]
+
+siginfo: ExceptionCode=0xc0000006, ExceptionInformation=0x00000000 0x2b6078b4 0xc000020c 
+
+Registers:
+EAX=0x2be41fa8, EBX=0x0043db98, ECX=0x0055898f, EDX=0x00000000
+ESP=0x0332f2a4, EBP=0x030e8080, ESI=0x2ac4c7e8, EDI=0x2b607870
+EIP=0x6d84f8f9, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0332f2a4)
+0x0332f2a4:   030e7c00 030e8080 6d84f9b7 0000030c
+0x0332f2b4:   0055898f 030e8080 00000000 6d949bed
+0x0332f2c4:   0000030c 0055898f 030e8080 030e7c00
+0x0332f2d4:   030e7c00 030e8080 6d949c63 0332f334
+0x0332f2e4:   030e8080 00000000 030e7c00 00000000
+0x0332f2f4:   030e7c00 00000000 00000000 6d9181d8
+0x0332f304:   030e7c00 00000001 00000000 030e7c00
+0x0332f314:   030e8080 00000000 6d94a1e3 0000030c 
+
+Instructions: (pc=0x6d84f8f9)
+0x6d84f8e9:   00 85 c0 74 1d 8b 4c 24 10 39 08 75 0d 8b 78 08
+0x6d84f8f9:   39 77 44 75 05 39 50 10 74 0a 8b 40 04 83 e0 fe 
+
+
+Stack: [0x032e0000,0x03330000),  sp=0x0332f2a4,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x8f8f9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  javax.swing.SwingUtilities.getSharedOwnerFrame()Ljava/awt/Frame;+14
+j  javax.swing.JOptionPane.getRootFrame()Ljava/awt/Frame;+14
+j  javax.swing.JOptionPane.showOptionDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)I+32
+j  javax.swing.JOptionPane.showConfirmDialog(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;)I+10
+j  b01.sbs.B.D(Ljava/lang/String;)V+7
+j  b01.sbs.B.E(Ljava/lang/String;)V+1
+j  b01.sbs.B$4.actionPerformed(Ljava/awt/event/ActionEvent;)V+43
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.AbstractButton.doClick(I)V+64
+j  javax.swing.plaf.basic.BasicMenuItemUI.doClick(Ljavax/swing/MenuSelectionManager;)V+53
+j  javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(Ljava/awt/event/MouseEvent;)V+62
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+562
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+J  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+J  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02c0f000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=5812]
+  0x02c36800 JavaThread "Thread-52" [_thread_blocked, id=5040]
+  0x00436000 JavaThread "DestroyJavaVM" [_thread_blocked, id=4632]
+  0x03578000 JavaThread "TimerQueue" daemon [_thread_blocked, id=4892]
+=>0x030e7c00 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=3460]
+  0x030cec00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2284]
+  0x030ce000 JavaThread "AWT-Shutdown" [_thread_blocked, id=3572]
+  0x03094c00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=864]
+  0x02bcc800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2788]
+  0x02bc7c00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=1124]
+  0x02bc6800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5120]
+  0x02bc5c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5788]
+  0x02bc1400 JavaThread "Finalizer" daemon [_thread_blocked, id=4696]
+  0x02bbd000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5796]
+
+Other Threads:
+  0x02bb3c00 VMThread [id=5684]
+  0x02be7400 WatcherThread [id=3200]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 1856K, used 1442K [0x22990000, 0x22b90000, 0x22e70000)
+  eden space 1664K,  84% used [0x22990000, 0x22aeed30, 0x22b30000)
+  from space 192K,  20% used [0x22b60000, 0x22b69c18, 0x22b90000)
+  to   space 192K,   0% used [0x22b30000, 0x22b30000, 0x22b60000)
+ tenured generation   total 23928K, used 14650K [0x22e70000, 0x245ce000, 0x26990000)
+   the space 23928K,  61% used [0x22e70000, 0x23cbe980, 0x23cbea00, 0x245ce000)
+ compacting perm gen  total 12288K, used 4936K [0x26990000, 0x27590000, 0x2a990000)
+   the space 12288K,  40% used [0x26990000, 0x26e62020, 0x26e62200, 0x27590000)
+    ro space 8192K,  62% used [0x2a990000, 0x2ae8f728, 0x2ae8f800, 0x2b190000)
+    rw space 12288K,  52% used [0x2b190000, 0x2b7d1eb8, 0x2b7d2000, 0x2bd90000)
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	Z:\java\jre1.6.0_02\bin\java.exe
+0x7c900000 - 0x7c9b2000 	C:\WINNT\system32\ntdll.dll
+0x7c800000 - 0x7c8f5000 	C:\WINNT\system32\kernel32.dll
+0x61740000 - 0x617aa000 	C:\WINNT\SYSTEM32\SYSFER.DLL
+0x5b860000 - 0x5b8b4000 	C:\WINNT\system32\NETAPI32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINNT\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINNT\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINNT\system32\Secur32.dll
+0x77c10000 - 0x77c68000 	C:\WINNT\system32\msvcrt.dll
+0x7c340000 - 0x7c396000 	Z:\java\jre1.6.0_02\bin\msvcr71.dll
+0x6d7c0000 - 0x6da09000 	Z:\java\jre1.6.0_02\bin\client\jvm.dll
+0x7e410000 - 0x7e4a0000 	C:\WINNT\system32\USER32.dll
+0x77f10000 - 0x77f58000 	C:\WINNT\system32\GDI32.dll
+0x76b40000 - 0x76b6d000 	C:\WINNT\system32\WINMM.dll
+0x629c0000 - 0x629c9000 	C:\WINNT\system32\LPK.DLL
+0x74d90000 - 0x74dfb000 	C:\WINNT\system32\USP10.dll
+0x6d310000 - 0x6d318000 	Z:\java\jre1.6.0_02\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINNT\system32\PSAPI.DLL
+0x6d770000 - 0x6d77c000 	Z:\java\jre1.6.0_02\bin\verify.dll
+0x6d3b0000 - 0x6d3cf000 	Z:\java\jre1.6.0_02\bin\java.dll
+0x6d7b0000 - 0x6d7bf000 	Z:\java\jre1.6.0_02\bin\zip.dll
+0x6d000000 - 0x6d1c3000 	Z:\java\jre1.6.0_02\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINNT\system32\WINSPOOL.DRV
+0x76390000 - 0x763ad000 	C:\WINNT\system32\IMM32.dll
+0x774e0000 - 0x7761d000 	C:\WINNT\system32\ole32.dll
+0x73760000 - 0x737a9000 	C:\WINNT\system32\ddraw.dll
+0x73bc0000 - 0x73bc6000 	C:\WINNT\system32\DCIMAN32.dll
+0x6d2b0000 - 0x6d303000 	Z:\java\jre1.6.0_02\bin\fontmanager.dll
+0x74720000 - 0x7476b000 	C:\WINNT\system32\MSCTF.dll
+0x7c9c0000 - 0x7d1d6000 	C:\WINNT\system32\shell32.dll
+0x77f60000 - 0x77fd6000 	C:\WINNT\system32\SHLWAPI.dll
+0x773d0000 - 0x774d3000 	C:\WINNT\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x5d090000 - 0x5d12a000 	C:\WINNT\system32\comctl32.dll
+0x6d570000 - 0x6d583000 	Z:\java\jre1.6.0_02\bin\net.dll
+0x71ab0000 - 0x71ac7000 	C:\WINNT\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINNT\system32\WS2HELP.dll
+0x605d0000 - 0x605d9000 	C:\WINNT\system32\mslbui.dll
+0x6d590000 - 0x6d599000 	Z:\java\jre1.6.0_02\bin\nio.dll
+0x71a50000 - 0x71a8f000 	C:\WINNT\system32\mswsock.dll
+0x662b0000 - 0x66308000 	C:\WINNT\system32\hnetcfg.dll
+0x71a90000 - 0x71a98000 	C:\WINNT\System32\wshtcpip.dll
+0x76f20000 - 0x76f47000 	C:\WINNT\system32\DNSAPI.dll
+0x76fb0000 - 0x76fb8000 	C:\WINNT\System32\winrnr.dll
+0x76f60000 - 0x76f8c000 	C:\WINNT\system32\WLDAP32.dll
+0x751d0000 - 0x751ee000 	C:\WINNT\system32\wshbth.dll
+0x77920000 - 0x77a13000 	C:\WINNT\system32\SETUPAPI.dll
+0x76fc0000 - 0x76fc6000 	C:\WINNT\system32\rasadhlp.dll
+0x6d450000 - 0x6d474000 	Z:\java\jre1.6.0_02\bin\jpeg.dll
+0x6d1f0000 - 0x6d21f000 	Z:\java\jre1.6.0_02\bin\cmm.dll
+
+VM Arguments:
+java_command: b01/Main /timeZone:Asia/Beirut
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\WINNT\system32;C:\WINNT;C:\WINNT\system32\WBEM;C:\TCWIN45\BIN
+USERNAME=med
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 8 Stepping 6, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 8 stepping 6, cmov, cx8, fxsr, mmx, sse
+
+Memory: 4k page, physical 522672k(117948k free), swap 1276672k(630340k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.6.0_02-b06) for windows-x86, built on Jul 12 2007 01:16:14 by "java_re" with unknown MS VC++:1310
+

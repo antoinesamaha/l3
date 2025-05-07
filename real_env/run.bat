@@ -1,0 +1,1 @@
+..\..\java\jre1.6.0_02\bin\java%3 -classpath jar\ojdbc14.jar;jar\mysql-connector-java-5.0.7-bin.jar;jar\l3f.jar;jar\foc.jar;jar\l3hsg.jar;jar\socketBasedService.jar;jar\comm.jar;properties/.;properties/icons/app/.;properties/icons/foc/.;properties/languages/foc/.;properties/languages/app/.; b01/Main /timeZone:Asia/Beirut %2 %3 %4 %5 %6 %7

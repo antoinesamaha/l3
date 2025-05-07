@@ -87,9 +87,9 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,maven
-
+*.class
 **/bin/
 
 **/bin/**/*.class
 
-l3drivers/bin/b01/l3/**/*.class
+l3drivers/bin/b01/l3/*.class

@@ -1,1 +1,0 @@
-keytool -genkey -alias 01Barmaja -keystore keystore-name

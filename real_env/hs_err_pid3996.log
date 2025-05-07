@@ -1,0 +1,199 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x6d84f8f9, pid=3996, tid=4448
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0_02-b06 mixed mode, sharing)
+# Problematic frame:
+# V  [jvm.dll+0x8f8f9]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x002a6400):  JavaThread "main" [_thread_in_vm, id=4448]
+
+siginfo: ExceptionCode=0xc0000006, ExceptionInformation=0x00000000 0x2b5e315c 0xc000020c 
+
+Registers:
+EAX=0x2be44050, EBX=0x002add28, ECX=0x00558654, EDX=0x00000000
+ESP=0x0090c44c, EBP=0x02b27850, ESI=0x2ac32a38, EDI=0x2b5e3118
+EIP=0x6d84f8f9, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0090c44c)
+0x0090c44c:   002a6400 02b27850 6d84f9b7 000003c2
+0x0090c45c:   00558654 02b27850 00000000 6d949bed
+0x0090c46c:   000003c2 00558654 02b27850 002a6400
+0x0090c47c:   002a6400 02b27850 6d949c63 0090c4dc
+0x0090c48c:   02b27850 00000000 002a6400 00000000
+0x0090c49c:   002a6400 00000000 00000000 6d9181d8
+0x0090c4ac:   002a6400 00000001 00000000 002a6400
+0x0090c4bc:   02b27850 00000000 6d94a1e3 000003c2 
+
+Instructions: (pc=0x6d84f8f9)
+0x6d84f8e9:   00 85 c0 74 1d 8b 4c 24 10 39 08 75 0d 8b 78 08
+0x6d84f8f9:   39 77 44 75 05 39 50 10 74 0a 8b 40 04 83 e0 fe 
+
+
+Stack: [0x008c0000,0x00910000),  sp=0x0090c44c,  free space=305k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x8f8f9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.misc.Resource.getBytes()[B+57
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+219
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+34
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+253
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+34
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+253
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+j  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;+0
+j  java.lang.Class.forName(Ljava/lang/String;)Ljava/lang/Class;+5
+j  oracle.jdbc.driver.OracleDriver.getConnectionInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+270
+j  oracle.jdbc.driver.OracleDriver.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+633
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)Ljava/sql/Connection;+210
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;+41
+j  b01.A.a.X.F()V+143
+j  b01.A.a.X.<init>()V+55
+j  b01.A.Y.S()V+12
+j  b01.A.Y.F(Ljava/lang/String;)V+1
+j  b01.A.Y.C(Ljava/lang/String;)Z+17
+j  b01.A.Y.X()Z+2
+j  b01.Main.main([Ljava/lang/String;)V+254
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02a8c800 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=1216]
+  0x02e19400 JavaThread "AWT-Shutdown" [_thread_blocked, id=5160]
+  0x02dd8400 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3052]
+  0x02a83800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2740]
+  0x02a7cc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5456]
+  0x02a78000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=4976]
+  0x02a76c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=2108]
+  0x02a75c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4840]
+  0x02a71800 JavaThread "Finalizer" daemon [_thread_blocked, id=4716]
+  0x02a6d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1352]
+=>0x002a6400 JavaThread "main" [_thread_in_vm, id=4448]
+
+Other Threads:
+  0x02a64000 VMThread [id=3556]
+  0x02a87000 WatcherThread [id=120]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 740K [0x22990000, 0x22a90000, 0x22e70000)
+  eden space 896K,  75% used [0x22990000, 0x22a39388, 0x22a70000)
+  from space 64K, 100% used [0x22a70000, 0x22a80000, 0x22a80000)
+  to   space 64K,   0% used [0x22a80000, 0x22a80000, 0x22a90000)
+ tenured generation   total 4096K, used 1616K [0x22e70000, 0x23270000, 0x26990000)
+   the space 4096K,  39% used [0x22e70000, 0x23004300, 0x23004400, 0x23270000)
+ compacting perm gen  total 12288K, used 1139K [0x26990000, 0x27590000, 0x2a990000)
+   the space 12288K,   9% used [0x26990000, 0x26aacd28, 0x26aace00, 0x27590000)
+    ro space 8192K,  62% used [0x2a990000, 0x2ae8f728, 0x2ae8f800, 0x2b190000)
+    rw space 12288K,  52% used [0x2b190000, 0x2b7d1eb8, 0x2b7d2000, 0x2bd90000)
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	Z:\java\jre1.6.0_02\bin\java.exe
+0x7c900000 - 0x7c9af000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f6000 	C:\WINDOWS\system32\kernel32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x7c340000 - 0x7c396000 	Z:\java\jre1.6.0_02\bin\msvcr71.dll
+0x6d7c0000 - 0x6da09000 	Z:\java\jre1.6.0_02\bin\client\jvm.dll
+0x7e410000 - 0x7e4a1000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\WINDOWS\system32\GDI32.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x76390000 - 0x763ad000 	C:\WINDOWS\system32\IMM32.DLL
+0x629c0000 - 0x629c9000 	C:\WINDOWS\system32\LPK.DLL
+0x74d90000 - 0x74dfb000 	C:\WINDOWS\system32\USP10.dll
+0x6d310000 - 0x6d318000 	Z:\java\jre1.6.0_02\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d770000 - 0x6d77c000 	Z:\java\jre1.6.0_02\bin\verify.dll
+0x6d3b0000 - 0x6d3cf000 	Z:\java\jre1.6.0_02\bin\java.dll
+0x6d7b0000 - 0x6d7bf000 	Z:\java\jre1.6.0_02\bin\zip.dll
+0x6d000000 - 0x6d1c3000 	Z:\java\jre1.6.0_02\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\msvcrt.dll
+0x774e0000 - 0x7761d000 	C:\WINDOWS\system32\ole32.dll
+0x5ad70000 - 0x5ada8000 	C:\WINDOWS\system32\uxtheme.dll
+0x73760000 - 0x737ab000 	C:\WINDOWS\system32\ddraw.dll
+0x73bc0000 - 0x73bc6000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x6d2b0000 - 0x6d303000 	Z:\java\jre1.6.0_02\bin\fontmanager.dll
+0x74720000 - 0x7476c000 	C:\WINDOWS\system32\MSCTF.dll
+0x6e610000 - 0x6e67b000 	C:\PROGRAM FILES\NORTON INTERNET SECURITY\ENGINE\16.5.0.135\ASOEHOOK.DLL
+0x5d090000 - 0x5d12a000 	C:\WINDOWS\system32\COMCTL32.dll
+0x77120000 - 0x771ab000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x755c0000 - 0x755ee000 	C:\WINDOWS\system32\msctfime.ime
+0x7c9c0000 - 0x7d1d7000 	C:\WINDOWS\system32\shell32.dll
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x773d0000 - 0x774d3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+0x6d570000 - 0x6d583000 	Z:\java\jre1.6.0_02\bin\net.dll
+0x71ab0000 - 0x71ac7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6d590000 - 0x6d599000 	Z:\java\jre1.6.0_02\bin\nio.dll
+0x605d0000 - 0x605d9000 	C:\WINDOWS\system32\mslbui.dll
+
+VM Arguments:
+java_command: b01/Main /timeZone:Asia/Beirut
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files\Java\jre6\lib\ext\QTJava.zip
+PATH=C:\Program Files\PHP\;C:\ORANT\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\QuickTime\QTSystem\;c:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\;C:\Program Files\Common Files\Nero\Lib\
+USERNAME=rhkattar
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 7 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2070572k(1151672k free), swap 3984432k(2681220k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.6.0_02-b06) for windows-x86, built on Jul 12 2007 01:16:14 by "java_re" with unknown MS VC++:1310
+
