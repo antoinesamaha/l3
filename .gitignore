@@ -90,3 +90,6 @@ buildNumber.properties
 
 **/bin/
 
+**/bin/**/*.class
+
+l3drivers/bin/b01/l3/**/*.class
