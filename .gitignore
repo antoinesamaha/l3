@@ -91,5 +91,6 @@ buildNumber.properties
 **/bin/
 
 **/bin/**/*.class
+**/exe/*.jar
 
 l3drivers/bin/b01/l3/*.class

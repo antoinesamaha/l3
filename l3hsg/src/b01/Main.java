@@ -199,6 +199,9 @@ public class Main {
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.maglumi.MaglumiDriver", b01.l3.drivers.maglumi.MaglumiDriver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.maglumi.MaglumiEmulator", b01.l3.drivers.maglumi.MaglumiEmulator.class);
 
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.octa.OctaDriver", b01.l3.drivers.octa.OctaDriver.class);
+			DriverFactory.getInstance().addDriver("b01.l3.drivers.octa.OctaEmulator", b01.l3.drivers.octa.OctaEmulator.class);
+
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDDriver", b01.l3.drivers.alcor.ised.ISEDDriver.class);
 			DriverFactory.getInstance().addDriver("b01.l3.drivers.alcor.ised.ISEDEmulator", b01.l3.drivers.alcor.ised.ISEDEmulator.class);
 
