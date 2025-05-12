@@ -39,12 +39,18 @@ public class OctaFrame extends AstmFrame {
             }
         }
         Globals.logString("OctaDriver extractAnswerFromBuffer ["+sIdx+":"+eIdx+"]");
-        if (sIdx > 0 && eIdx > sIdx) {
+        if (sIdx >= 0 && eIdx > sIdx) {
             StringBuffer response = new StringBuffer(buffer.subSequence(sIdx, eIdx + 1));
             setDataWithFrame(response);
             buffer.replace(0, eIdx + 1, "");
             extractionDone = true;
             Globals.logString("OctaDriver returning True");
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Globals.logException(e);
         }
 
         return extractionDone;
