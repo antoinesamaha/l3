@@ -39,6 +39,10 @@ public class OctaDriver extends AstmDriver{
 		getL3SerialPort().setAnswerFrame(answerFrame);
 	}
 
+	public boolean isInquiryBased() {
+		return true;
+	}
+
 	protected void initDriverReceiver() {
 		Globals.logString("OctaDriver initDriverReceiver");
 		setDriverReceiver(new OctaReceiver(this));

@@ -6,6 +6,19 @@ import b01.l3.drivers.astm.AstmFrame;
 
 public class OctaFrame extends AstmFrame {
 
+    /*
+MSG1	Worklist	request	(or	Total	request)
+MSG2	Transfer	OK	(ACK)
+MSG3	Demographic	data	of	a	single	patient
+MSG4	Transfer	error	(NACK)
+MSG5	Result	data	of	a	single	patient
+MSG6	Query	request	(or	Partial	request	of	a	single	patient	by	patient	ID	number)
+MSG7	No	data	(EOT)
+     */
+
+    public static final String ACK_FRAME = String.valueOf(STX)+String.valueOf(ACK)+String.valueOf(ETX);
+    public static final String NACK_FRAME = String.valueOf(STX)+String.valueOf(NACK)+String.valueOf(ETX);
+
     public OctaFrame(Instrument instrument) {
         super(instrument);
     }
