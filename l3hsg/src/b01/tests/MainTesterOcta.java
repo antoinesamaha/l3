@@ -10,6 +10,7 @@ import b01.l3.connector.LisConnectorFactory;
 import b01.l3.connector.dbConnector.lisConnectorTables.LisConnectorModule;
 import b01.l3.drivers.astm.AstmFrame;
 import b01.l3.drivers.octa.OctaDriver;
+import b01.l3.drivers.octa.OctaFrameCreator;
 
 public class MainTesterOcta {
 
@@ -122,19 +123,24 @@ public class MainTesterOcta {
 					try {
 						Thread.sleep(5000);
 						SocketSender sender = new SocketSender(9099);
-						if (false) {// Simulating a reception of result
+						if (true) {// Simulating a reception of result
 							String message = String.valueOf(AstmFrame.STX);
 							//message += "J00175477167        MELISSA NARMIN                02031952F073SERUM               1405202569.00g/dl                                                                                                                                                          ADM2005202506Albumin   Alpha 1   Alpha 2   Beta 1    Beta 2    Gamma                                             058.8004.6013.7009.0005.2008.70000000000000000000040.5703.1709.4506.2103.5906.0000000000000000000000SPIKE 1                                 002.500000000000000001.73000000000000000001.4301.00                                                                                                                                                                                                                                      00";
-							message += "@00095492848        test 9                        01011980M045                            00000g/dl                                                                                                                                                          TS 0206202507HbA1c%    Other Hb AHb A0     Hb A2     HbA1c#                                                      005.2001.6092.0002.0033.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0                                        000.0000.0000.0000.0000.0000.0000.0000.0001.0001.00                                                                                                                                                                                                                                      00";
+							//message += "@00095492848        test 9                        01011980M045                            00000g/dl                                                                                                                                                          TS 0206202507HbA1c%    Other Hb AHb A0     Hb A2     HbA1c#                                                      005.2001.6092.0002.0033.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0                                        000.0000.0000.0000.0000.0000.0000.0000.0001.0001.00                                                                                                                                                                                                                                      00";
+							message += "@00095492999        test 9                        01011980M045                            00000g/dl                                                                                                                                                          TS 0206202507HbA1c%    Other Hb AHb A0     Hb A2     HbA1c#                                                      005.2001.6092.0002.0033.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0000.0                                        000.0000.0000.0000.0000.0000.0000.0000.0001.0001.00                                                                                                                                                                                                                                      00";
 							message += AstmFrame.ETX;
 							//message += AstmFrame.EOT;
 							sender.send(message);
 						}
-						if (true) {// Simulating a reception of enquiry
+						if (false) {// Simulating a reception of enquiry
 							String message = String.valueOf(AstmFrame.STX);
 							message += "@5492999        ";
 							message += AstmFrame.ETX;
 							sender.send(message);
+							Thread.sleep(2000);
+							OctaFrameCreator creator = new OctaFrameCreator();
+							sender.send(creator.buildAckFrame());
+							Thread.sleep(2000);
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
