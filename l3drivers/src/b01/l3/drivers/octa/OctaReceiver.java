@@ -135,7 +135,15 @@ public class OctaReceiver implements L3SerialPortListener {
 
         //sample.setDateAndTime();
         L3Test test = sample.addTest();
-        test.setLabel(fraction1Name);
+
+        String lisTestCode = driver.testMaps_getLisCode(fraction1Name);
+        if (lisTestCode == null) {
+            lisTestCode = fraction1Name;
+        }
+        test.setResultOk(true);
+        test.setValueNotes("");
+        test.setNotificationMessage("");
+        test.setLabel(lisTestCode);
         test.setValue(fraction1Percent); // Example value
         test.setUnitLabel("%");
         message.addSample(sample);
