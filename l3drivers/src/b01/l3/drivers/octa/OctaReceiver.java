@@ -78,7 +78,7 @@ public class OctaReceiver implements L3SerialPortListener {
     private String readString(StringBuffer data, int[] indexes) {
         int start = indexes[0] - 2; // Convert to 0-based index and remove STX
         if (data.length() >= start + indexes[1] - 1) {
-            return data.substring(start, start + indexes[1] -1).trim();
+            return data.substring(start, start + indexes[1]).trim();
         } else {
             return "";
         }

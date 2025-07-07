@@ -3,24 +3,34 @@ package b01.l3.drivers.octa;
 import b01.l3.Instrument;
 import b01.l3.data.L3Message;
 import b01.l3.data.L3Sample;
-import b01.l3.data.L3SampleTestJoinFilter;
 import b01.l3.drivers.astm.AstmFrame;
 import b01.l3.drivers.astm.AstmFrameCreator;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
+
 public class OctaFrameCreator extends AstmFrameCreator {
 
     private static final int FRAME_SIZE = 240;
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+    private SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 
-    private String appendSpaces(String str, int length) {
+    private String appendSpacesAlignedRight(String str, int length) {
         StringBuilder sb = new StringBuilder(str);
         while (sb.length() < length) {
             sb.insert(0, " ");
+        }
+        if (sb.length() > length) {
+            sb.setLength(length); // Trim to length if it exceeds
+        }
+        return sb.toString();
+    }
+
+    private String appendSpacesAlignedLeft(String str, int length) {
+        StringBuilder sb = new StringBuilder(str);
+        while (sb.length() < length) {
+            sb.append(" ");
         }
         if (sb.length() > length) {
             sb.setLength(length); // Trim to length if it exceeds
@@ -68,11 +78,11 @@ public class OctaFrameCreator extends AstmFrameCreator {
                 messageToSend.append(AstmFrame.STX);
                 messageToSend.append("@");
                 messageToSend.append("0000");
-                messageToSend.append(appendSpaces(sample.getId(), 15));
-                String patientName = sample.getMiddleInitial() != null && sample.getMiddleInitial().length() > 0 ? sample.getFirstName() + " " + sample.getMiddleInitial() + " " + sample.getLastName() : sample.getFirstName() + " " +  sample.getLastName();
-                messageToSend.append(appendSpaces(patientName, 30));
+                messageToSend.append(appendSpacesAlignedRight(sample.getId().trim(), 15));
+                String patientName = sample.getMiddleInitial() != null && sample.getMiddleInitial().length() > 0 ? sample.getFirstName().trim() + " " + sample.getMiddleInitial().trim() + " " + sample.getLastName().trim() : sample.getFirstName().trim() + " " +  sample.getLastName().trim();
+                messageToSend.append(appendSpacesAlignedRight(patientName, 30));
                 messageToSend.append(sdf.format(sample.getDateOfBirth()));
-                messageToSend.append(appendSpaces(sample.getSexe(), 1));
+                messageToSend.append(appendSpacesAlignedRight(sample.getSexe(), 1));
 
                 //Age
                 int age = computeAge(sample.getDateOfBirth());
@@ -80,15 +90,15 @@ public class OctaFrameCreator extends AstmFrameCreator {
                 messageToSend.append(ageStr);
 
                 //Department
-                messageToSend.append("A2345678901234Z");
+                messageToSend.append(appendSpacesAlignedLeft("HSGLABS", 20));
                 messageToSend.append(sdf.format(sample.getDateAndTime()));
                 //Concentration
-                messageToSend.append("00000");
-                messageToSend.append("                              "); // 30 spaces
-                messageToSend.append("                              "); // 30 spaces
-                messageToSend.append("                              "); // 30 spaces
-                messageToSend.append("                              "); // 30 spaces
-                messageToSend.append("                              "); // 30 spaces
+                messageToSend.append("078.5");
+                messageToSend.append("FREE FIELD 1                  "); // 30 spaces
+                messageToSend.append("FREE FIELD 2                  "); // 30 spaces
+                messageToSend.append("FREE FIELD 3                  "); // 30 spaces
+                messageToSend.append("FREE FIELD 4                  "); // 30 spaces
+                messageToSend.append("FREE FIELD 5                  "); // 30 spaces
                 messageToSend.append(AstmFrame.ETX);
 
                 // Read only one record and suppose we are doing the Hb1Ac test
