@@ -106,13 +106,15 @@ public class YumizenP8000Driver extends AstmDriver {
 	@Override
 	public void connect() throws Exception {
 		super.connect();
-		if(sender != null) sender.connect();
+		// The Sender is transient, should connect and disconnect for every transmission
+		// if(sender != null) sender.connect();
 	}
 
 	@Override
 	public void disconnect() {
 		super.disconnect();
-		if(sender != null) sender.disconnect();
+		// The Sender is transient, should connect and disconnect for every transmission
+		// if(sender != null) sender.disconnect();
 	}
 	
 	public void sendFramesArray(boolean createDataWithFrame) throws Exception {

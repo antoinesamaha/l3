@@ -10,6 +10,7 @@ public class BServer implements Runnable {
 	private LogInterface logInterface = null;
 
 	public BServer(int port, BServerListener mailBoxListener) {
+		logString("Setting up BServer at port: " + port);
 		this.port = port;
 		this.serverListener = mailBoxListener;
 	}
